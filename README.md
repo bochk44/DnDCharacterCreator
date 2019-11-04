@@ -4,6 +4,7 @@ Basic Groundrules:
 ---
 
 * If you aren't sure if we want to commit to the edit you've made, **push it to a branch**
+* If you want to test interactions in GitHub, use the ~~index.html~~ make a new file
 
 
 (if you think of your own, feel free to add to the list)
