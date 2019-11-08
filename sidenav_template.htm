@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {
+  font-family: "Lato", sans-serif;
+}
+
+.leftSidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.leftSidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+.leftSidenav h3 {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.rightSidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  right: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.rightSidenav .closebtn {
+  position: absolute;
+  top: 0;
+  left: 25px;
+  font-size: 36px;
+  margin-right: 50px;
+}
+
+.rightSidenav h3 {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+</style>
+</head>
+<body>
+
+<div id="leftSidenav" class="leftSidenav">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeLeftNav()">&#8592;</a>
+  <h3> Left Side Nav </h3>
+  <img src="HM.png" alt="Hoes Mad" width="100" height="100" style=padding-left:50px;>
+</div>
+
+<div id="rightSidenav" class="rightSidenav">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeRightNav()">&#8594;</a>
+  <h3> Right Side Nav </h3>
+  <img src="HM.png" alt="Hoes Mad" width="100" height="100" style="padding-left:50px;">
+</div>
+
+<h2> Main Page</h2>
+<p>Click on the element below to open the side navigation menu.</p>
+<span style="font-size:30px;cursor:pointer" onclick="openLeftNav()">&#8594; open</span>
+<span style="font-size:30px;cursor:pointer;float:right" onclick="openRightNav()"> open &#8592;</span>
+
+<script>
+function openLeftNav() {
+
+  document.getElementById("leftSidenav").style.width = "250px";
+}
+
+function closeLeftNav() {
+  document.getElementById("leftSidenav").style.width = "0";
+}
+
+function openRightNav() {
+
+  document.getElementById("rightSidenav").style.width = "250px";
+}
+
+function closeRightNav() {
+  document.getElementById("rightSidenav").style.width = "0";
+}
+</script>
+   
+</body>
+</html> 
