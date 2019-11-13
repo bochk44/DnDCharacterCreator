@@ -90,7 +90,9 @@ body {
 
 <h2> Main Page</h2>
 <p>Click on the element below to open the side navigation menu.</p>
-<span style="font-size:30px;cursor:pointer" onclick="openLeftNav()">&#8594; open</span>
+<span style="font-size:30px;cursor:pointer" onclick="openLeftNav()">
+  <img src="https://github.com/bochk44/DnDCharacterCreator/blob/master/Images/MenuIcon.jpg"    alt="Menu Icon" width="50" height="50" style=padding-left:10px;>
+</span>
 <span style="font-size:30px;cursor:pointer;float:right" onclick="openRightNav()"> open &#8592;</span>
 
 <script>
@@ -100,7 +102,7 @@ function openLeftNav() {
 }
 
 function closeLeftNav() {
-  document.getElementById("leftSidenav").style.width = "0";
+  document.getElementById("leftSidenav").style.width = "30%";
 }
 
 function openRightNav() {
@@ -109,7 +111,7 @@ function openRightNav() {
 }
 
 function closeRightNav() {
-  document.getElementById("rightSidenav").style.width = "0";
+  document.getElementById("rightSidenav").style.width = "65%";
 }
 </script>
    
