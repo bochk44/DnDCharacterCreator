@@ -14,7 +14,7 @@ body {
   z-index: 1;
   top: 0;
   left: 0;
-  background-color: #111;
+  background-color: #3B0B39;
   overflow-x: hidden;
   transition: 0.5s;
   padding-top: 60px;
@@ -32,7 +32,7 @@ body {
   padding: 8px 8px 8px 32px;
   text-decoration: none;
   font-size: 25px;
-  color: #818181;
+  color: #EFFBEF;
   display: block;
   transition: 0.3s;
 }
@@ -68,6 +68,40 @@ body {
 
 }
 
+.leftSidenav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  background-color: #A901DB;
+  height: auto;
+  overflow: auto;
+}
+  
+.leftSidenav li {
+  border-bottom: 1px solid #555;
+}
+.leftSidenav li:last-child {
+  border-bottom: none;
+}
+  
+.leftSidenav li a {
+  display: block;
+  color: #000;
+  padding: 8px 16px;
+  text-decoration: none;
+}
+
+.leftSidenav li a.active {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.leftSidenav li a:hover:not(.active) {
+  background-color: #555;
+  color: white;
+}
+
 @media screen and (max-height: 450px) {
   .sidenav {padding-top: 15px;}
   .sidenav a {font-size: 18px;}
@@ -78,8 +112,13 @@ body {
 
 <div id="leftSidenav" class="leftSidenav">
   <a href="javascript:void(0)" class="closebtn" onclick="closeLeftNav()">&#8592;</a>
-  <h3> Left Side Nav </h3>
-  <img src="HM.png" alt="Hoes Mad" width="100" height="100" style=padding-left:50px;>
+  <h3> DnD Character Creator </h3>
+  <ul>
+  <li><a class="active" href="#race">Race</a></li>
+  <li><a href="#class onclick=closeLeftNav()">Class</a></li>
+  <li><a href="#background onclick=closeLeftNav()">Background</a></li>
+  <li><a href="#skills onclick=closeLeftNav()">Skills</a></li>
+</ul>
 </div>
 
 <div id="rightSidenav" class="rightSidenav">
@@ -87,16 +126,19 @@ body {
   <h3> Right Side Nav </h3>
   <img src="HM.png" alt="Hoes Mad" width="100" height="100" style="padding-left:50px;">
 </div>
-
+  
+<span style="font-size:30px;cursor:pointer" onclick="openLeftNav()">
+  <img src="Images/MenuIcon.jpg"    alt="Menu Icon" width="50" height="50" style=padding-left:10px;>
+</span>
 <h2> Main Page</h2>
 <p>Click on the element below to open the side navigation menu.</p>
-<span style="font-size:30px;cursor:pointer" onclick="openLeftNav()">&#8594; open</span>
+
 <span style="font-size:30px;cursor:pointer;float:right" onclick="openRightNav()"> open &#8592;</span>
 
 <script>
 function openLeftNav() {
 
-  document.getElementById("leftSidenav").style.width = "250px";
+  document.getElementById("leftSidenav").style.width = "30%";
 }
 
 function closeLeftNav() {
@@ -105,7 +147,7 @@ function closeLeftNav() {
 
 function openRightNav() {
 
-  document.getElementById("rightSidenav").style.width = "250px";
+  document.getElementById("rightSidenav").style.width = "65%";
 }
 
 function closeRightNav() {
