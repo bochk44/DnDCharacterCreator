@@ -209,7 +209,7 @@ body {
 .content {
   padding: 0 18px;
   display: none;
-  width: 80%;
+  width: 76%;
   overflow: hidden;
   background-color: #F6CEEC;
 }
@@ -242,99 +242,99 @@ body {
 
 <h2>Classes</h2>
 
-<button type="button" class="collapsible">Barbarian</button>
+<button type="button" class="collapsible"><strong>Barbarian</strong></button>
 <div class="content">
   <p>A warrior class that focuses on having lots of health and strong meelee attacks.<br />Main Ability: Strength</p>
   <label class="container">Select Class
-    <input type="radio" name="radio">
+    <input type="radio" name="class" id="0">
     <span class="checkmark"></span>
   </label>
 </div>
-<button type="button" class="collapsible">Bard</button>
+<button type="button" class="collapsible"><strong>Bard</strong></button>
 <div class="content">
   <p>A magic casting class that focuses on using music to support allies and weaken enemies.<br />Main Ability: Charisma</p>
   <label class="container">Select Class
-    <input type="radio" name="radio">
+    <input type="radio" name="class" id="1">
     <span class="checkmark"></span>
   </label>
 </div>
-<button type="button" class="collapsible">Cleric</button>
+<button type="button" class="collapsible"><strong>Cleric</strong></button>
 <div class="content">
   <p>A magic casting class that focuses on using holy magic to heal allies and cripple enemies.<br />Main Ability: Wisdom</p>
   <label class="container">Select Class
-    <input type="radio" name="radio">
+    <input type="radio" name="class" id="2">
     <span class="checkmark"></span>
   </label>
 </div>
-<button type="button" class="collapsible">Druid</button>
+<button type="button" class="collapsible"><strong>Druid</strong></button>
 <div class="content">
   <p>A magic casting class that focuses on using nature magic strengthen themselves<br />Main Ability: Wisdom</p>
   <label class="container">Select Class
-    <input type="radio" name="radio">
+    <input type="radio" name="class" id="3">
     <span class="checkmark"></span>
   </label>
 </div>
-<button type="button" class="collapsible">Fighter</button>
+<button type="button" class="collapsible"><strong>Fighter</strong></button>
 <div class="content">
   <p>A warrior class that focuses on weapon based combat to inflict large amount of damage.<br />Main Ability: Strength or Dexterity</p>
   <label class="container">Select Class
-    <input type="radio" name="radio">
+    <input type="radio" name="class" id="4">
     <span class="checkmark"></span>
   </label>
 </div>
-<button type="button" class="collapsible">Monk</button>
+<button type="button" class="collapsible"><strong>Monk</strong></button>
 <div class="content">
   <p>A martial/magic class that focuses on using magical abilities to augment meelee attacks.<br />Main Ability: Wisdom</p>
   <label class="container">Select Class
-    <input type="radio" name="radio">
+    <input type="radio" name="class" id="5">
     <span class="checkmark"></span>
   </label>
 </div>
-<button type="button" class="collapsible">Paladin</button>
+<button type="button" class="collapsible"><strong>Paladin</strong></button>
 <div class="content">
   <p>A martial/magic class that focuses on having high defense and strong meelee attacks.<br />Main Ability: Strength</p>
   <label class="container">Select Class
-    <input type="radio" name="radio">
+    <input type="radio" name="class" id="6">
     <span class="checkmark"></span>
   </label>
 </div>
-<button type="button" class="collapsible">Ranger</button>
+<button type="button" class="collapsible"><strong>Ranger</strong></button>
 <div class="content">
   <p>A ranged martial class that focuses on dealing high amounts of damage from a distance.<br />Main Ability: Dexterity</p>
   <label class="container">Select Class
-    <input type="radio" name="radio">
+    <input type="radio" name="class" id="7">
     <span class="checkmark"></span>
   </label>
 </div>
-<button type="button" class="collapsible">Rogue</button>
+<button type="button" class="collapsible"><strong>Rogue</strong></button>
 <div class="content">
   <p>A martial class that focuses on using stealth to deal high amounts of meelee damage.<br />Main Ability: Dexterity</p>
   <label class="container">Select Class
-    <input type="radio" name="radio">
+    <input type="radio" name="class" id="8">
     <span class="checkmark"></span>
   </label>
 </div>
-<button type="button" class="collapsible">Sorcerer</button>
+<button type="button" class="collapsible"><strong>Sorcerer</strong></button>
 <div class="content">
   <p>A magic class that focuses on being able to cast several high damage spells several times a day.<br />Main Ability: Charisma</p>
   <label class="container">Select Class
-    <input type="radio" name="radio">
+    <input type="radio" name="class" id="9">
     <span class="checkmark"></span>
   </label>
 </div>
-<button type="button" class="collapsible">Warlock</button>
+<button type="button" class="collapsible"><strong>Warlock</strong></button>
 <div class="content">
   <p>A magic class that focuses on using dark magic to cast a few high strength spells.<br />Main Ability: Charisma</p>
   <label class="container">Select Class
-    <input type="radio" name="radio">
+    <input type="radio" name="class" id="10">
     <span class="checkmark"></span>
   </label>
 </div>
-<button type="button" class="collapsible">Wizard</button>
+<button type="button" class="collapsible"><strong>Wizard</strong></button>
 <div class="content">
   <p>A magic class that focuses on having a very wide range of spells available.<br />Main Ability: Intelligence</p>
   <label class="container">Select Class
-    <input type="radio" name="radio">
+    <input type="radio" name="class" id="11">
     <span class="checkmark"></span>
   </label>
 </div>
@@ -345,14 +345,28 @@ var i;
 
 for (i = 0; i < coll.length; i++) {
   coll[i].addEventListener("click", function() {
-    this.classList.toggle("active");
     var content = this.nextElementSibling;
     if (content.style.display === "block") {
+      resetCollapsibles();
       content.style.display = "none";
     } else {
+      resetCollapsibles();
+      this.classList.toggle("active");
       content.style.display = "block";
     }
   });
+}
+
+function resetCollapsibles() {
+  var k;
+  var radioBut = document.getElementsByClassName("container");
+  for(k = 0; k < radioBut.length; k++) {
+    var content = coll[k].nextElementSibling;
+    if(!radioBut[k].checked && content.style.display === "block") {
+      coll[k].classList.toggle("active");
+      content.style.display = "none";
+    }
+  }
 }
 
 function openLeftNav() {
