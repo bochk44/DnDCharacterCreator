@@ -4,7 +4,7 @@
 
 
 * If you are adding entirely new content/a new file, just throw it in the main branch
-* If you aren't sure if we want to commit to edit of an existing file you've made, **make a pull request**
+* If you aren't sure if we want to commit to edit of an existing file you've made, **branch and make a pull request**
 * If you want to test interactions in GitHub, just make a new file
 
 
