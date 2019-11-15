@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="ClassSelector" content="width=device-width, initial-scale=1">
+<style>
+body {
+  font-family: "Lato", sans-serif;
+}
+
+/* --------------------------------------------------------- */
+/* --------------------------------------------------------- */
+/* ------------------Side Nav details start------------------*/
+/* --------------------------------------------------------- */
+/* --------------------------------------------------------- */
+
+.leftSidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #3B0B39;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+.leftSidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+.leftSidenav h3 {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #EFFBEF;
+  display: block;
+  transition: 0.3s;
+}
+.rightSidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  right: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+.rightSidenav .closebtn {
+  position: absolute;
+  top: 0;
+  left: 25px;
+  font-size: 36px;
+  margin-right: 50px;
+}
+.rightSidenav h3 {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+.leftSidenav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  background-color: #A901DB;
+  height: auto;
+  overflow: auto;
+}
+  
+.leftSidenav li {
+  border-bottom: 1px solid #555;
+}
+.leftSidenav li:last-child {
+  border-bottom: none;
+}
+  
+.leftSidenav li a {
+  display: block;
+  color: #000;
+  padding: 8px 16px;
+  text-decoration: none;
+}
+.leftSidenav li a.active {
+  background-color: #4CAF50;
+  color: white;
+}
+.leftSidenav li a:hover:not(.active) {
+  background-color: #555;
+  color: white;
+}
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+
+
+/* --------------------------------------------------------- */
+/* --------------------------------------------------------- */
+/* ------------------Side Nav details end--------------------*/
+/* --------------------------------------------------------- */
+/* --------------------------------------------------------- */
+
+
+
+
+
+
+/* --------------------------------------------------------- */
+/* --------------------------------------------------------- */
+/* ----------------Radio Button details start----------------*/
+/* --------------------------------------------------------- */
+/* --------------------------------------------------------- */
+
+.container {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 22px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  background-color: #eee;
+  border-radius: 50%;
+}
+
+.container:hover input ~ .checkmark {
+  background-color: #ccc;
+}
+
+.container input:checked ~ .checkmark {
+  background-color: #4CAF50;
+}
+
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+.container input:checked ~ .checkmark:after {
+  display: block;
+}
+
+.container .checkmark:after {
+  left: 9px;
+  top: 5px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+/* --------------------------------------------------------- */
+/* --------------------------------------------------------- */
+/* ----------------Radio Button details end------------------*/
+/* --------------------------------------------------------- */
+/* --------------------------------------------------------- */
+
+
+
+.collapsible {
+  background-color: #A901DB;
+  color: white;
+  cursor: pointer;
+  padding: 18px;
+  width: 80%;
+  border: 1px solid #555;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+}
+
+.active, .collapsible:hover {
+  background-color: #555;
+}
+
+.content {
+  padding: 0 18px;
+  display: none;
+  width: 80%;
+  overflow: hidden;
+  background-color: #F6CEEC;
+}
+</style>
+</head>
+<body>
+
+<div id="leftSidenav" class="leftSidenav">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeLeftNav()">&#8592;</a>
+  <h3> DnD Character Creator </h3>
+  <ul>
+  <li><a class="active" href="#race">Race</a></li>
+  <li><a href="#class onclick=closeLeftNav()">Class</a></li>
+  <li><a href="#background onclick=closeLeftNav()">Background</a></li>
+  <li><a href="#skills onclick=closeLeftNav()">Skills</a></li>
+</ul>
+</div>
+
+<div id="rightSidenav" class="rightSidenav">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeRightNav()">&#8594;</a>
+  <h3> Right Side Nav </h3>
+  <img src="HM.png" alt="Hoes Mad" width="100" height="100" style="padding-left:50px;">
+</div>
+
+
+<span style="font-size:30px;cursor:pointer" onclick="openLeftNav()">
+  <img src="Images/MenuIcon.jpg"    alt="Menu Icon" width="50" height="50" style=padding-left:10px;>
+</span>
+
+
+<h2>Classes</h2>
+
+<button type="button" class="collapsible">Barbarian</button>
+<div class="content">
+  <p>A warrior class that focuses on having lots of health and strong meelee attacks.<br />Main Ability: Strength</p>
+  <label class="container">Select Class
+    <input type="radio" name="radio">
+    <span class="checkmark"></span>
+  </label>
+</div>
+<button type="button" class="collapsible">Bard</button>
+<div class="content">
+  <p>A magic casting class that focuses on using music to support allies and weaken enemies.<br />Main Ability: Charisma</p>
+  <label class="container">Select Class
+    <input type="radio" name="radio">
+    <span class="checkmark"></span>
+  </label>
+</div>
+<button type="button" class="collapsible">Cleric</button>
+<div class="content">
+  <p>A magic casting class that focuses on using holy magic to heal allies and cripple enemies.<br />Main Ability: Wisdom</p>
+  <label class="container">Select Class
+    <input type="radio" name="radio">
+    <span class="checkmark"></span>
+  </label>
+</div>
+<button type="button" class="collapsible">Druid</button>
+<div class="content">
+  <p>A magic casting class that focuses on using nature magic strengthen themselves<br />Main Ability: Wisdom</p>
+  <label class="container">Select Class
+    <input type="radio" name="radio">
+    <span class="checkmark"></span>
+  </label>
+</div>
+<button type="button" class="collapsible">Fighter</button>
+<div class="content">
+  <p>A warrior class that focuses on weapon based combat to inflict large amount of damage.<br />Main Ability: Strength or Dexterity</p>
+  <label class="container">Select Class
+    <input type="radio" name="radio">
+    <span class="checkmark"></span>
+  </label>
+</div>
+<button type="button" class="collapsible">Monk</button>
+<div class="content">
+  <p>A martial/magic class that focuses on using magical abilities to augment meelee attacks.<br />Main Ability: Wisdom</p>
+  <label class="container">Select Class
+    <input type="radio" name="radio">
+    <span class="checkmark"></span>
+  </label>
+</div>
+<button type="button" class="collapsible">Paladin</button>
+<div class="content">
+  <p>A martial/magic class that focuses on having high defense and strong meelee attacks.<br />Main Ability: Strength</p>
+  <label class="container">Select Class
+    <input type="radio" name="radio">
+    <span class="checkmark"></span>
+  </label>
+</div>
+<button type="button" class="collapsible">Ranger</button>
+<div class="content">
+  <p>A ranged martial class that focuses on dealing high amounts of damage from a distance.<br />Main Ability: Dexterity</p>
+  <label class="container">Select Class
+    <input type="radio" name="radio">
+    <span class="checkmark"></span>
+  </label>
+</div>
+<button type="button" class="collapsible">Rogue</button>
+<div class="content">
+  <p>A martial class that focuses on using stealth to deal high amounts of meelee damage.<br />Main Ability: Dexterity</p>
+  <label class="container">Select Class
+    <input type="radio" name="radio">
+    <span class="checkmark"></span>
+  </label>
+</div>
+<button type="button" class="collapsible">Sorcerer</button>
+<div class="content">
+  <p>A magic class that focuses on being able to cast several high damage spells several times a day.<br />Main Ability: Charisma</p>
+  <label class="container">Select Class
+    <input type="radio" name="radio">
+    <span class="checkmark"></span>
+  </label>
+</div>
+<button type="button" class="collapsible">Warlock</button>
+<div class="content">
+  <p>A magic class that focuses on using dark magic to cast a few high strength spells.<br />Main Ability: Charisma</p>
+  <label class="container">Select Class
+    <input type="radio" name="radio">
+    <span class="checkmark"></span>
+  </label>
+</div>
+<button type="button" class="collapsible">Wizard</button>
+<div class="content">
+  <p>A magic class that focuses on having a very wide range of spells available.<br />Main Ability: Intelligence</p>
+  <label class="container">Select Class
+    <input type="radio" name="radio">
+    <span class="checkmark"></span>
+  </label>
+</div>
+
+<script>
+var coll = document.getElementsByClassName("collapsible");
+var i;
+
+for (i = 0; i < coll.length; i++) {
+  coll[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var content = this.nextElementSibling;
+    if (content.style.display === "block") {
+      content.style.display = "none";
+    } else {
+      content.style.display = "block";
+    }
+  });
+}
+
+function openLeftNav() {
+  document.getElementById("leftSidenav").style.width = "30%";
+}
+function closeLeftNav() {
+  document.getElementById("leftSidenav").style.width = "0";
+}
+function openRightNav() {
+  document.getElementById("rightSidenav").style.width = "65%";
+}
+function closeRightNav() {
+  document.getElementById("rightSidenav").style.width = "0";
+}
+</script>
+
+</body>
+</html>
