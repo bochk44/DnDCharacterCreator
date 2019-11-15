@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<script>
+function openLeftNav() {
+  document.getElementById("leftSidenav").style.width = "30%";
+}
+function closeLeftNav() {
+  document.getElementById("leftSidenav").style.width = "0";
+}
+function openRightNav() {
+  document.getElementById("rightSidenav").style.width = "65%";
+}
+function closeRightNav() {
+  document.getElementById("rightSidenav").style.width = "0";
+}
+
+function toggleStr()  {
+  document.getElementById("strDropdown").classList.toggle("show");
+}
+
+function toggleDex()  {
+  document.getElementById("dexDropdown").classList.toggle("show");
+}
+
+function toggleCon()  {
+  document.getElementById("conDropdown").classList.toggle("show");
+}
+
+function toggleInt()  {
+  document.getElementById("intDropdown").classList.toggle("show");
+}
+
+function toggleWis()  {
+  document.getElementById("wisDropdown").classList.toggle("show");
+}
+
+function toggleCha()  {
+  document.getElementById("chaDropdown").classList.toggle("show");
+}
+
+window.onclick = function(e) {
+  if (!e.target.matches('.dropbtn')) {
+  var myDropdown = document.getElementsByClassName("dropdown-content");
+    for( i = 0; i < myDropdown.length; i++ ){
+		if (myDropdown[i].classList.contains('show')) {
+			myDropdown[i].classList.remove('show');
+		}
+	}
+  }
+}
+
+var AS = [ 15, 14, 13, 12, 10, 8 ];
+
+function reload(){
+	document.getElementById('strbtn').innerHTML = AS[0];
+	document.getElementById('strtotal').innerHTML = (AS[0] + 0);
+	document.getElementById('strmod').innerHTML = ( Math.floor(((AS[0] - 10)/2)) );
+	
+    document.getElementById('dexbtn').innerHTML = AS[1];
+	document.getElementById("dextotal").innerHTML = (AS[1] + 2);
+	document.getElementById('dexmod').innerHTML = ( Math.floor(((AS[1] - 10 +2)/2)) );
+	
+	document.getElementById('conbtn').innerHTML = AS[2];
+	document.getElementById('contotal').innerHTML = (AS[2] + 0);
+	document.getElementById('conmod').innerHTML = ( Math.floor(((AS[2] - 10)/2)) );
+	
+	document.getElementById('intbtn').innerHTML = AS[3];
+	document.getElementById('inttotal').innerHTML = (AS[3] + 1);
+	document.getElementById('intmod').innerHTML = ( Math.floor(((AS[3] - 10 +1)/2)) );
+	
+	document.getElementById('wisbtn').innerHTML = AS[4];
+	document.getElementById('wistotal').innerHTML = (AS[4] + 0);
+	document.getElementById('wismod').innerHTML = ( Math.floor(((AS[4] - 10)/2)) );
+	
+	document.getElementById('chabtn').innerHTML = AS[5];
+	document.getElementById('chatotal').innerHTML = (AS[5] + 0);
+	document.getElementById('chamod').innerHTML = ( Math.floor(((AS[5] - 10)/2)) );
+	
+	
+	
+	console.log("Reloaded");
+	console.log(AS);
+}
+
+function swap2( as, first, second ){
+	for( i=0; i < 6; i++ ){
+	  if( as[i] == second ){
+		var temp = as[i];
+		as[i] = as[first];
+		as[first] = temp;
+		break;
+	  }
+	}
+	
+	return as;
+  }
+  
+
+
+
+</script>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {
+  font-family: "Lato", sans-serif;
+}
+.leftSidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #3B0B39;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+.leftSidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+.leftSidenav h3 {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #EFFBEF;
+  display: block;
+  transition: 0.3s;
+}
+.rightSidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  right: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+.rightSidenav .closebtn {
+  position: absolute;
+  top: 0;
+  left: 25px;
+  font-size: 36px;
+  margin-right: 50px;
+}
+.rightSidenav h3 {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+.leftSidenav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  background-color: #A901DB;
+  height: auto;
+  overflow: auto;
+}
+  
+.leftSidenav li {
+  border-bottom: 1px solid #555;
+}
+.leftSidenav li:last-child {
+  border-bottom: none;
+}
+  
+.leftSidenav li a {
+  display: block;
+  color: #000;
+  padding: 8px 16px;
+  text-decoration: none;
+}
+.leftSidenav li a.active {
+  background-color: #4CAF50;
+  color: white;
+}
+.leftSidenav li a:hover:not(.active) {
+  background-color: #555;
+  color: white;
+}
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+
+/* Dropdown Button */
+.dropbtn {
+  background-color: #3498DB;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+.dropbtn:hover, .dropbtn:focus {
+  background-color: #2980B9;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {background-color: #ddd}
+
+.statTable tr td{
+	text-align: center;
+}
+
+.statTable tr td p{
+	font-size: 30px;
+}
+
+/* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
+.show {display:block;}
+</style>
+</head>
+<body>
+
+<div id="leftSidenav" class="leftSidenav">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeLeftNav()">&#8592;</a>
+  <h3> DnD Character Creator </h3>
+  <ul>
+  <li><a class="active" href="#race">Race</a></li>
+  <li><a href="#class onclick=closeLeftNav()">Class</a></li>
+  <li><a href="#background onclick=closeLeftNav()">Background</a></li>
+  <li><a href="#skills onclick=closeLeftNav()">Skills</a></li>
+</ul>
+</div>
+
+<div id="rightSidenav" class="rightSidenav">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeRightNav()">&#8594;</a>
+  <h3> Right Side Nav </h3>
+  <img src="HM.png" alt="Hoes Mad" width="100" height="100" style="padding-left:50px;">
+</div>
+
+
+  
+<span style="font-size:30px;cursor:pointer" onclick="openLeftNav()">
+  <img src="Images/MenuIcon.jpg"    alt="Menu Icon" width="50" height="50" style=padding-left:10px;>
+</span>
+
+<h2> Ability Scores <span style="font-size:30px;cursor:pointer;float:right" onclick="openRightNav()"> open &#8592;</span></h2>
+
+<Blockquote>	Ability Scores are numbers that describe your characters physical and mental capabilities. There are six Ability Scores: Strength, Dexterity, Constitution, Intelligence, Wisdom and Charisma. The higher the Ability Score, the better your character will be in that particular area.</blockquote>
+<blockquote>	We will be using what is know as the Standard Array method to generate your ability scores. You have six numbers: 15, 14, 13, 12, 10 and 8 to assign to each Ability Score as a base value. Your chosen race will add a bonus to the base value which will give you your final score. Your Ability Scores also determine their respective Ability Score Modifiers, which will be used when you play. Record both your Ability Scores and your Ability Score Modifiers on your character sheet once finished.</blockquote>
+<blockquote>	For a more detailed explanation of each ability score, click the icon beside each one. </blockquote>
+
+
+<table style= "width:50%" class="statTable">
+  <tr>
+	<th> </th>
+    <th> Base Value </th>
+	<th> Racial Bonus </th>
+	<th> Total Value </th>
+	<th> Modifer </th>
+  </tr>
+  
+  <tr> <!-- Strength Row -->
+    <td>
+		<p> Strength
+
+		</p>
+	</td>
+    <td> 
+		<div id = "StatDrop" class="dropdown">
+			<button  id="strbtn" class="dropbtn" onclick="toggleStr()"><script> document.write(AS[0])</script></button>
+			<div id="strDropdown" class="dropdown-content">
+			<a href="#15" onclick="AS = swap2(AS, 0, 15); reload(); ">15</a>
+			<a href="#14" onclick="AS = swap2(AS, 0, 14); reload(); ">14</a>
+			<a href="#13" onclick="AS = swap2(AS, 0, 13); reload(); ">13</a>
+			<a href="#12" onclick="AS = swap2(AS, 0, 12); reload(); ">12</a>
+			<a href="#10" onclick="AS = swap2(AS, 0, 10); reload(); ">10</a>
+			<a href="#8" onclick="AS = swap2(AS, 0, 8); reload(); ">8</a>
+			</div>
+		</div>
+	</td>
+	
+	<td id=>
+		0
+	</td>
+	
+	<td id="strtotal" >
+		<script>document.write(AS[0] + 0)</script>
+	</td>
+		
+	<td id="strmod" >
+		<script>document.write( Math.floor(((AS[0] - 10)/2)) )</script>
+	</td>
+	
+	
+  </tr>
+  
+  <tr> <!-- Dexterity Row -->
+	<td>
+		<p> Dexterity </p>
+	</td>
+	
+	<td> 
+		<div id = "StatDrop" class="dropdown">
+			<button  id = "dexbtn" class="dropbtn" onclick="toggleDex()"><script> document.write(AS[1])</script></button>
+			<div id="dexDropdown" class="dropdown-content">
+			<a href="#15" onclick="AS = swap2(AS, 1, 15); reload(); " >15</a>
+			<a href="#14" onclick="AS = swap2(AS, 1, 14); reload(); " >14</a>
+			<a href="#13" onclick="AS = swap2(AS, 1, 13); reload(); " >13</a>
+			<a href="#12" onclick="AS = swap2(AS, 1, 12); reload(); " >12</a>
+			<a href="#10" onclick="AS = swap2(AS, 1, 10); reload(); " >10</a>
+			<a href="#8" onclick="AS = swap2(AS, 1, 8); reload(); " >8</a>
+			</div>
+		</div>
+	</td>
+	
+	<td>
+		+2
+	</td>
+	
+	<td id="dextotal">
+		<script>document.write( AS[1] +2 )</script>
+	</td>
+	
+	<td id="dexmod">
+		<script>document.write( Math.floor(((AS[1] - 10+2)/2)) )</script>
+	</td>
+  
+  </tr>
+  
+  <tr> <!-- Constitution Row -->
+	<td>
+		<p> Constitution </p>
+	</td>
+	
+	<td>
+		<div id = "StatDrop" class="dropdown">
+				<button  id = "conbtn" class="dropbtn" onclick="toggleCon()"><script> document.write(AS[2])</script></button>
+				<div id="conDropdown" class="dropdown-content">
+				<a href="#15" onclick="AS = swap2(AS, 2, 15); reload(); " >15</a>
+				<a href="#14" onclick="AS = swap2(AS, 2, 14); reload(); " >14</a>
+				<a href="#13" onclick="AS = swap2(AS, 2, 13); reload(); " >13</a>
+				<a href="#12" onclick="AS = swap2(AS, 2, 12); reload(); " >12</a>
+				<a href="#10" onclick="AS = swap2(AS, 2, 10); reload(); " >10</a>
+				<a href="#8" onclick="AS = swap2(AS, 2, 8); reload(); " >8</a>
+				</div>
+		</div>
+	</td>
+	
+	<td>
+		0
+	</td>
+	
+	<td id="contotal">
+		<script>document.write(AS[2] + 0)</script>
+	</td>
+	
+	<td id="conmod">
+		<script>document.write( Math.floor(((AS[2] - 10)/2)) )</script>
+	</td>
+  
+  </tr>
+  
+  <tr> <!-- Intelligence Row -->
+  
+	<td>
+		<p> Intelligence </p>
+	</td>
+	
+	<td>
+		<div id = "StatDrop" class="dropdown">
+			<button  id = "intbtn" class="dropbtn" onclick="toggleInt()"><script> document.write(AS[3])</script></button>
+			<div id="intDropdown" class="dropdown-content">
+			<a href="#15" onclick="AS = swap2(AS, 3, 15); reload(); " >15</a>
+			<a href="#14" onclick="AS = swap2(AS, 3, 14); reload(); " >14</a>
+			<a href="#13" onclick="AS = swap2(AS, 3, 13); reload(); " >13</a>
+			<a href="#12" onclick="AS = swap2(AS, 3, 12); reload(); " >12</a>
+			<a href="#10" onclick="AS = swap2(AS, 3, 10); reload(); " >10</a>
+			<a href="#8" onclick="AS = swap2(AS, 3, 8); reload(); " >8</a>
+			</div>
+		</div>
+	</td>
+	
+	<td>
+		+1
+	</td>
+	
+	<td id="inttotal">
+		<script>document.write(AS[3] + 1)</script>
+	</td>
+	
+	<td id="intmod">
+		<script>document.write( Math.floor(((AS[3] - 10+1)/2)) )</script>
+	</td>
+  
+  </tr>
+  
+   <tr> <!-- Wisdom Row -->
+	<td>
+		<p> Wisdom </p>
+	</td>
+	
+	<td>
+		<div id = "StatDrop" class="dropdown">
+				<button  id = "wisbtn" class="dropbtn" onclick="toggleWis()"><script> document.write(AS[4])</script></button>
+				<div id="wisDropdown" class="dropdown-content">
+				<a href="#15" onclick="AS = swap2(AS, 4, 15); reload(); " >15</a>
+				<a href="#14" onclick="AS = swap2(AS, 4, 14); reload(); " >14</a>
+				<a href="#13" onclick="AS = swap2(AS, 4, 13); reload(); " >13</a>
+				<a href="#12" onclick="AS = swap2(AS, 4, 12); reload(); " >12</a>
+				<a href="#10" onclick="AS = swap2(AS, 4, 10); reload(); " >10</a>
+				<a href="#8" onclick="AS = swap2(AS, 4, 8); reload(); " >8</a>
+				</div>
+		</div>
+	</td>
+	
+	<td>
+		0
+	</td>
+	
+	<td id="wistotal">
+		<script>document.write(AS[4] + 0)</script>
+	</td>
+	
+	<td id="wismod">
+		<script>document.write( Math.floor(((AS[4] - 10)/2)) )</script>
+	</td>
+  
+  </tr>
+  
+   <tr> <!-- Charisma Row -->
+	<td>
+		<p> Charisma </p>
+	</td>
+	
+	<td>
+		<div id = "StatDrop" class="dropdown">
+				<button  id = "chabtn" class="dropbtn" onclick="toggleCha()"><script> document.write(AS[5])</script></button>
+				<div id="chaDropdown" class="dropdown-content">
+				<a href="#15" onclick="AS = swap2(AS, 5, 15); reload(); " >15</a>
+				<a href="#14" onclick="AS = swap2(AS, 5, 14); reload(); " >14</a>
+				<a href="#13" onclick="AS = swap2(AS, 5, 13); reload(); " >13</a>
+				<a href="#12" onclick="AS = swap2(AS, 5, 12); reload(); " >12</a>
+				<a href="#10" onclick="AS = swap2(AS, 5, 10); reload(); " >10</a>
+				<a href="#8" onclick="AS = swap2(AS, 5, 8); reload(); " >8</a>
+				</div>
+		</div>
+	</td>
+	
+	<td>
+		0
+	</td>
+	
+	<td id="chatotal">
+		<script>document.write(AS[5] + 0)</script>
+	</td>
+	
+	<td id="chamod">
+		<script>document.write( Math.floor(((AS[5] - 10)/2)) )</script>
+	</td>
+  
+  </tr>
+  
+
+</table>
+
+
+
+   
+</body>
+</html> 
