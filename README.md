@@ -2,15 +2,11 @@
 
 **_[CLICK HERE FOR CURRENT BUILD](https://bochk44.github.io/DnDCharacterCreator/)_**
 
-Basic Groundrules:
----
 
 * If you are adding entirely new content, just throw it in the main branch
 * If you aren't sure if we want to commit to edit of an existing file you've made, **make a pull request**
 * If you want to test interactions in GitHub, just make a new file
 
-
-(if you think of your own, feel free to add to the list)
 
 ## TODO:
 
