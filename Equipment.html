@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {
+  font-family: "Lato", sans-serif;
+}
+.leftSidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #3B0B39;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+.leftSidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+.leftSidenav h3 {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #EFFBEF;
+  display: block;
+  transition: 0.3s;
+}
+.rightSidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  right: 0;
+  background-color: #3B0B39;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+.rightSidenav .closebtn {
+  position: absolute;
+  top: 0;
+  left: 25px;
+  font-size: 36px;
+  margin-right: 50px;
+}
+.rightSidenav h3 {
+ padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 30px;
+  color: #EFFBEF;
+  display: block;
+  transition: 0.3s;
+}
+
+.rightSidenav p {
+  padding-left: 32px;
+  text-decoration: none;
+  font-size: 20px;
+  color: #EFFBEF;
+  display: block;
+  transition: 0.3s;
+}
+
+.rightSidenav li  {
+  padding-left: 32px;
+  text-decoration: none;
+  font-size: 20px;
+  color: #EFFBEF;
+  display: block;
+  transition: 0.3s;
+}
+
+.leftSidenav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  background-color: #A901DB;
+  height: auto;
+  overflow: auto;
+}
+  
+.leftSidenav li {
+  border-bottom: 1px solid #555;
+}
+.leftSidenav li:last-child {
+  border-bottom: none;
+}
+  
+.leftSidenav li a {
+  display: block;
+  color: #000;
+  padding: 8px 16px;
+  text-decoration: none;
+}
+.leftSidenav li a.active {
+  background-color: #4CAF50;
+  color: white;
+}
+.leftSidenav li a:hover:not(.active) {
+  background-color: #555;
+  color: white;
+}
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+
+
+.choiceTable tr td{
+	padding-left: 20px;
+	padding-right: 20px;
+}
+
+.savebtn{
+  float: right;
+  background-color: #3B0B39;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  margin-right: 50px;
+  margin-bottom: 20px;
+}
+</style>
+</head>
+<body>
+
+<div id="leftSidenav" class="leftSidenav">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeLeftNav()">&#8592;</a>
+  <h3> DnD Character Creator </h3>
+  <ul>
+  <li><a class="active" href="#race">Race</a></li>
+  <li><a href="#class onclick=closeLeftNav()">Class</a></li>
+  <li><a href="#background onclick=closeLeftNav()">Background</a></li>
+  <li><a href="#skills onclick=closeLeftNav()">Skills</a></li>
+</ul>
+</div>
+
+
+
+<div id="rightSidenav" class="rightSidenav">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeRightNav()">&#8594;</a>
+  <h3> Dungeoneer's Pack </h3>
+  
+  <p> A Dungeoneer's Pack contains: </p>
+	<ul>
+	
+	<li> <a> a Backpack  </a> </li>
+	<li> <a> a Crowbar  </a> </li>
+	<li> <a> a Hammer </a> </li>
+	<li> <a> 10 Pitons </a> </li>
+	<li> <a> 10 Torches </a> </li>
+	<li> <a> a Tinderbox </a> </li>
+	<li> <a> 10 Days of Rations </a> </li>
+	<li> <a> a Waterskin </a> </li>
+	<li> <a> 50 Feet of Hempen Rope </a> </li>
+	
+	</ul>
+
+  
+</div>
+  
+<span style="font-size:30px;cursor:pointer" onclick="openLeftNav()">
+  <img src="Images/MenuIcon.jpg"    alt="Menu Icon" width="50" height="50" style=padding-left:10px;>
+</span>
+<span style="font-size:30px;cursor:pointer;float:right" onclick="openRightNav()"> open &#8592;</span>
+<h2> Equipment</h2>
+<p>As a <b>Fighter</b>, you can choose from the following equipment options:</p>
+
+
+
+<table class="choiceTable">
+	<tr>
+		<td> <input type="radio" name="option1" value="chain" > (a) Chain main armour 
+			<span style="font-size:30px;cursor:pointer" onclick="openRightNav()">
+				<img src="Images/info_icon.png"    alt="Info Icon" width="25" height="25" style=padding-left:10px;>
+			</span></input> 
+		</td>
+		
+		<td class="or"> <p>or </p> </td>
+		
+		<td> <input type="radio" name="option1" value="leather" > (b) Leather armour, a longbow and 20 arrows </input> 
+			<span style="font-size:30px;cursor:pointer" onclick="openRightNav()">
+				<img src="Images/info_icon.png"    alt="Info Icon" width="25" height="25" style=padding-left:10px;>
+			</span>
+		</td>
+	</tr>
+	
+	<tr>
+		<td> <input type="radio" name="option2" value="mw1" > (a) a Martial Weapon and a Shield </input> 
+			<span style="font-size:30px;cursor:pointer" onclick="openRightNav()">
+				<img src="Images/info_icon.png"    alt="Info Icon" width="25" height="25" style=padding-left:10px;>
+			</span>
+		</td>
+		
+		<td class="or"> <p> or </p> </td>
+		
+		<td> <input type="radio" name ="option2" value="mw2" > (b) two Martial Weapons </input> 
+			<span style="font-size:30px;cursor:pointer" onclick="openRightNav()">
+				<img src="Images/info_icon.png"    alt="Info Icon" width="25" height="25" style=padding-left:10px;>
+			</span>
+		</td>
+	</tr>
+	
+	<tr>
+		<td> <input type="radio" name="option3" value="crossbow" > (a) a Crossbow and 20 bolts </input> 
+			<span style="font-size:30px;cursor:pointer" onclick="openRightNav()">
+				<img src="Images/info_icon.png"    alt="Info Icon" width="25" height="25" style=padding-left:10px;>
+			</span>
+		</td>
+		
+		<td class="or"> <p> or </p> </td>
+		
+		<td> <input type="radio" name="option3" value="handaxes" > (b) two Handaxes </input> 
+			<span style="font-size:30px;cursor:pointer" onclick="openRightNav()">
+				<img src="Images/info_icon.png"    alt="Info Icon" width="25" height="25" style=padding-left:10px;>
+			</span>
+		</td>
+	</tr>
+	
+	<tr>
+		<td> <input type="radio" name="option4" value="dungeon" > (a) a Dungeoneer's Pack </input> 
+			<span style="font-size:30px;cursor:pointer" onclick="openRightNav()">
+				<img src="Images/info_icon.png"    alt="Info Icon" width="25" height="25" style=padding-left:10px;>
+			</span>
+		</td>
+		
+		<td class="or"> <p> or </p> </td>
+		
+		<td> <input type="radio" name="option4" value="explore" > (b) an Explorer's Pack </input> 
+			<span style="font-size:30px;cursor:pointer" onclick="openRightNav()">
+				<img src="Images/info_icon.png"    alt="Info Icon" width="25" height="25" style=padding-left:10px;>
+			</span>
+		</td>
+	</tr>
+</table>
+
+<div>
+	<a href="index.html" target="_parent" > 
+	<button class="savebtn"> Save Changes </button>
+	</a>
+
+</div>
+
+
+
+<script>
+function openLeftNav() {
+  document.getElementById("leftSidenav").style.width = "30%";
+}
+function closeLeftNav() {
+  document.getElementById("leftSidenav").style.width = "0";
+}
+function openRightNav() {
+  document.getElementById("rightSidenav").style.width = "30%";
+}
+function closeRightNav() {
+  document.getElementById("rightSidenav").style.width = "0";
+}
+</script>
+   
+</body>
+</html> 
