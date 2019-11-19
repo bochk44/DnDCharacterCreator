@@ -10,7 +10,7 @@ function closeLeftNav() {
   document.getElementById("leftSidenav").style.width = "0";
 }
 function openRightNav() {
-  document.getElementById("rightSidenav").style.width = "65%";
+  document.getElementById("rightSidenav").style.width = "35%";
 }
 function closeRightNav() {
   document.getElementById("rightSidenav").style.width = "0";
@@ -97,6 +97,11 @@ function swap2( as, first, second ){
 	return as;
   }
   
+  function saveChanges(){
+   <!-- This function should save everything decided in this page to a universal JS file -->
+   console.log("Ability Scores Saved");
+  }
+  
 
 
 
@@ -141,7 +146,7 @@ body {
   z-index: 1;
   top: 0;
   right: 0;
-  background-color: #111;
+  background-color: #3B0B39;
   overflow-x: hidden;
   transition: 0.5s;
   padding-top: 60px;
@@ -154,13 +159,37 @@ body {
   margin-right: 50px;
 }
 .rightSidenav h3 {
-  padding: 8px 8px 8px 32px;
+ padding: 8px 8px 8px 32px;
   text-decoration: none;
-  font-size: 25px;
-  color: #818181;
+  font-size: 30px;
+  color: #EFFBEF;
   display: block;
   transition: 0.3s;
 }
+
+.rightSidenav p {
+  padding-left: 32px;
+  text-decoration: none;
+  font-size: 20px;
+  color: #EFFBEF;
+  display: block;
+  transition: 0.3s;
+}
+
+.rightSidenav table tr{
+  padding-left: 32px;
+  text-decoration: none;
+  font-size: 18px;
+  text-align: left;
+  color: #EFFBEF;
+  display: block;
+  transition: 0.3s;
+}
+
+.rightSidenav table tr td{
+	padding: 10px;
+}
+
 .leftSidenav ul {
   list-style-type: none;
   margin: 0;
@@ -199,7 +228,7 @@ body {
 
 /* Dropdown Button */
 .dropbtn {
-  background-color: #3498DB;
+  background-color: #A901DB;;
   color: white;
   padding: 16px;
   font-size: 16px;
@@ -208,7 +237,7 @@ body {
 }
 
 .dropbtn:hover, .dropbtn:focus {
-  background-color: #2980B9;
+  background-color: #555;
 }
 
 .dropdown {
@@ -239,7 +268,19 @@ body {
 }
 
 .statTable tr td p{
-	font-size: 30px;
+	font-size: 30px; text-align: left; padding-left: 40px;
+}
+
+.savebtn{
+  float: right;
+  background-color: #3B0B39;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  margin-right: 50px;
+  margin-bottom: 20px;
 }
 
 /* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
@@ -252,17 +293,48 @@ body {
   <a href="javascript:void(0)" class="closebtn" onclick="closeLeftNav()">&#8592;</a>
   <h3> DnD Character Creator </h3>
   <ul>
-  <li><a class="active" href="#race">Race</a></li>
+  <li><a href="#race">Race</a></li>
   <li><a href="#class onclick=closeLeftNav()">Class</a></li>
   <li><a href="#background onclick=closeLeftNav()">Background</a></li>
-  <li><a href="#skills onclick=closeLeftNav()">Skills</a></li>
+  <li><a class="active" href="#ability_scores">Ability Scores</a></li>
 </ul>
 </div>
 
 <div id="rightSidenav" class="rightSidenav">
   <a href="javascript:void(0)" class="closebtn" onclick="closeRightNav()">&#8594;</a>
-  <h3> Right Side Nav </h3>
-  <img src="HM.png" alt="Hoes Mad" width="100" height="100" style="padding-left:50px;">
+  <h3> Strength </h3>
+  <p> Measures: Natural athleticism, bodily power </p>
+  <p> Important For: Barbarian, fighter, paladin </p>
+  
+  <p> Racial Increases: </p>
+  <table>
+	<tr>
+		<td>
+			Mountain Dwarf (+2)
+		</td>
+			
+		<td>
+			Half-Orc (+2)
+		</td>
+	</tr>
+		<td>
+			Dragonborn (+2)
+		</td>
+			
+		<td>
+			Human (+1)
+		</td>
+	<tr>
+	
+	</tr>
+  
+  </table>
+  
+  <p> Relavent Skill(s): </p>
+  <ul>
+	<li style = "color: #EFFBEF; padding-left: 50;"> Athletics </li>
+  </ul>
+
 </div>
 
 
@@ -290,7 +362,9 @@ body {
   <tr> <!-- Strength Row -->
     <td>
 		<p> Strength
-
+			<span style="font-size:30px;cursor:pointer" onclick="openRightNav()">
+				<img src="Images/info_icon.png"    alt="Info Icon" width="25" height="25" style=padding-left:10px;>
+			</span>
 		</p>
 	</td>
     <td> 
@@ -324,7 +398,11 @@ body {
   
   <tr> <!-- Dexterity Row -->
 	<td>
-		<p> Dexterity </p>
+		<p> Dexterity 
+			<span style="font-size:30px;cursor:pointer" onclick="openRightNav()">
+				<img src="Images/info_icon.png"    alt="Info Icon" width="25" height="25" style=padding-left:10px;>
+			</span>
+		</p>
 	</td>
 	
 	<td> 
@@ -357,7 +435,11 @@ body {
   
   <tr> <!-- Constitution Row -->
 	<td>
-		<p> Constitution </p>
+		<p> Constitution 
+			<span style="font-size:30px;cursor:pointer" onclick="openRightNav()">
+				<img src="Images/info_icon.png"    alt="Info Icon" width="25" height="25" style=padding-left:10px;>
+			</span>
+		</p>
 	</td>
 	
 	<td>
@@ -391,7 +473,11 @@ body {
   <tr> <!-- Intelligence Row -->
   
 	<td>
-		<p> Intelligence </p>
+		<p> Intelligence 
+		<span style="font-size:30px;cursor:pointer" onclick="openRightNav()">
+				<img src="Images/info_icon.png"    alt="Info Icon" width="25" height="25" style=padding-left:10px;>
+			</span>
+		</p>
 	</td>
 	
 	<td>
@@ -424,7 +510,11 @@ body {
   
    <tr> <!-- Wisdom Row -->
 	<td>
-		<p> Wisdom </p>
+		<p> Wisdom 
+			<span style="font-size:30px;cursor:pointer" onclick="openRightNav()">
+				<img src="Images/info_icon.png"    alt="Info Icon" width="25" height="25" style=padding-left:10px;>
+			</span>
+		</p>
 	</td>
 	
 	<td>
@@ -457,7 +547,11 @@ body {
   
    <tr> <!-- Charisma Row -->
 	<td>
-		<p> Charisma </p>
+		<p> Charisma 
+		<span style="font-size:30px;cursor:pointer" onclick="openRightNav()">
+				<img src="Images/info_icon.png"    alt="Info Icon" width="25" height="25" style=padding-left:10px;>
+			</span>
+		</p>
 	</td>
 	
 	<td>
@@ -490,6 +584,13 @@ body {
   
 
 </table>
+
+<div>
+	<a href="index.html" target="_parent" onclick="saveChanges()" > 
+	<button class="savebtn"> Save Changes </button>
+	</a>
+
+</div>
 
 
 
