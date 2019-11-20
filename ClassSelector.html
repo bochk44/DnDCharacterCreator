@@ -130,7 +130,7 @@ body {
 /* --------------------------------------------------------- */
 /* --------------------------------------------------------- */
 
-.container {
+.radioButton {
   display: block;
   position: relative;
   padding-left: 35px;
@@ -143,7 +143,7 @@ body {
   user-select: none;
 }
 
-.container input {
+.radioButton input {
   position: absolute;
   opacity: 0;
   cursor: pointer;
@@ -161,11 +161,11 @@ body {
   border-radius: 50%;
 }
 
-.container:hover input ~ .checkmark {
+.radioButton:hover input ~ .checkmark {
   background-color: #ccc;
 }
 
-.container input:checked ~ .checkmark {
+.radioButton input:checked ~ .checkmark {
   background-color: #4CAF50;
 }
 
@@ -175,11 +175,11 @@ body {
   display: none;
 }
 
-.container input:checked ~ .checkmark:after {
+.radioButton input:checked ~ .checkmark:after {
   display: block;
 }
 
-.container .checkmark:after {
+.radioButton .checkmark:after {
   left: 9px;
   top: 5px;
   width: 5px;
@@ -312,7 +312,7 @@ body {
 <button type="button" class="collapsible"><strong>Barbarian</strong></button>
 <div class="content">
   <p>A warrior class that focuses on having lots of health and strong meelee attacks.<br />Main Ability: Strength</p>
-  <label class="container">Select Class
+  <label class="radioButton">Select Class
     <input type="radio" name="class" id="radio0" onclick="closeRightNav(); closeLeftNav();">
     <span class="checkmark"></span>
   </label>
@@ -320,7 +320,7 @@ body {
 <button type="button" class="collapsible"><strong>Bard</strong></button>
 <div class="content">
   <p>A magic casting class that focuses on using music to support allies and weaken enemies.<br />Main Ability: Charisma</p>
-  <label class="container">Select Class
+  <label class="radioButton">Select Class
     <input type="radio" name="class" id="radio1" onclick="closeRightNav(); closeLeftNav();">
     <span class="checkmark"></span>
   </label>
@@ -328,7 +328,7 @@ body {
 <button type="button" class="collapsible"><strong>Cleric</strong></button>
 <div class="content">
   <p>A magic casting class that focuses on using holy magic to heal allies and cripple enemies.<br />Main Ability: Wisdom</p>
-  <label class="container">Select Class
+  <label class="radioButton">Select Class
     <input type="radio" name="class" id="radio2" onclick="closeRightNav(); closeLeftNav();">
     <span class="checkmark"></span>
   </label>
@@ -336,7 +336,7 @@ body {
 <button type="button" class="collapsible"><strong>Druid</strong></button>
 <div class="content">
   <p>A magic casting class that focuses on using nature magic strengthen themselves<br />Main Ability: Wisdom</p>
-  <label class="container">Select Class
+  <label class="radioButton">Select Class
     <input type="radio" name="class" id="radio3" onclick="closeRightNav(); closeLeftNav();">
     <span class="checkmark"></span>
   </label>
@@ -344,7 +344,7 @@ body {
 <button type="button" class="collapsible"><strong>Fighter</strong></button>
 <div class="content">
   <p>A warrior class that focuses on weapon based combat to inflict large amount of damage.<br />Main Ability: Strength or Dexterity</p>
-  <label class="container">Select Class
+  <label class="radioButton">Select Class
     <input type="radio" name="class" id="radio4" onclick="closeRightNav(); closeLeftNav();">
     <span class="checkmark"></span>
   </label>
@@ -352,7 +352,7 @@ body {
 <button type="button" class="collapsible"><strong>Monk</strong></button>
 <div class="content">
   <p>A martial/magic class that focuses on using magical abilities to augment meelee attacks.<br />Main Ability: Wisdom</p>
-  <label class="container">Select Class
+  <label class="radioButton">Select Class
     <input type="radio" name="class" id="radio5" onclick="closeRightNav(); closeLeftNav();">
     <span class="checkmark"></span>
   </label>
@@ -360,7 +360,7 @@ body {
 <button type="button" class="collapsible"><strong>Paladin</strong></button>
 <div class="content">
   <p>A martial/magic class that focuses on having high defense and strong meelee attacks.<br />Main Ability: Strength</p>
-  <label class="container">Select Class
+  <label class="radioButton">Select Class
     <input type="radio" name="class" id="radio6" onclick="closeRightNav(); closeLeftNav();">
     <span class="checkmark"></span>
   </label>
@@ -368,7 +368,7 @@ body {
 <button type="button" class="collapsible"><strong>Ranger</strong></button>
 <div class="content">
   <p>A ranged martial class that focuses on dealing high amounts of damage from a distance.<br />Main Ability: Dexterity</p>
-  <label class="container">Select Class
+  <label class="radioButton">Select Class
     <input type="radio" name="class" id="radio7" onclick="closeRightNav(); closeLeftNav();">
     <span class="checkmark"></span>
   </label>
@@ -376,7 +376,7 @@ body {
 <button type="button" class="collapsible"><strong>Rogue</strong></button>
 <div class="content">
   <p>A martial class that focuses on using stealth to deal high amounts of meelee damage.<br />Main Ability: Dexterity</p>
-  <label class="container">Select Class
+  <label class="radioButton">Select Class
     <input type="radio" name="class" id="radio8" onclick="closeRightNav(); closeLeftNav();">
     <span class="checkmark"></span>
   </label>
@@ -384,7 +384,7 @@ body {
 <button type="button" class="collapsible"><strong>Sorcerer</strong></button>
 <div class="content">
   <p>A magic class that focuses on being able to cast several high damage spells several times a day.<br />Main Ability: Charisma</p>
-  <label class="container">Select Class
+  <label class="radioButton">Select Class
     <input type="radio" name="class" id="radio9" onclick="closeRightNav(); closeLeftNav();">
     <span class="checkmark"></span>
   </label>
@@ -392,7 +392,7 @@ body {
 <button type="button" class="collapsible"><strong>Warlock</strong></button>
 <div class="content">
   <p>A magic class that focuses on using dark magic to cast a few high strength spells.<br />Main Ability: Charisma</p>
-  <label class="container">Select Class
+  <label class="radioButton">Select Class
     <input type="radio" name="class" id="radio10" onclick="closeRightNav(); closeLeftNav();">
     <span class="checkmark"></span>
   </label>
@@ -400,7 +400,7 @@ body {
 <button type="button" class="collapsible"><strong>Wizard</strong></button>
 <div class="content">
   <p>A magic class that focuses on having a very wide range of spells available.<br />Main Ability: Intelligence</p>
-  <label class="container">Select Class
+  <label class="radioButton">Select Class
     <input type="radio" name="class" id="radio11" onclick="closeRightNav(); closeLeftNav();">
     <span class="checkmark"></span>
   </label>
@@ -426,7 +426,7 @@ for (i = 0; i < coll.length; i++) {
 
 function resetCollapsibles() {
   var k;
-  var radioBut = document.getElementsByClassName("container");
+  var radioBut = document.getElementsByClassName("radioButton");
   for(k = 0; k < radioBut.length; k++) {
     var content = coll[k].nextElementSibling;
     var prefix = "radio";
@@ -444,7 +444,7 @@ function confirmClass() {
   var prefix = "radio";
   var activeRadio = null;
   var curRadio;
-  var radioBut = document.getElementsByClassName("container");
+  var radioBut = document.getElementsByClassName("radioButton");
   
   
   for (i = 0; i < radioBut.length && activeRadio === null; i++) {
