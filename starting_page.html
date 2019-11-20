@@ -1,0 +1,168 @@
+<!DOCTYPE html >
+<html>
+
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+
+body {
+  font-family: "Lato", sans-serif;
+}
+
+.page{
+	margin: 50px;
+}
+
+.page h1{
+	text-align: center;
+}
+
+.continue{
+  margin-left: 33%;
+  position: absolute;
+  
+  width: 20%;
+  padding: 20px;
+  background-color: #3B0B39;
+  color: white;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+.leftSidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #3B0B39;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+.leftSidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+.leftSidenav h3 {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #EFFBEF;
+  display: block;
+  transition: 0.3s;
+}
+
+.leftSidenav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  background-color: #A901DB;
+  height: auto;
+  overflow: auto;
+}
+  
+.leftSidenav li {
+  border-bottom: 1px solid #555;
+}
+.leftSidenav li:last-child {
+  border-bottom: none;
+}
+  
+.leftSidenav li a {
+  display: block;
+  color: #000;
+  padding: 8px 16px;
+  text-decoration: none;
+}
+.leftSidenav li a.active {
+  background-color: #4CAF50;
+  color: white;
+}
+.leftSidenav li a:hover:not(.active) {
+  background-color: #555;
+  color: white;
+}
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<div id="leftSidenav" class="leftSidenav">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeLeftNav()">&#8592;</a>
+  <h3> DnD Character Creator </h3>
+  <ul>
+  <li><a href="#race">Race</a></li>
+  <li><a href="#class onclick=closeLeftNav()">Class</a></li>
+  <li><a href="#background onclick=closeLeftNav()">Background</a></li>
+  <li><a href="#skills onclick=closeLeftNav()">Skills</a></li> 
+  
+  </ul>
+  
+  <br>
+  <br>
+  
+  <ul>
+  <li><a href="#equipment">Equipment</a></li>
+  <li><a href="#proficiencies">Proficiencies</a></li>
+  <li><a href="#spells">Spells</a></li>
+  
+  </ul>
+
+</div>
+
+<span style="font-size:30px;cursor:pointer" onclick="openLeftNav()">
+  <img src="Images/MenuIcon.jpg"    alt="Menu Icon" width="50" height="50" style=padding-left:10px;>
+</span>
+
+<div class="page">
+
+<h1>
+Dungeons and Dragons Character Creator
+</h1>
+
+<blockquote>
+	Creating a DnD character can be an arduous and somewhat tedious process, especially for new players. 
+	Our goal is to simplify that process with easy step by step instructions and clear directions so you can get to playing the game faster. 
+	Don’t have a character sheet? You can find one <a href="Character Sheet - Alternative - Print Version.pdf" target="_blank" > here. </a>
+</blockquote>
+
+<div>
+
+	<a href="index.html" target="_parent"> 
+		<button class="continue"> Get Started </button>
+	</a>
+
+</div>
+
+
+</div>
+
+
+</body>
+
+
+
+</html>
+
+<script>
+function openLeftNav() {
+  document.getElementById("leftSidenav").style.width = "30%";
+}
+function closeLeftNav() {
+  document.getElementById("leftSidenav").style.width = "0";
+}
+</script>
