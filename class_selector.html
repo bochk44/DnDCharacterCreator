@@ -493,7 +493,7 @@ function confirmClass() {
   
   if(activeRadio != null && activeRadio.id === "radio4") {
     document.getElementById("rightNav_h3").innerHTML = "Fighter";
-    document.getElementById("rightNav_p").innerHTML = "Please select a fighting style:<br/><br/><button class=\"subclass\" onclick=\"confirmSubclass(4, 0)\">Archery &raquo;</button> Gain a +2 to attack rolls made with ranged weapons<br/><br/><button class=\"subclass\" onclick=\"confirmSubclass(\"Fighter\", \"Defense\")\">Defense &raquo;</button> Gain a bonus +1 to AC while wearing armour<br/><br/><button class=\"subclass\" onclick=\"confirmSubclass(\"Fighter\", \"Dueling\")\">Dueling &raquo;</button> While using a one-handed meelee weapon and no other weapon, gain +2 to damage with that weapon<br/><br/><button class=\"subclass\" onclick=\"confirmSubclass(\"Fighter\", \"Great Weapon Fighting\")\">Great Weapon Fighting &raquo;</button> When you roll a 1 or 2 for damage while using a two-handed weapon, you may re-roll<br/><br/><button class=\"subclass\" onclick=\"confirmSubclass(\"Fighter\", \"Protection\")\">Protection &raquo;</button> While you have a shield equipped, you can force an enemy within 5 feet to recieve a disadvantage on their attcak roll<br/><br/><button class=\"subclass\" onclick=\"confirmSubclass(\"Fighter\", \"Two Weapon Fighting\")\">Two Weapon Fighting &raquo;</button> When you wield two weapons simultaneously, you can add your ability modifier to your second attack<br/><br/><br/><br/><br/>";
+    document.getElementById("rightNav_p").innerHTML = "Please select a fighting style:<br/><br/><button class=\"subclass\" onclick=\"confirmSubclass(4, 0)\">Archery &raquo;</button> Gain a +2 to attack rolls made with ranged weapons<br/><br/><button class=\"subclass\" onclick=\"confirmSubclass(4, 1)\">Defense &raquo;</button> Gain a bonus +1 to AC while wearing armour<br/><br/><button class=\"subclass\" onclick=\"confirmSubclass(4, 2)\">Dueling &raquo;</button> While using a one-handed meelee weapon and no other weapon, gain +2 to damage with that weapon<br/><br/><button class=\"subclass\" onclick=\"confirmSubclass(4, 3)\">Great Weapon Fighting &raquo;</button> When you roll a 1 or 2 for damage while using a two-handed weapon, you may re-roll<br/><br/><button class=\"subclass\" onclick=\"confirmSubclass(4, 4)\">Protection &raquo;</button> While you have a shield equipped, you can force an enemy within 5 feet to recieve a disadvantage on their attcak roll<br/><br/><button class=\"subclass\" onclick=\"confirmSubclass(4, 5)\">Two Weapon Fighting &raquo;</button> When you wield two weapons simultaneously, you can add your ability modifier to your second attack<br/><br/><br/><br/><br/>";
   }
   else {
     document.getElementById("rightNav_h3").innerHTML = "No Class Selected";
@@ -506,7 +506,7 @@ function confirmClass() {
 } //ends confirmClass
   
 function confirmSubclass(thing ,thing2) {
- var msg = "You have selected a" + classes[thing] + " (" + subclasses[thing][thing2] + "). Is this the choice you wanted to make?";
+ var msg = "You have selected a " + classes[thing] + " (" + subclasses[thing][thing2] + "). Is this the choice you wanted to make?";
  if(confirm(msg)) {
     document.location.href = "background_select.html";
  }
