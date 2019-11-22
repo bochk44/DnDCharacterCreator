@@ -429,7 +429,7 @@ function confirmClass() {
   
   if(activeRadio != null && activeRadio.id === "radio2") {
     document.getElementById("rightNav_h3").innerHTML = "Elf";
-    document.getElementById("rightNav_p").innerHTML = "Please select a sub-race:<br/><br/><button class=\"subclass\" onclick=\"confirmSubclass(4, 0)\">High Elf &raquo;</button> High Elf details<br/><br/><button class=\"subclass\" onclick=\"confirmSubclass(4, 1)\">Wood Elf &raquo;</button> Wood Elf details<br/><br/><button class=\"subclass\" onclick=\"confirmSubclass(4, 2)\">Drow &raquo;</button> Drow details<br/><br/><br/><br/>";
+    document.getElementById("rightNav_p").innerHTML = "Please select a sub-race:<br/><br/><button class=\"subclass\" onclick=\"confirmSubclass(2, 0)\">High Elf &raquo;</button> High Elf details<br/><br/><button class=\"subclass\" onclick=\"confirmSubclass(2, 1)\">Wood Elf &raquo;</button> Wood Elf details<br/><br/><button class=\"subclass\" onclick=\"confirmSubclass(2, 2)\">Drow &raquo;</button> Drow details<br/><br/><br/><br/>";
   }
   else {
     document.getElementById("rightNav_h3").innerHTML = "No Race Selected";
@@ -444,7 +444,7 @@ function confirmClass() {
 function confirmSubclass(thing ,thing2) {
  var msg = "You have selected a " + races[thing] + " (" + subraces[thing][thing2] + "). Would you like to save this choice?";
  if(confirm(msg)) {
-    document.location.href = "background_select.html";
+    document.location.href = "class_selector.html";
  }
 }
 function openLeftNav() {
