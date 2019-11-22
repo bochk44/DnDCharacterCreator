@@ -497,10 +497,10 @@ function confirmClass() {
   openRightNav();
 } //ends confirmClass
 
-function confirmSubclass(class, subclass) {
-  var msg = "You have selected " + class + " (" + subclass + "). Is this the choice you wanted to make?";
+function confirmSubclass(classA, subclass) {
+  var msg = "You have selected " + classA + " (" + subclass + "). Is this the choice you wanted to make?";
   if (confirm(msg)) {
-    document.location.href = background.html;
+    document.location.href = background_select.html;
   }
 }
 
