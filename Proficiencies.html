@@ -1,0 +1,794 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<script>
+window.onclick = function(e) {
+  if (!e.target.matches('.dropbtn')) {
+  var myDropdown = document.getElementsByClassName("dropdown-content");
+    for( i = 0; i < myDropdown.length; i++ ){
+		if (myDropdown[i].classList.contains('show')) {
+			myDropdown[i].classList.remove('show');
+		}
+	}
+  }
+}
+
+var skills = ["Acrobatics", "Animal Handling",
+				"Arcana", "Athletics", "Deception",
+				"History", "Insight", "Intimidation",
+				"Investigation", "Medicine", "Nature",
+				"Perception", "Performance", "Persuasion",
+				"Religion", "Sleight of Hand", "Stealth",
+				"Survival"
+			  ];
+			  
+var prof1 = "Select a Skill";
+var prof2 = "Select a Skill";
+
+var back1 = "Select a Skill";
+var back2 = "Select a Skill";
+
+function setSkill( id, value ){
+	if( id == 1 ){
+		if( prof2 != value && back1 != value && back2 != value ){
+			prof1 = value;
+		}
+		else{
+			createAlert();
+		}
+	
+	}
+	else if( id == 2 ){
+		if( prof1 != value && back1 != value && back2 != value ){
+			prof2 = value;
+		}
+		else{
+			createAlert();
+		}
+	
+	}
+	else if( id == 3 ){
+		if( prof1 != value && prof2 != value && back2 != value ){
+			back1 = value;
+		}
+		else{
+			createAlert();
+		}
+	
+	}
+	else{
+		if( prof1 != value && prof2 != value && back1 != value ){
+			back2 = value;
+		}
+		else{
+			createAlert();
+		}
+	
+	}
+}
+
+function toggleProf1(){
+	document.getElementById("prof1Dropdown").classList.toggle("show");
+}
+
+function toggleProf2(){
+	document.getElementById("prof2Dropdown").classList.toggle("show");
+}
+
+function toggleBack1(){
+	document.getElementById("back1Dropdown").classList.toggle("show");
+}
+
+function toggleBack2(){
+	document.getElementById("back2Dropdown").classList.toggle("show");
+}
+
+function reload(){
+	document.getElementById("prof1").innerHTML = prof1;
+	document.getElementById("prof2").innerHTML = prof2;
+	document.getElementById("back1").innerHTML = back1;
+	document.getElementById("back2").innerHTML = back2;
+}
+
+
+
+</script>
+
+<style>
+body {
+  font-family: "Lato", sans-serif;
+}
+
+.page{
+	margin: 50px;
+}
+
+.leftSidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #3B0B39;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+.leftSidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+.leftSidenav h3 {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #EFFBEF;
+  display: block;
+  transition: 0.3s;
+}
+.rightSidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  right: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+.rightSidenav .closebtn {
+  position: absolute;
+  top: 0;
+  left: 25px;
+  font-size: 36px;
+  margin-right: 50px;
+}
+.rightSidenav h3 {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+.leftSidenav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  background-color: #A901DB;
+  height: auto;
+  overflow: auto;
+}
+  
+.leftSidenav li {
+  border-bottom: 1px solid #555;
+}
+.leftSidenav li:last-child {
+  border-bottom: none;
+}
+  
+.leftSidenav li a {
+  display: block;
+  color: #000;
+  padding: 8px 16px;
+  text-decoration: none;
+}
+.leftSidenav li a.active {
+  background-color: #4CAF50;
+  color: white;
+}
+.leftSidenav li a:hover:not(.active) {
+  background-color: #555;
+  color: white;
+}
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+
+/* Dropdown Button */
+.dropbtn {
+  background-color: #A901DB;;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+.dropbtn:hover, .dropbtn:focus {
+  background-color: #555;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {background-color: #ddd}
+
+.show{display:block; }
+
+.alert {
+  margin-top: 15px;
+  padding: 20px;
+  background-color: #f44336;
+  color: white;
+  opacity: 0;
+  transition: opacity 0.6s;
+  margin-bottom: 15px;
+  display: "none";
+}
+
+.alertbtn {
+  margin-left: 15px;
+  color: white;
+  font-weight: bold;
+  float: right;
+  font-size: 22px;
+  line-height: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.alertbtn:hover {
+  color: black;
+}
+
+.confirm {
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  position: fixed;
+  bottom: 80%;
+  right: 5%;
+  padding: 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  border-radius: 6px;
+}
+.confirm:hover {
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+  }
+</style>
+</head>
+<body>
+
+<div id="leftSidenav" class="leftSidenav">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeLeftNav()">&#8592;</a>
+  <h3> DnD Character Creator </h3>
+  <ul>
+  <li><a class="active" href="#race">Race</a></li>
+  <li><a href="#class onclick=closeLeftNav()">Class</a></li>
+  <li><a href="#background onclick=closeLeftNav()">Background</a></li>
+  <li><a href="#skills onclick=closeLeftNav()">Skills</a></li> 
+  
+  </ul>
+  
+  <br>
+  <br>
+  
+  <ul>
+  <li><a href="#equipment">Equipment</a></li>
+  <li><a href="#proficiencies">Proficiencies</a></li>
+  <li><a href="#spells">Spells</a></li>
+  
+  </ul>
+
+</div>
+
+<!-- This is commented out so it doesn't go out in the final version
+<div id="rightSidenav" class="rightSidenav">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeRightNav()">&#8594;</a>
+  <h3> Right Side Nav </h3>
+  <img src="HM.png" alt="Hoes Mad" width="100" height="100" style="padding-left:50px;">
+</div>
+
+	Update it if you want it to do something -->
+  
+<span style="font-size:30px;cursor:pointer" onclick="openLeftNav()">
+  <img src="Images/MenuIcon.jpg"    alt="Menu Icon" width="50" height="50" style=padding-left:10px;>
+</span>
+
+<!-- this too
+<span style="font-size:30px;cursor:pointer;float:right" onclick="openRightNav()"> open &#8592;</span>
+-->
+
+<div class="page" >
+
+<h2> Proficiencies </h2>
+
+<div align="right"onclick="confirmClass();">
+  
+  <a href = "index.html" target="_parent" > 
+  <button type="button" class="confirm" id="conButton">CONFIRM CHOICE &raquo;</button>
+  </a>
+</div>
+
+<p>Your proficiencies are skills that your character is good at. When performing these skills you will receive a bonus to their effectiveness. 
+
+You are a <strong>High Elf Fighter</strong> with the <strong>Noble</strong> background. You can choose four skills to be proficient in:</p>
+
+
+
+
+
+<h3> Class Skills </h3>
+
+<div class="dropdown" >
+	<button id="prof1" class="dropbtn" onclick="toggleProf1()"> <script> document.write( prof1 ) </script> </button>
+	<div id="prof1Dropdown" class="dropdown-content">
+		<table>
+		
+		<tr>
+	
+		<td>
+		<a href="#Acrobatics" onclick= "setSkill( 1, skills[0]); reload(); "> Acrobatics </a>
+		</td>
+		
+		<td>
+		<a href="#Animal Handling" onclick= "setSkill( 1, skills[1]); reload(); ">Animal Handling </a>
+		</td>
+		
+		<td>
+		<a href="#Arcana" onclick= "setSkill( 1, skills[2]); reload(); "> Arcana </a>
+		</td>
+		
+		</tr>
+		
+		<tr>
+		
+		<td>
+		<a href="#Athletics" onclick="setSkill( 1, skills[3]); reload();"> Athletics </a>
+		</td>
+		
+		<td>
+		<a href="#Deception" onclick="setSkill( 1, skills[4]); reload();"> Deception </a>
+		</td>
+		
+		<td>
+		<a href="#History" onclick="setSkill( 1, skills[5]); reload();">History</a>
+		</td>
+		
+		</tr>
+		
+		<tr>
+		
+		<td>
+		<a href="#Insight" onclick="setSkill( 1, skills[6]); reload();">Insight</a>
+		</td>
+		
+		<td>
+		<a href="#Intimidation" onclick="setSkill( 1, skills[7]); reload();"> Intimidation</a>
+		</td>
+		
+		<td>
+		<a href="#Investigation" onclick="setSkill( 1, skills[8]); reload();"> Investigation</a>
+		</td>
+		
+		</tr>
+		
+		<tr>
+		
+		<td>
+		<a href="#Medicine" onclick="setSkill( 1, skills[9]); reload();"> Medicine</a>
+		</td>
+		
+		<td>
+		<a href="#Nature" onclick="setSkill( 1, skills[10]); reload();"> Nature</a>
+		</td>
+		
+		<td>
+		<a href="#Perception" onclick="setSkill( 1, skills[11]); reload();"> Perception </a>
+		</td>
+		
+		</tr>
+		
+		<tr>
+		
+		<td>
+		<a href="#Performance" onclick="setSkill( 1, skills[12]); reload();"> Performance</a>
+		</td>
+		
+		<td>
+		<a href="#Persuasion" onclick="setSkill( 1, skills[13]); reload();">Persuasion</a>
+		</td>
+		
+		<td>
+		<a href="#Religion" onclick="setSkill( 1, skills[14]); reload();">Religion</a>
+		</td>
+		
+		</tr>
+		
+		<tr>
+		
+		<td>
+		<a href="#Sleight of Hand" onclick="setSkill( 1, skills[15]); reload();"> Sleight of Hand</a>
+		</td>
+		
+		<td>
+		<a href="#Stealth" onclick="setSkill( 1, skills[16]); reload();"> Stealth </a>
+		</td>
+		
+		<td>
+		<a href="#Survival" onclick="setSkill( 1, skills[17]); reload();"> Survival </a>
+		</td>
+		</tr>
+		
+		</table
+	
+	</div>
+
+
+</div>
+
+<br></br>
+
+<div class="dropdown" >
+	<button id="prof2" class="dropbtn" onclick="toggleProf2()"> <script> document.write( prof2 ) </script> </button>
+	<div id="prof2Dropdown" class="dropdown-content">
+	
+	<table>
+		<tr>
+		<td>
+		<a href="#Acrobatics" onclick= "setSkill( 2, skills[0]); reload(); "> Acrobatics </a>
+		</td>
+		
+		<td>
+		<a href="#Animal Handling" onclick= "setSkill( 2, skills[1]); reload(); ">Animal Handling </a>
+		</td>
+		
+		<td>
+		<a href="#Arcana" onclick= "setSkill( 2, skills[2]); reload(); "> Arcana </a>
+		</td>
+		</tr>
+		
+		<tr>
+		<td>
+		<a href="#Athletics" onclick="setSkill( 2, skills[3]); reload();"> Athletics </a>
+		</td>
+		
+		<td>
+		<a href="#Deception" onclick="setSkill( 2, skills[4]); reload();"> Deception </a>
+		</td>
+		
+		<td>
+		<a href="#History" onclick="setSkill( 2, skills[5]); reload();">History</a>
+		</td>
+		</tr>
+		
+		<tr>
+		<td>
+		<a href="#Insight" onclick="setSkill( 2, skills[6]); reload();">Insight</a>
+		</td>
+		
+		<td>
+		<a href="#Intimidation" onclick="setSkill( 2, skills[7]); reload();"> Intimidation</a>
+		</td>
+		
+		<td>
+		<a href="#Investigation" onclick="setSkill( 2, skills[8]); reload();"> Investigation</a>
+		</td>
+		</tr>
+		
+		<tr>
+		<td>
+		<a href="#Medicine" onclick="setSkill( 2, skills[9]); reload();"> Medicine</a>
+		</td>
+		
+		<td>
+		<a href="#Nature" onclick="setSkill( 2, skills[10]); reload();"> Nature</a>
+		</td>
+		
+		<td>
+		<a href="#Perception" onclick="setSkill( 2, skills[11]); reload();"> Perception </a>	
+		</td>
+		</tr>
+		
+		<tr>
+		<td>
+		<a href="#Performance" onclick="setSkill( 2, skills[12]); reload();"> Performance</a>
+		</td>
+		
+		<td>
+		<a href="#Persuasion" onclick="setSkill( 2, skills[13]); reload();">Persuasion</a>
+		</td>
+		
+		<td>
+		<a href="#Religion" onclick="setSkill( 2, skills[14]); reload();">Religion</a>
+		</td>
+		</tr>
+		
+		<tr>
+		<td>
+		<a href="#Sleight of Hand" onclick="setSkill( 2, skills[15]); reload();"> Sleight of Hand</a>
+		</td>
+		
+		<td>
+		<a href="#Stealth" onclick="setSkill( 2, skills[16]); reload();"> Stealth </a>
+		</td>
+		
+		<td>
+		<a href="#Survival" onclick="setSkill( 2, skills[17]); reload();"> Survival </a>
+		</td>
+		</tr>
+		
+	</table>
+	
+	</div>
+
+
+</div>
+
+<ul>
+
+</ul>
+
+<h3> Background Skills </h3>
+
+<div class="dropdown" >
+	<button id="back1" class="dropbtn" onclick="toggleBack1()"> <script> document.write( back1 ) </script> </button>
+	<div id="back1Dropdown" class="dropdown-content">
+	
+	<table>
+		<tr>
+		<td>
+		<a href="#Acrobatics" onclick= "setSkill( 3, skills[0]); reload(); "> Acrobatics </a>
+		</td>
+		
+		<td>
+		<a href="#Animal Handling" onclick= "setSkill( 3, skills[1]); reload(); ">Animal Handling </a>
+		</td>
+		
+		<td>
+		<a href="#Arcana" onclick= "setSkill( 3, skills[2]); reload(); "> Arcana </a>
+		</td>
+		</tr>
+		
+		<tr>
+		<td>
+		<a href="#Athletics" onclick="setSkill( 3, skills[3]); reload();"> Athletics </a>
+		</td>
+		
+		<td>
+		<a href="#Deception" onclick="setSkill( 3, skills[4]); reload();"> Deception </a>
+		</td>
+		
+		<td>
+		<a href="#History" onclick="setSkill( 3, skills[5]); reload();">History</a>
+		</td>
+		</tr>
+		
+		<tr>
+		<td>
+		<a href="#Insight" onclick="setSkill( 3, skills[6]); reload();">Insight</a>
+		</td>
+		
+		<td>
+		<a href="#Intimidation" onclick="setSkill( 3, skills[7]); reload();"> Intimidation</a>
+		</td>
+		
+		<td>
+		<a href="#Investigation" onclick="setSkill( 3, skills[8]); reload();"> Investigation</a>
+		</td>
+		</tr>
+		
+		<tr>
+		<td>
+		<a href="#Medicine" onclick="setSkill( 3, skills[9]); reload();"> Medicine</a>
+		</td>
+		
+		<td>
+		<a href="#Nature" onclick="setSkill( 3, skills[10]); reload();"> Nature</a>
+		</td>
+		
+		<td>
+		<a href="#Perception" onclick="setSkill( 3, skills[11]); reload();"> Perception </a>
+		</td>
+		
+		</tr>
+		
+		<tr>
+		<td>
+		<a href="#Performance" onclick="setSkill( 3, skills[12]); reload();"> Performance</a>
+		</td>
+		
+		<td>
+		<a href="#Persuasion" onclick="setSkill( 3, skills[13]); reload();">Persuasion</a>
+		</td>
+		
+		<td>
+		<a href="#Religion" onclick="setSkill( 3, skills[14]); reload();">Religion</a>
+		</td>
+		</tr>
+		
+		<tr>
+		<td>
+		<a href="#Sleight of Hand" onclick="setSkill( 3, skills[15]); reload();"> Sleight of Hand</a>
+		</td>
+		
+		<td>
+		<a href="#Stealth" onclick="setSkill( 3, skills[16]); reload();"> Stealth </a>
+		</td>
+		
+		<td>
+		<a href="#Survival" onclick="setSkill( 3, skills[17]); reload();"> Survival </a>
+		</td>
+		</tr>
+		
+	</table>
+	
+	</div>
+
+
+</div>
+
+<br></br>
+
+<div class="dropdown" >
+	<button id="back2" class="dropbtn" onclick="toggleBack2()"> <script> document.write( back2 ) </script> </button>
+	<div id="back2Dropdown" class="dropdown-content">
+	<table>
+		<tr>
+		<td>
+		<a href="#Acrobatics" onclick= "setSkill( 4, skills[0]); reload(); "> Acrobatics </a>
+		</td>
+		
+		<td>
+		<a href="#Animal Handling" onclick= "setSkill( 4, skills[1]); reload(); ">Animal Handling </a>
+		</td>
+		
+		<td>
+		<a href="#Arcana" onclick= "setSkill( 4, skills[2]); reload(); "> Arcana </a>
+		</td>
+		</tr>
+		
+		<tr>
+		<td>
+		<a href="#Athletics" onclick="setSkill( 4, skills[3]); reload();"> Athletics </a>
+		</td>
+		
+		<td>
+		<a href="#Deception" onclick="setSkill( 4, skills[4]); reload();"> Deception </a>
+		</td>
+		
+		<td>
+		<a href="#History" onclick="setSkill( 4, skills[5]); reload();">History</a>
+		</td>
+		</tr>
+		
+		<tr>
+		<td>
+		<a href="#Insight" onclick="setSkill( 4, skills[6]); reload();">Insight</a>
+		</td>
+		
+		<td>
+		<a href="#Intimidation" onclick="setSkill( 4, skills[7]); reload();"> Intimidation</a>
+		</td>
+		
+		<td>
+		<a href="#Investigation" onclick="setSkill( 4, skills[8]); reload();"> Investigation</a>
+		</td>
+		</tr>
+		
+		<tr>
+		<td>
+		<a href="#Medicine" onclick="setSkill( 4, skills[9]); reload();"> Medicine</a>
+		</td>
+		
+		<td>
+		<a href="#Nature" onclick="setSkill( 4, skills[10]); reload();"> Nature</a>
+		</td>
+		
+		<td>
+		<a href="#Perception" onclick="setSkill( 4, skills[11]); reload();"> Perception </a>
+		</td>
+		</tr>
+		
+		<tr>
+		<td>
+		<a href="#Performance" onclick="setSkill( 4, skills[12]); reload();"> Performance</a>
+		</td>
+		
+		<td>
+		<a href="#Persuasion" onclick="setSkill( 4, skills[13]); reload();">Persuasion</a>
+		</td>
+		
+		<td>
+		<a href="#Religion" onclick="setSkill( 4, skills[14]); reload();">Religion</a>
+		</td>
+		</tr>
+		
+		<tr>
+		<td>
+		<a href="#Sleight of Hand" onclick="setSkill( 4, skills[15]); reload();"> Sleight of Hand</a>
+		</td>
+		
+		<td>
+		<a href="#Stealth" onclick="setSkill( 4, skills[16]); reload();"> Stealth </a>
+		</td>
+		
+		<td>
+		<a href="#Survival" onclick="setSkill( 4, skills[17]); reload();"> Survival </a>
+		</td>
+		</tr>
+		
+	</table>
+	
+	</div>
+
+
+</div>
+
+<div class="alert">
+  <span class="alertbtn">&times;</span>  
+  You have already selected that skill.
+</div>
+
+
+</div>
+
+<script>
+function openLeftNav() {
+  document.getElementById("leftSidenav").style.width = "30%";
+}
+function closeLeftNav() {
+  document.getElementById("leftSidenav").style.width = "0";
+}
+function openRightNav() {
+  document.getElementById("rightSidenav").style.width = "65%";
+}
+function closeRightNav() {
+  document.getElementById("rightSidenav").style.width = "0";
+}
+
+var close = document.getElementsByClassName("alertbtn");
+var i;
+
+function createAlert(){
+	for( i = 0; i < close.length; i++ ){
+		var div = close[i].parentElement;
+		div.style.opacity = "1";
+		div.style.display = "block";
+	}
+}
+
+for (i = 0; i < close.length; i++) {
+  close[i].onclick = function(){
+    var div = this.parentElement;
+    div.style.opacity = "0";
+    setTimeout(function(){ div.style.display = "none"; }, 600);
+  }
+}
+</script>
+   
+</body>
+</html> 
