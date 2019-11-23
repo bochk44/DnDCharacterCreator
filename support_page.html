@@ -33,42 +33,6 @@ body {
   display: block;
   transition: 0.3s;
 }
-.rightSidenav {
-  height: 100%;
-  width: 0;
-  position: fixed;
-  z-index: 1;
-  top: 0;
-  right: 0;
-  background-color: #111;
-  overflow-x: hidden;
-  transition: 0.5s;
-  padding-top: 60px;
-}
-.rightSidenav .closebtn {
-  position: absolute;
-  top: 0;
-  left: 25px;
-  font-size: 36px;
-  margin-right: 50px;
-}
-.rightSidenav h3 {
-  padding: 8px 8px 8px 32px;
-  text-decoration: none;
-  font-size: 25px;
-  color: #818181;
-  display: block;
-  transition: 0.3s;
-}
-.rightSidenav p {
-  padding: 8px 8px 8px 32px;
-  text-decoration: none;
-  font-size: 20px;
-  color: #818181;
-  display: block;
-  transition: 0.3s;
-}
- 
 .leftSidenav ul {
   list-style-type: none;
   margin: 0;
@@ -132,20 +96,19 @@ body {
   </a>
 </div>
 
-
-<div id="rightSidenav" class="rightSidenav">
-  <a href="javascript:void(0)" class="closebtn" onclick="closeRightNav()">&#8594;</a>
-  <h3> Additional Details </h3>
-  <img src="Images/info_icon.png" alt="Information" width="100" height="100" style="padding-left:50px;">
-</div>
   
 <span style="font-size:30px;cursor:pointer" onclick="openLeftNav()">
   <img src="Images/MenuIcon.jpg"    alt="Menu Icon" width="50" height="50" style=padding-left:10px;>
 </span>
-<h2> Main Page</h2>
-<p>Click on the element below to open the side navigation menu.</p>
+<h2> Support</h2>
+<p>Thank you for using our website! If you have any comments, questions, or concerns please fill ot the form below.</p>
 
-<span style="font-size:30px;cursor:pointer;float:right" onclick="openRightNav()"> open &#8592;</span>
+<div class="container" style="background-color:white">
+  <input id="name" type="text" placeholder="John Doe" name="name" required autofocus>
+  <input id="email" type="text" placeholder="john.doe@email.com" name="mail" required>
+  <input id="comments" type="textarea" placeholder="Tell us what you think!" rows="10" cols="15" wrap="hard" required>
+</div>
+
 
 <script>
 function openLeftNav() {
@@ -153,12 +116,6 @@ function openLeftNav() {
 }
 function closeLeftNav() {
   document.getElementById("leftSidenav").style.width = "0";
-}
-function openRightNav() {
-  document.getElementById("rightSidenav").style.width = "65%";
-}
-function closeRightNav() {
-  document.getElementById("rightSidenav").style.width = "0";
 }
 </script>
    
