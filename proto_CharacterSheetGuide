@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="Stolen layout" />
+
+    <style>
+
+        body {
+            font: 100% Lucida Sans, Verdana;
+            background-color: black;
+        }
+
+        .container {
+            width: 100%;
+            height: 100%;
+
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+
+        /****************************************/
+        /* BANNER                               */
+        /****************************************/
+
+        #banner {
+            width: 100%;
+            height: 9.5%;
+
+            position: fixed;
+            left: 0;
+            top: 0;
+                
+            text-align: center;
+            color: mediumpurple;
+            background-color: #222222;
+        }
+
+            
+        /****************************************/
+        /* Content Wrapper                      */
+        /****************************************/
+
+        .wrapper {
+            width: 115%;
+            height: 89.5%;
+
+            position: fixed;
+            display: block;
+            left: -15%;
+            top: 10.5%;
+        }
+        
+            
+        /****************************************/
+        /* Left Navigation Menu                 */
+        /****************************************/
+
+        .leftnav {
+            width: 15%;
+            height: 100%;
+
+            position: fixed;
+            left: 0;
+            z-index: 1;
+            overflow-x: hidden;
+            transition: 0.5s;
+
+            background-color: #222;
+        }
+            .leftnav .closebtn {
+                width: 90%;
+
+                border-style: none;
+                padding-right: 10%;
+
+                text-align: right;
+                font-size: 12px;
+                color: #4CAF50;
+            }
+            .leftnav h3 {
+                width: 100%;
+                text-align: center;
+
+                display: block;
+
+                padding-bottom: 20px;
+
+                color: mediumpurple;
+
+                text-decoration: none;
+            }
+            .leftnav a {
+                width: 100%;
+                text-align: center;
+
+                display: block;
+
+                padding-top: 10px;
+                padding-bottom: 10px;
+
+                border-top: 1px solid #555;
+                color: #4CAF50;
+
+                text-decoration: none;
+            }
+            .leftnav a:last-child {
+                border-bottom: 1px solid #555;
+            }
+            .leftnav a.active {
+                background-color: #4CAF50;
+                color: white;
+            }
+            .leftnav a:hover:not(.active) {
+                background-color: #555;
+                color: white;
+            }
+            
+        /****************************************/
+        /* Main Content Area                    */
+        /****************************************/
+
+        .main {
+            width: 68%;
+
+            position: fixed;
+            left: 15%;
+            top: 10.5%;
+            bottom: 0;
+
+
+            border-width: 20px;
+            border-style: solid;
+            border-color: #333;
+
+            background-color: lightgray;
+        }
+            .main p {
+                padding-left: 20px;
+                padding-right: 20px;
+            }
+
+        /****************************************/
+        /* Tab Content                          */
+        /****************************************/
+
+        .tablink {
+            width: 14.28%;
+
+            float: left;
+            padding-top: 1%;
+            padding-bottom: 1%;
+            outline: none;
+            cursor: pointer;
+
+            font-size: 12px;
+            background-color: #222;
+            color: #4CAF50;
+        }
+        
+            .tablink:hover {
+                background-color: #4CAF50;
+                color: white;
+            }
+
+        .tabcontent {
+            height: 100%;
+            position: page;
+
+            padding: 30px 20px 2px 20px;
+
+            background-color: #4CAF50;
+            color: white;
+        }
+            #basics { display: none; }
+            #features { display: none; }
+            #scores { display: none; }
+            #skills { display: none; }
+            #defenses { display: none; }
+            #attacks { display: none; }
+            #inventory { display: none; }
+        
+        /****************************************/
+        /* Tab Content                          */
+        /****************************************/
+
+        .rightmenu {
+
+
+        }
+
+    </style>
+
+</head>
+<body>
+
+    <div class="container">
+
+        <!-- BANNER -->
+        <div id="banner">
+            <h2>Dungeons & Dragons Character Creator</h2>
+        </div>
+
+
+        <!-- MAIN CONTENT -->
+        <div class="wrapper">
+
+            
+
+            <!-- LEFT NAVIGATION MENU -->
+
+            <div class="leftnav">
+
+                <a id="closenav" href="javascript:void(0)" class="closebtn" onclick="closenav()">&#8592;CLOSE   </a>
+
+                <h3>Navigation Menu</h3>
+
+                <a href="#race" onclick="closeLeftNav()">RACE</a>
+                <a href="#class_title" onclick="closeLeftNav()">CLASS</a>
+                <a href="#background" onclick="closeLeftNav()">BACKGROUND</a>
+                <a href="#spells" onclick="closeLeftNav()">SPELLS</a>
+                <a href="Equipment.html" onclick="closeLeftNav()">EQUIPMENT</a>
+                <a href="Ability_Scores.html" onclick="closeLeftNav()">ABILITY SCORES</a>
+                <a href="#skills" onclick="closeLeftNav()">SKILLS</a>
+                <a class="active" href="#charsheetguide" onclick="closeLeftNav()">CHARACTER SHEET GUIDE</a>
+            </div>
+
+            <!-- MAIN CONTENT -->
+
+            <div class="main">
+
+                <p>
+                    Hello, welcome to the Character Sheet Guide! Now that you've decided your character's race, class, background,
+                    and ability scores, let's use them to fill out a character sheet!
+
+                    <a href="Character Sheet - Alternative - Print Version.pdf" download="DnD5eCharacterSheet.pdf">
+                        &#8594; Click here to download a free character sheet &#8592;
+                    </a>
+                </p>
+
+                <!-- TAB BUTTONS -->
+
+                <button class="tablink" onclick="openTab('basics')">BASICS</button>
+                <button class="tablink" onclick="openTab('features')">FEATURES</button>
+                <button class="tablink" onclick="openTab('scores')">ABILITY SCORES</button>
+                <button class="tablink" onclick="openTab('skills')">SKILLS</button>
+                <button class="tablink" onclick="openTab('defenses')">DEFENSES</button>
+                <button class="tablink" onclick="openTab('attacks')">ATTACKS</button>
+                <button class="tablink" onclick="openTab('inventory')">INVENTORY</button>
+
+                <!-- TAB CONTENT -->
+
+                <div id="basics" class="tabcontent">
+                    <h2>Basics</h2>
+                    <p>Let's fill in some basic character attributes.</p>
+                </div>
+                <div id="features" class="tabcontent">
+                    <h2>Features & Proficiencies</h2>
+                    <p>Here, we'll list your character's unique features.</p>
+                </div>
+                <div id="scores" class="tabcontent">
+                    <h2>Ability Scores</h2>
+                    <p>We'll need somewhere to keep track of those important ability scores.</p>
+                </div>
+                <div id="skills" class="tabcontent">
+                    <h2>Skills</h2>
+                    <p>Here's where we'll keep track of our skills.</p>
+                </div>
+                <div id="defenses" class="tabcontent">
+                    <h2>Defenses</h2>
+                    <p>Here's where we'll keep track of your character's combat defenses.</p>
+                </div>
+                <div id="attacks" class="tabcontent">
+                    <h2>Attacks</h2>
+                    <p>Let's write down those attacks.</p>
+                </div>
+                <div id="inventory" class="tabcontent">
+                    <h2>Inventory</h2>
+                    <p>Lastly, here we can list of any of your character's important belongings.</p>
+                </div>
+
+            </div>
+
+            <!-- RIGHT SIDE MENU -->
+
+            <div class="rightmenu">
+
+            </div>
+        </div>
+
+    </div>
+
+
+
+    <script>
+
+        function openTab( tabName ) { 
+        document.getElementById( 'basics' ).style.display = "none";
+        document.getElementById( 'features' ).style.display = "none";
+        document.getElementById( 'scores' ).style.display = "none";
+        document.getElementById( 'skills' ).style.display = "none";
+        document.getElementById( 'defenses' ).style.display = "none";
+        document.getElementById( 'attacks' ).style.display = "none";
+        document.getElementById( 'inventory' ).style.display = "none";
+
+        document.getElementById( tabName ).style.display = "block";
+
+        }
+    </script>
+
+</body>
+</html>
