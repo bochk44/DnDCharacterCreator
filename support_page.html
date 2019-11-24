@@ -151,7 +151,7 @@ function intakeInfo() {
   var name = document.getElementById("name").value;
   var email = document.getElementById("email").value;
   var loca1 = email.indexOf("@");
-  var loca2 = email.indexOf(".");
+  var loca2 = email.lastIndexOf(".");
   var feedback = document.getElementById("comments").value;
   if(name === " ") {
     alert("Please enter a name.");
