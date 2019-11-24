@@ -102,8 +102,14 @@ function swap2( as, first, second ){
    console.log("Ability Scores Saved");
   }
   
+function confirmChoice(){
 
 
+if(confirm("Are you ok with picking these ability scores?")) {
+    document.location.href = "Spells.html";
+ }
+
+}
 
 </script>
 
@@ -282,8 +288,26 @@ body {
   margin-right: 50px;
   margin-bottom: 20px;
 }
-	
-  
+
+  .confirm {
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  position: fixed;
+  bottom: 80%;
+  right: 5%;
+  padding: 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  border-radius: 6px;
+}
+.confirm:hover {
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+  }
+
 .subclass {
   display: inline-block;
   padding: 10px;
@@ -315,12 +339,13 @@ body {
   <a href="javascript:void(0)" class="closebtn" onclick="closeLeftNav()">&#8592;</a>
   <h3> DnD Character Creator </h3>
   <ul>
+	<li><a href="starting_page.html" onclick="closeLeftNav()">HOME</a></li>
     <li><a href="race_select.html" onclick="closeLeftNav()">RACE</a></li>
     <li><a href="class_selector.html" onclick="closeLeftNav()">CLASS</a></li>
     <li><a href="background_select.html" onclick="closeLeftNav()">BACKGROUND</a></li>
+	<li><a class = "active" href="Ability_Scores.html" onclick="closeLeftNav()">ABILITY SCORES</a></li>
     <li><a href="Spells.html" onclick="closeLeftNav()">SPELLS</a></li>
     <li><a href="Equipment.html" onclick="closeLeftNav()">EQUIPMENT</a></li>
-    <li><a href="Ability_Scores.html" onclick="closeLeftNav()">ABILITY SCORES</a></li>
     <li><a href="Proficiencies.html" onclick="closeLeftNav()">SKILLS</a></li>
     <li><a href="proto_CharacterSheetGuide.html" onclick="closeLeftNav()">CHARACTER SHEET GUIDE</a></li>
     <li><a href="support_page.html" onclick="closeLeftNav()">SUPPORT</a></li>
@@ -329,7 +354,7 @@ body {
   <br/>
   <br/>
   <br/>
-  <a href="Character Sheet - Alternative - Print Version.pdf" download="DnD5eCharacterSheet.pdf">
+  <a href="Character Sheet - Alternative - Print Version.pdf" target = "_blank">
     <button class="subclass">Download a blank character sheet here!</button>
   </a>
 </div>
@@ -377,11 +402,18 @@ body {
   <img src="Images/MenuIcon.jpg"    alt="Menu Icon" width="50" height="50" style=padding-left:10px;>
 </span>
 
-<h2> Ability Scores <span style="font-size:30px;cursor:pointer;float:right" onclick="openRightNav()"> open &#8592;</span></h2>
+<h2 style="margin-left: 2%"> Ability Scores </h2>
 
-<Blockquote>	Ability Scores are numbers that describe your characters physical and mental capabilities. There are six Ability Scores: Strength, Dexterity, Constitution, Intelligence, Wisdom and Charisma. The higher the Ability Score, the better your character will be in that particular area.</blockquote>
-<blockquote>	We will be using what is know as the Standard Array method to generate your ability scores. You have six numbers: 15, 14, 13, 12, 10 and 8 to assign to each Ability Score as a base value. Your chosen race will add a bonus to the base value which will give you your final score. Your Ability Scores also determine their respective Ability Score Modifiers, which will be used when you play. Record both your Ability Scores and your Ability Score Modifiers on your character sheet once finished.</blockquote>
-<blockquote>	For a more detailed explanation of each ability score, click the icon beside each one. </blockquote>
+<div align="right"onclick="confirmClass();">
+  
+  <!-- <a href = "index.html" target="_parent" > -->
+  <button type="button" class="confirm" id="conButton" onclick="confirmChoice()">CONFIRM CHOICE &raquo;</button>
+  <!--</a> -->
+</div>
+
+<Blockquote style="margin-right: 16%">	Ability Scores are numbers that describe your characters physical and mental capabilities. There are six Ability Scores: Strength, Dexterity, Constitution, Intelligence, Wisdom and Charisma. The higher the Ability Score, the better your character will be in that particular area.</blockquote>
+<blockquote style="margin-right: 16%">	We will be using what is know as the Standard Array method to generate your ability scores. You have six numbers: 15, 14, 13, 12, 10 and 8 to assign to each Ability Score as a base value. Your chosen race will add a bonus to the base value which will give you your final score. Your Ability Scores also determine their respective Ability Score Modifiers, which will be used when you play. Record both your Ability Scores and your Ability Score Modifiers on your character sheet once finished.</blockquote>
+<blockquote style="margin-right: 16%">	For a more detailed explanation of each ability score, click the icon beside each one. </blockquote>
 
 
 <table style= "width:50%" class="statTable">
@@ -619,12 +651,7 @@ body {
 
 </table>
 
-<div>
-	<a href="Proficiencies.html" target="_parent" onclick="saveChanges()" > 
-	<button class="savebtn"> Save Changes </button>
-	</a>
 
-</div>
 
 
 

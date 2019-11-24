@@ -6,7 +6,6 @@
 body {
   font-family: "Lato", sans-serif;
 }
-
 .leftSidenav {
   height: 100%;
   width: 0;
@@ -61,15 +60,6 @@ body {
   display: block;
   transition: 0.3s;
 }
-.rightSidenav p {
-  padding: 8px 8px 8px 32px;
-  text-decoration: none;
-  font-size: 20px;
-  color: #818181;
-  display: block;
-  transition: 0.3s;
-}
- 
 .leftSidenav ul {
   list-style-type: none;
   margin: 0;
@@ -105,86 +95,57 @@ body {
   .sidenav {padding-top: 15px;}
   .sidenav a {font-size: 18px;}
 }
-  
-  
-.subclass {
-  display: inline-block;
-  padding: 10px;
-  font-size: 18px;
-  cursor: pointer;
-  text-align: center;
-  text-decoration: none;
-  outline: none;
-  color: #fff;
-  background-color: #4CAF50;
-  border: none;
-  border-radius: 10px;
-  box-shadow: 0 2px #999;
-}
-.subclass:hover {background-color: #3e8e41}
-.subclass:active {
-  background-color: #3e8e41;
-  box-shadow: 0 1px #666;
-  transform: translateY(1px);
-}
-
 </style>
 </head>
 <body>
-  
+
 <div id="leftSidenav" class="leftSidenav">
   <a href="javascript:void(0)" class="closebtn" onclick="closeLeftNav()">&#8592;</a>
   <h3> DnD Character Creator </h3>
   <ul>
-    <li><a href="race_select.html" onclick="closeLeftNav()">RACE</a></li>
-    <li><a href="class_selector.html" onclick="closeLeftNav()">CLASS</a></li>
-    <li><a href="background_select.html" onclick="closeLeftNav()">BACKGROUND</a></li>
-    <li><a href="Spells.html" onclick="closeLeftNav()">SPELLS</a></li>
-    <li><a href="Equipment.html" onclick="closeLeftNav()">EQUIPMENT</a></li>
-    <li><a href="Ability_Scores.html" onclick="closeLeftNav()">ABILITY SCORES</a></li>
-    <li><a href="Proficiencies.html" onclick="closeLeftNav()">SKILLS</a></li>
-    <li><a href="proto_CharacterSheetGuide.html" onclick="closeLeftNav()">CHARACTER SHEET GUIDE</a></li>
-    <li><a href="support_page.html" onclick="closeLeftNav()">SUPPORT</a></li>
+  <li><a class="active" href="#race">Race</a></li>
+  <li><a href="#class onclick=closeLeftNav()">Class</a></li>
+  <li><a href="#background onclick=closeLeftNav()">Background</a></li>
+  <li><a href="#skills onclick=closeLeftNav()">Skills</a></li> 
+  
   </ul>
-  <br/>
-  <br/>
-  <br/>
-  <br/>
-  <a href="Character Sheet - Alternative - Print Version.pdf" download="DnD5eCharacterSheet.pdf">
-    <button class="subclass">Download a blank character sheet here!</button>
-  </a>
-</div>
+  
+  <br>
+  <br>
+  
+  <ul>
+  <li><a href="#equipment">Equipment</a></li>
+  <li><a href="#proficiencies">Proficiencies</a></li>
+  <li><a href="#spells">Spells</a></li>
+  
+  </ul>
 
+</div>
 
 <div id="rightSidenav" class="rightSidenav">
   <a href="javascript:void(0)" class="closebtn" onclick="closeRightNav()">&#8594;</a>
-  <h3> Additional Details </h3>
-  <img src="HM.png" alt="Information" width="100" height="100" style="padding-left:50px;">
+  <h3> Right Side Nav </h3>
+  <img src="HM.png" alt="Hoes Mad" width="100" height="100" style="padding-left:50px;">
 </div>
   
 <span style="font-size:30px;cursor:pointer" onclick="openLeftNav()">
   <img src="Images/MenuIcon.jpg"    alt="Menu Icon" width="50" height="50" style=padding-left:10px;>
 </span>
 <h2> Main Page</h2>
-<p>Click on the element below to open the side navigation menu.</p>
+<p>Click around to learn more.</p>
 
 <span style="font-size:30px;cursor:pointer;float:right" onclick="openRightNav()"> open &#8592;</span>
 
 <script>
 function openLeftNav() {
-
   document.getElementById("leftSidenav").style.width = "30%";
 }
-
 function closeLeftNav() {
   document.getElementById("leftSidenav").style.width = "0";
 }
-
 function openRightNav() {
-
   document.getElementById("rightSidenav").style.width = "65%";
 }
-
 function closeRightNav() {
   document.getElementById("rightSidenav").style.width = "0";
 }

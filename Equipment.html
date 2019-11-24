@@ -191,10 +191,28 @@ body {
   -webkit-transform: rotate(45deg);
   -ms-transform: rotate(45deg);
   transform: rotate(45deg);
-	
-	
+  }
   
-.subclass {
+  .confirm {
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  position: fixed;
+  bottom: 80%;
+  right: 5%;
+  padding: 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  border-radius: 6px;
+}
+.confirm:hover {
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+  }
+  
+  .subclass {
   display: inline-block;
   padding: 10px;
   font-size: 18px;
@@ -214,21 +232,21 @@ body {
   box-shadow: 0 1px #666;
   transform: translateY(1px);
 }
-	
 </style>
 </head>
 <body>
-	
+
 <div id="leftSidenav" class="leftSidenav">
   <a href="javascript:void(0)" class="closebtn" onclick="closeLeftNav()">&#8592;</a>
   <h3> DnD Character Creator </h3>
   <ul>
+	<li><a href="starting_page.html" onclick="closeLeftNav()">HOME</a></li>
     <li><a href="race_select.html" onclick="closeLeftNav()">RACE</a></li>
     <li><a href="class_selector.html" onclick="closeLeftNav()">CLASS</a></li>
     <li><a href="background_select.html" onclick="closeLeftNav()">BACKGROUND</a></li>
+	<li><a href="Ability_Scores.html" onclick="closeLeftNav()">ABILITY SCORES</a></li>
     <li><a href="Spells.html" onclick="closeLeftNav()">SPELLS</a></li>
-    <li><a href="Equipment.html" onclick="closeLeftNav()">EQUIPMENT</a></li>
-    <li><a href="Ability_Scores.html" onclick="closeLeftNav()">ABILITY SCORES</a></li>
+    <li><a class="active" href="Equipment.html" onclick="closeLeftNav()">EQUIPMENT</a></li>
     <li><a href="Proficiencies.html" onclick="closeLeftNav()">SKILLS</a></li>
     <li><a href="proto_CharacterSheetGuide.html" onclick="closeLeftNav()">CHARACTER SHEET GUIDE</a></li>
     <li><a href="support_page.html" onclick="closeLeftNav()">SUPPORT</a></li>
@@ -237,7 +255,7 @@ body {
   <br/>
   <br/>
   <br/>
-  <a href="Character Sheet - Alternative - Print Version.pdf" download="DnD5eCharacterSheet.pdf">
+  <a href="Character Sheet - Alternative - Print Version.pdf" target = "_blank">
     <button class="subclass">Download a blank character sheet here!</button>
   </a>
 </div>
@@ -274,6 +292,14 @@ body {
 <div class="page">
 
 <h2> Equipment</h2>
+
+
+  
+  <!-- <a href = "index.html" target="_parent" > -->
+  <button type="button" class="confirm" id="conButton" onclick="confirmChoice()">CONFIRM CHOICE &raquo;</button>
+  <!--</a> -->
+</div>
+
 <p>As a <b>Fighter</b>, you can choose from the following equipment options:</p>
 
 
@@ -281,7 +307,7 @@ body {
 	<tr>
 		<td> 
 			<label class="radioButton"> (a) Chain mail armour
-				<input type="radio" name="option1" value="chain" > </input> 
+				<input type="radio" name="option1" id="option1" value="chain" > </input> 
 				<span class="checkmark"></span>
 				<span style="font-size:30px;cursor:pointer" onclick="openRightNav()">
 					<img src="Images/info_icon.png"    alt="Info Icon" width="25" height="25" style=padding-left:10px;>
@@ -294,7 +320,7 @@ body {
 		
 		<td>
 			<label class="radioButton"> (b) Leather armour, a longbow and 20 arrows
-				<input type="radio" name="option1" value="leather" >  </input> 
+				<input type="radio" name="option1" id="option2" value="leather" >  </input> 
 				<span class="checkmark"></span>
 				<span style="font-size:30px;cursor:pointer" onclick="openRightNav()">
 					<img src="Images/info_icon.png"    alt="Info Icon" width="25" height="25" style=padding-left:10px;>
@@ -306,7 +332,7 @@ body {
 	<tr>
 		<td> 
 			<label class="radioButton"> (a) a Martial Weapon and a Shield
-				<input type="radio" name="option2" value="mw1" >  </input> 
+				<input type="radio" name="option2" id="option3" value="mw1" >  </input> 
 				<span class="checkmark"></span>
 				<span style="font-size:30px;cursor:pointer" onclick="openRightNav()">
 					<img src="Images/info_icon.png"    alt="Info Icon" width="25" height="25" style=padding-left:10px;>
@@ -318,7 +344,7 @@ body {
 		
 		<td> 
 			<label class="radioButton"> (b) two Martial Weapons
-				<input type="radio" name ="option2" value="mw2" >  </input> 
+				<input type="radio" name ="option2" id="option4" value="mw2" >  </input> 
 				<span class="checkmark"></span>
 				<span style="font-size:30px;cursor:pointer" onclick="openRightNav()">
 					<img src="Images/info_icon.png"    alt="Info Icon" width="25" height="25" style=padding-left:10px;>
@@ -330,7 +356,7 @@ body {
 	<tr>
 		<td>
 			<label class="radioButton"> (a) a Crossbow and 20 bolts
-				<input type="radio" name="option3" value="crossbow" >  </input> 
+				<input type="radio" name="option3" id="option5" value="crossbow" >  </input> 
 				<span class="checkmark"></span>
 				<span style="font-size:30px;cursor:pointer" onclick="openRightNav()">
 					<img src="Images/info_icon.png"    alt="Info Icon" width="25" height="25" style=padding-left:10px;>
@@ -342,7 +368,7 @@ body {
 		
 		<td> 
 			<label class="radioButton"> (b) two Handaxes
-				<input type="radio" name="option3" value="handaxes" >  </input> 
+				<input type="radio" name="option3" id="option6" value="handaxes" >  </input> 
 				<span class="checkmark"></span>
 				<span style="font-size:30px;cursor:pointer" onclick="openRightNav()">
 					<img src="Images/info_icon.png"    alt="Info Icon" width="25" height="25" style=padding-left:10px;>
@@ -354,7 +380,7 @@ body {
 	<tr>
 		<td> 
 			<label class="radioButton"> (a) a Dungeoneer's Pack
-				<input type="radio" name="option4" value="dungeon" >  </input> 
+				<input type="radio" name="option4" id="option7" value="dungeon" >  </input> 
 				<span class="checkmark"></span>
 				<span style="font-size:30px;cursor:pointer" onclick="openRightNav()">
 					<img src="Images/info_icon.png"    alt="Info Icon" width="25" height="25" style=padding-left:10px;>
@@ -366,7 +392,7 @@ body {
 		
 		<td> 
 			<label class="radioButton"> (b) an Explorer's Pack
-				<input type="radio" name="option4" value="explore" >  </input> 
+				<input type="radio" name="option4" id="option8" value="explore" >  </input> 
 				<span class="checkmark"></span>
 				<span style="font-size:30px;cursor:pointer" onclick="openRightNav()">
 					<img src="Images/info_icon.png"    alt="Info Icon" width="25" height="25" style=padding-left:10px;>
@@ -376,18 +402,44 @@ body {
 	</tr>
 </table>
 
-<div>
-	<a href="Ability_Scores.html" target="_parent" > 
-	<button class="savebtn"> Save Changes </button>
-	</a>
-
-</div>
 
 </div> <!-- page div end -->
 
 
 
 <script>
+function confirmChoice(){
+
+ var i;
+  var prefix = "option";
+  var activeRadio = null;
+  var curRadio;
+  var radioBut = document.getElementsByClassName("radioButton");
+  var counter = 0;
+  
+  
+  for (i = 1; i < radioBut.length+1 && activeRadio === null; i++) {
+    curRadio = document.getElementById(prefix.concat(i));
+	console.log( prefix.concat(i) );
+    console.log( curRadio );
+	console.log( curRadio.checked );
+    if(curRadio.checked) {
+	  counter++;
+    }
+  } //ends for loop
+  
+	if( counter >= 4 ){
+		if(confirm("Are you ok with picking this equipment?") ) {
+    document.location.href = "Proficiencies.html";
+ }
+	}
+
+
+
+
+}
+
+
 function openLeftNav() {
   document.getElementById("leftSidenav").style.width = "30%";
 }

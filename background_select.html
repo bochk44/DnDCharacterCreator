@@ -6,13 +6,11 @@
 body {
   font-family: "Lato", sans-serif;
 }
-
 /* --------------------------------------------------------- */
 /* --------------------------------------------------------- */
 /* ------------------Side Nav details start------------------*/
 /* --------------------------------------------------------- */
 /* --------------------------------------------------------- */
-
 .leftSidenav {
   height: 100%;
   width: 0;
@@ -76,25 +74,16 @@ body {
   .sidenav {padding-top: 15px;}
   .sidenav a {font-size: 18px;}
 }
-
-
 /* --------------------------------------------------------- */
 /* --------------------------------------------------------- */
 /* ------------------Side Nav details end--------------------*/
 /* --------------------------------------------------------- */
 /* --------------------------------------------------------- */
-
-
-
-
-
-
 /* --------------------------------------------------------- */
 /* --------------------------------------------------------- */
 /* ----------------Radio Button details start----------------*/
 /* --------------------------------------------------------- */
 /* --------------------------------------------------------- */
-
 .radioButton {
   display: block;
   position: relative;
@@ -107,7 +96,6 @@ body {
   -ms-user-select: none;
   user-select: none;
 }
-
 .radioButton input {
   position: absolute;
   opacity: 0;
@@ -115,7 +103,6 @@ body {
   height: 0;
   width: 0;
 }
-
 .checkmark {
   position: absolute;
   top: 0;
@@ -125,25 +112,20 @@ body {
   background-color: #eee;
   border-radius: 50%;
 }
-
 .radioButton:hover input ~ .checkmark {
   background-color: #ccc;
 }
-
 .radioButton input:checked ~ .checkmark {
   background-color: #4CAF50;
 }
-
 .checkmark:after {
   content: "";
   position: absolute;
   display: none;
 }
-
 .radioButton input:checked ~ .checkmark:after {
   display: block;
 }
-
 .radioButton .checkmark:after {
   left: 9px;
   top: 5px;
@@ -155,23 +137,16 @@ body {
   -ms-transform: rotate(45deg);
   transform: rotate(45deg);
 }
-
 /* --------------------------------------------------------- */
 /* --------------------------------------------------------- */
 /* ----------------Radio Button details end------------------*/
 /* --------------------------------------------------------- */
 /* --------------------------------------------------------- */
-
-
-
-
 /* --------------------------------------------------------- */
 /* --------------------------------------------------------- */
 /* ---------------Collapsible details start------------------*/
 /* --------------------------------------------------------- */
 /* --------------------------------------------------------- */
-
-
 .collapsible {
   background-color: #A901DB;
   color: white;
@@ -184,11 +159,9 @@ body {
   font-size: 15px;
   margin-left: 10%;
 }
-
 .active, .collapsible:hover {
   background-color: #4CAF50;
 }
-
 .content {
   padding: 0 18px;
   display: none;
@@ -203,16 +176,11 @@ body {
 /* ---------------Collapsible details end--------------------*/
 /* --------------------------------------------------------- */
 /* --------------------------------------------------------- */
-
-
-
-
 /* --------------------------------------------------------- */
 /* --------------------------------------------------------- */
 /* ------------------Button details start--------------------*/
 /* --------------------------------------------------------- */
 /* --------------------------------------------------------- */
-
 .confirm {
   background-color: #4CAF50;
   border: none;
@@ -228,7 +196,6 @@ body {
   margin: 4px 2px;
   border-radius: 6px;
 }
-
 .confirm:hover {
   box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
 }
@@ -247,22 +214,17 @@ body {
   border-radius: 10px;
   box-shadow: 0 2px #999;
 }
-
 .subclass:hover {background-color: #3e8e41}
-
 .subclass:active {
   background-color: #3e8e41;
   box-shadow: 0 1px #666;
   transform: translateY(1px);
 }
-
 /* --------------------------------------------------------- */
 /* --------------------------------------------------------- */
 /* ------------------Button details end----------------------*/
 /* --------------------------------------------------------- */
 /* --------------------------------------------------------- */
-
-
   
 </style>
 </head>
@@ -272,12 +234,13 @@ body {
   <a href="javascript:void(0)" class="closebtn" onclick="closeLeftNav()">&#8592;</a>
   <h3> DnD Character Creator </h3>
   <ul>
+	<li><a href="starting_page.html" onclick="closeLeftNav()">HOME</a></li>
     <li><a href="race_select.html" onclick="closeLeftNav()">RACE</a></li>
     <li><a href="class_selector.html" onclick="closeLeftNav()">CLASS</a></li>
-    <li><a href="background_select.html" onclick="closeLeftNav()">BACKGROUND</a></li>
+    <li><a class="active" href="background_select.html" onclick="closeLeftNav()">BACKGROUND</a></li>
+	<li><a href="Ability_Scores.html" onclick="closeLeftNav()">ABILITY SCORES</a></li>
     <li><a href="Spells.html" onclick="closeLeftNav()">SPELLS</a></li>
     <li><a href="Equipment.html" onclick="closeLeftNav()">EQUIPMENT</a></li>
-    <li><a href="Ability_Scores.html" onclick="closeLeftNav()">ABILITY SCORES</a></li>
     <li><a href="Proficiencies.html" onclick="closeLeftNav()">SKILLS</a></li>
     <li><a href="proto_CharacterSheetGuide.html" onclick="closeLeftNav()">CHARACTER SHEET GUIDE</a></li>
     <li><a href="support_page.html" onclick="closeLeftNav()">SUPPORT</a></li>
@@ -286,7 +249,7 @@ body {
   <br/>
   <br/>
   <br/>
-  <a href="Character Sheet - Alternative - Print Version.pdf" download="DnD5eCharacterSheet.pdf">
+  <a href="Character Sheet - Alternative - Print Version.pdf" target = "_blank">
     <button class="subclass">Download a blank character sheet here!</button>
   </a>
 </div>
@@ -296,7 +259,7 @@ body {
 </span>
 
 
-<h2 id="class_title" style="margin-left: 10%">Classes</h2>
+<h2 id="class_title" style="margin-left: 10%">Backgrounds</h2>
 
 <div align="right"onclick="confirmClass();">
   <button type="button" class="confirm" id="conButton">CONFIRM CHOICE &raquo;</button>
@@ -304,7 +267,7 @@ body {
 
 <button type="button" class="collapsible"><strong>Acolyte</strong></button>
 <div class="content">
-  <p>Your character is one that has spent much of their life serving in a temple for th gods.<br /><br /><b>Feature: Shelter of the Faithful</b><br />You and your party can recieve free healing and shelter at a temple, shrine, or other religious institutions connected to your faith.</p>
+  <p>Your character is one that has spent much of their life serving in a temple for the gods.<br /><br /><b>Feature: Shelter of the Faithful</b><br />You and your party can recieve free healing and shelter at a temple, shrine, or other religious institutions connected to your faith.</p>
   <label class="radioButton">Select BackGround
     <input type="radio" name="class" id="radio0" onclick="closeRightNav(); closeLeftNav();">
     <span class="checkmark"></span>
@@ -360,7 +323,7 @@ body {
 </div>
 <button type="button" class="collapsible"><strong>Noble</strong></button>
 <div class="content">
-  <p>You hail from a noble family with condiderable land, wealth, and political influence.<br /><br /><b>Feature: Position of Privilage</b><br />Thanks to your noble birth, you are welcomed in high society and commomers will go out of their way to avoid your displeasure. You can easily secure an audience with a local noble if you wish to.</p>
+  <p>You hail from a noble family with condiderable land, wealth, and political influence.<br /><br /><b>Feature: Position of Privilege</b><br />Thanks to your noble birth, you are welcomed in high society and commomers will go out of their way to avoid your displeasure. You can easily secure an audience with a local noble if you wish to.</p>
   <label class="radioButton">Select Background
     <input type="radio" name="class" id="radio7" onclick="closeRightNav(); closeLeftNav();">
     <span class="checkmark"></span>
@@ -403,7 +366,6 @@ body {
 var coll = document.getElementsByClassName("collapsible");
 var backgrounds = ["Acolyte", "Charlatan", "Criminal", "Entertainer", "Folk Hero", "Guild Artisan", "Hermit", "Noble", "Outlander", "Sailor", "Soldier", "Urchin"];
 var i;
-
 for (i = 0; i < coll.length; i++) {
   coll[i].addEventListener("click", function() {
     var content = this.nextElementSibling;
@@ -417,7 +379,6 @@ for (i = 0; i < coll.length; i++) {
     }
   });
 }
-
 function resetCollapsibles() {
   var k;
   var radioBut = document.getElementsByClassName("radioButton");
@@ -431,8 +392,6 @@ function resetCollapsibles() {
     }
   }
 }
-
-
 function confirmClass() {
   var i;
   var prefix = "radio";
@@ -452,7 +411,6 @@ function confirmClass() {
   if(activeRadio === null) {
     alert("Please select a background. (only \"Noble\" is implemented right now)");
   }
-
   closeLeftNav();
 } //ends confirmClass
   
@@ -462,8 +420,6 @@ function confirmBackground(thing) {
     document.location.href = "Spells.html";
  }
 }
-
-
 function openLeftNav() {
   document.getElementById("leftSidenav").style.width = "30%";
 }

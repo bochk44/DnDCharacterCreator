@@ -93,7 +93,6 @@ input[type=submit]:hover {
 textarea {
   resize: vertical;
 }
-
 .formArea {
   margin-left: 20%;
   border-radius: 7px;
@@ -122,7 +121,6 @@ textarea {
   box-shadow: 0 1px #666;
   transform: translateY(1px);
 }  
-
 </style>
 </head>
 <body>
@@ -131,21 +129,22 @@ textarea {
   <a href="javascript:void(0)" class="closebtn" onclick="closeLeftNav()">&#8592;</a>
   <h3> DnD Character Creator </h3>
   <ul>
+	<li><a href="starting_page.html" onclick="closeLeftNav()">HOME</a></li>
     <li><a href="race_select.html" onclick="closeLeftNav()">RACE</a></li>
     <li><a href="class_selector.html" onclick="closeLeftNav()">CLASS</a></li>
     <li><a href="background_select.html" onclick="closeLeftNav()">BACKGROUND</a></li>
+	<li><a href="Ability_Scores.html" onclick="closeLeftNav()">ABILITY SCORES</a></li>
     <li><a href="Spells.html" onclick="closeLeftNav()">SPELLS</a></li>
     <li><a href="Equipment.html" onclick="closeLeftNav()">EQUIPMENT</a></li>
-    <li><a href="Ability_Scores.html" onclick="closeLeftNav()">ABILITY SCORES</a></li>
     <li><a href="Proficiencies.html" onclick="closeLeftNav()">SKILLS</a></li>
     <li><a href="proto_CharacterSheetGuide.html" onclick="closeLeftNav()">CHARACTER SHEET GUIDE</a></li>
-    <li><a href="support_page.html" onclick="closeLeftNav()">SUPPORT</a></li>
+    <li><a class = "active" href="support_page.html" onclick="closeLeftNav()">SUPPORT</a></li>
   </ul>
   <br/>
   <br/>
   <br/>
   <br/>
-  <a href="Character Sheet - Alternative - Print Version.pdf" download="DnD5eCharacterSheet.pdf">
+  <a href="Character Sheet - Alternative - Print Version.pdf" target = "_blank">
     <button class="subclass">Download a blank character sheet here!</button>
   </a>
 </div>
@@ -172,7 +171,7 @@ function intakeInfo() {
   var loca1 = email.indexOf("@");
   var loca2 = email.lastIndexOf(".");
   var feedback = document.getElementById("comments").value;
-  if(name === "" || name === " ") {
+  if(name === " ") {
     alert("Please enter a name.");
   }
   else if(email === "" || (loca1 < 1 || loca2 < 3 || loca1 >= loca2-1)) {

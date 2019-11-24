@@ -269,12 +269,13 @@ body {
   <a href="javascript:void(0)" class="closebtn" onclick="closeLeftNav()">&#8592;</a>
   <h3> DnD Character Creator </h3>
   <ul>
-    <li><a class="active" onclick="closeLeftNav()">RACE</a></li>
+	<li><a href="starting_page.html" onclick="closeLeftNav()">HOME</a></li>
+    <li><a class="active" href="race_select.html" onclick="closeLeftNav()">RACE</a></li>
     <li><a href="class_selector.html" onclick="closeLeftNav()">CLASS</a></li>
     <li><a href="background_select.html" onclick="closeLeftNav()">BACKGROUND</a></li>
+	<li><a href="Ability_Scores.html" onclick="closeLeftNav()">ABILITY SCORES</a></li>
     <li><a href="Spells.html" onclick="closeLeftNav()">SPELLS</a></li>
     <li><a href="Equipment.html" onclick="closeLeftNav()">EQUIPMENT</a></li>
-    <li><a href="Ability_Scores.html" onclick="closeLeftNav()">ABILITY SCORES</a></li>
     <li><a href="Proficiencies.html" onclick="closeLeftNav()">SKILLS</a></li>
     <li><a href="proto_CharacterSheetGuide.html" onclick="closeLeftNav()">CHARACTER SHEET GUIDE</a></li>
     <li><a href="support_page.html" onclick="closeLeftNav()">SUPPORT</a></li>
@@ -283,7 +284,7 @@ body {
   <br/>
   <br/>
   <br/>
-  <a href="Character Sheet - Alternative - Print Version.pdf" download="DnD5eCharacterSheet.pdf">
+  <a href="Character Sheet - Alternative - Print Version.pdf" target = "_blank">
     <button class="subclass">Download a blank character sheet here!</button>
   </a>
 </div>
@@ -383,7 +384,7 @@ body {
 var coll = document.getElementsByClassName("collapsible");
 var races = ["Dragonborn", "Dwarf", "Elf", "Gnome", "Half-Elf", "Halfling", "Half-Orc", "Human", "Teifling"];
 var subraces = new Array(9);
-subraces[2] = ["High Elf", "Wood Elf", "Dark Elf"];
+subraces[2] = ["High Elf", "Wood Elf", "Drow"];
 var i;
 for (i = 0; i < coll.length; i++) {
   coll[i].addEventListener("click", function() {
@@ -428,7 +429,7 @@ function confirmClass() {
   
   if(activeRadio != null && activeRadio.id === "radio2") {
     document.getElementById("rightNav_h3").innerHTML = "Elf";
-    document.getElementById("rightNav_p").innerHTML = "Please select a sub-race:<br/><br/><button class=\"subclass\" onclick=\"confirmSubclass(2, 0)\">High Elf &raquo;</button> +1 Intelligence<br/>You know one cantrip of your choice from the Wizard spell list<br/><br/><button class=\"subclass\" onclick=\"confirmSubclass(2, 1)\">Wood Elf &raquo;</button> +1 Wisdom<br/>Increase your base walkking speed by 5 feet.<br/><br/><button class=\"subclass\" onclick=\"confirmSubclass(2, 2)\">Dark Elf &raquo;</button> +1 Charisma<br/>You know the dancing lights cantrip<br/><br/><br/><br/>";
+    document.getElementById("rightNav_p").innerHTML = "Please select a sub-race:<br/><br/><button class=\"subclass\" onclick=\"confirmSubclass(2, 0)\">High Elf &raquo;</button> High Elf details<br/><br/><button class=\"subclass\" onclick=\"confirmSubclass(2, 1)\">Wood Elf &raquo;</button> Wood Elf details<br/><br/><button class=\"subclass\" onclick=\"confirmSubclass(2, 2)\">Drow &raquo;</button> Drow details<br/><br/><br/><br/>";
   }
   else {
     document.getElementById("rightNav_h3").innerHTML = "No Race Selected";

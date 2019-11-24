@@ -6,13 +6,11 @@
 body {
   font-family: "Lato", sans-serif;
 }
-
 /* --------------------------------------------------------- */
 /* --------------------------------------------------------- */
 /* ------------------Side Nav details start------------------*/
 /* --------------------------------------------------------- */
 /* --------------------------------------------------------- */
-
 .leftSidenav {
   height: 100%;
   width: 0;
@@ -111,25 +109,16 @@ body {
   .sidenav {padding-top: 15px;}
   .sidenav a {font-size: 18px;}
 }
-
-
 /* --------------------------------------------------------- */
 /* --------------------------------------------------------- */
 /* ------------------Side Nav details end--------------------*/
 /* --------------------------------------------------------- */
 /* --------------------------------------------------------- */
-
-
-
-
-
-
 /* --------------------------------------------------------- */
 /* --------------------------------------------------------- */
 /* ----------------Radio Button details start----------------*/
 /* --------------------------------------------------------- */
 /* --------------------------------------------------------- */
-
 .radioButton {
   display: block;
   position: relative;
@@ -142,7 +131,6 @@ body {
   -ms-user-select: none;
   user-select: none;
 }
-
 .radioButton input {
   position: absolute;
   opacity: 0;
@@ -150,7 +138,6 @@ body {
   height: 0;
   width: 0;
 }
-
 .checkmark {
   position: absolute;
   top: 0;
@@ -160,25 +147,20 @@ body {
   background-color: #eee;
   border-radius: 50%;
 }
-
 .radioButton:hover input ~ .checkmark {
   background-color: #ccc;
 }
-
 .radioButton input:checked ~ .checkmark {
   background-color: #4CAF50;
 }
-
 .checkmark:after {
   content: "";
   position: absolute;
   display: none;
 }
-
 .radioButton input:checked ~ .checkmark:after {
   display: block;
 }
-
 .radioButton .checkmark:after {
   left: 9px;
   top: 5px;
@@ -190,23 +172,16 @@ body {
   -ms-transform: rotate(45deg);
   transform: rotate(45deg);
 }
-
 /* --------------------------------------------------------- */
 /* --------------------------------------------------------- */
 /* ----------------Radio Button details end------------------*/
 /* --------------------------------------------------------- */
 /* --------------------------------------------------------- */
-
-
-
-
 /* --------------------------------------------------------- */
 /* --------------------------------------------------------- */
 /* ---------------Collapsible details start------------------*/
 /* --------------------------------------------------------- */
 /* --------------------------------------------------------- */
-
-
 .collapsible {
   background-color: #A901DB;
   color: white;
@@ -219,11 +194,9 @@ body {
   font-size: 15px;
   margin-left: 10%;
 }
-
 .active, .collapsible:hover {
   background-color: #4CAF50;
 }
-
 .content {
   padding: 0 18px;
   display: none;
@@ -238,16 +211,11 @@ body {
 /* ---------------Collapsible details end--------------------*/
 /* --------------------------------------------------------- */
 /* --------------------------------------------------------- */
-
-
-
-
 /* --------------------------------------------------------- */
 /* --------------------------------------------------------- */
 /* ------------------Button details start--------------------*/
 /* --------------------------------------------------------- */
 /* --------------------------------------------------------- */
-
 .confirm {
   background-color: #4CAF50;
   border: none;
@@ -263,7 +231,6 @@ body {
   margin: 4px 2px;
   border-radius: 6px;
 }
-
 .confirm:hover {
   box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
 }
@@ -282,22 +249,17 @@ body {
   border-radius: 10px;
   box-shadow: 0 2px #999;
 }
-
 .subclass:hover {background-color: #3e8e41}
-
 .subclass:active {
   background-color: #3e8e41;
   box-shadow: 0 1px #666;
   transform: translateY(1px);
 }
-
 /* --------------------------------------------------------- */
 /* --------------------------------------------------------- */
 /* ------------------Button details end----------------------*/
 /* --------------------------------------------------------- */
 /* --------------------------------------------------------- */
-
-
   
 </style>
 </head>
@@ -447,7 +409,6 @@ var classes = ["Barbarian", "Bard", "Cleric", "Druid", "Fighter", "Monk", "Palad
 var subclasses = new Array(12);
 subclasses[4] = ["Archery", "Defense", "Dueling", "Great Weapon Fighting", "Protection", "Two Weapon Fighting"];
 var i;
-
 for (i = 0; i < coll.length; i++) {
   coll[i].addEventListener("click", function() {
     var content = this.nextElementSibling;
@@ -461,7 +422,6 @@ for (i = 0; i < coll.length; i++) {
     }
   });
 }
-
 function resetCollapsibles() {
   var k;
   var radioBut = document.getElementsByClassName("radioButton");
@@ -475,8 +435,6 @@ function resetCollapsibles() {
     }
   }
 }
-
-
 function confirmClass() {
   var i;
   var prefix = "radio";
@@ -487,6 +445,8 @@ function confirmClass() {
   
   for (i = 0; i < radioBut.length && activeRadio === null; i++) {
     curRadio = document.getElementById(prefix.concat(i));
+    console.log( curRadio );
+	console.log( curRadio.checked );
     if(curRadio.checked) {
       activeRadio = curRadio;
     }
@@ -512,8 +472,6 @@ function confirmSubclass(thing ,thing2) {
     document.location.href = "background_select.html";
  }
 }
-
-
 function openLeftNav() {
   document.getElementById("leftSidenav").style.width = "30%";
 }

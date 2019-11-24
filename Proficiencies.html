@@ -278,8 +278,8 @@ body {
 .confirm:hover {
   box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
   }
-	
-.subclass {
+  
+  .subclass {
   display: inline-block;
   padding: 10px;
   font-size: 18px;
@@ -299,7 +299,6 @@ body {
   box-shadow: 0 1px #666;
   transform: translateY(1px);
 }
-
 </style>
 </head>
 <body>
@@ -308,13 +307,14 @@ body {
   <a href="javascript:void(0)" class="closebtn" onclick="closeLeftNav()">&#8592;</a>
   <h3> DnD Character Creator </h3>
   <ul>
+	<li><a href="starting_page.html" onclick="closeLeftNav()">HOME</a></li>
     <li><a href="race_select.html" onclick="closeLeftNav()">RACE</a></li>
     <li><a href="class_selector.html" onclick="closeLeftNav()">CLASS</a></li>
     <li><a href="background_select.html" onclick="closeLeftNav()">BACKGROUND</a></li>
+	<li><a href="Ability_Scores.html" onclick="closeLeftNav()">ABILITY SCORES</a></li>
     <li><a href="Spells.html" onclick="closeLeftNav()">SPELLS</a></li>
     <li><a href="Equipment.html" onclick="closeLeftNav()">EQUIPMENT</a></li>
-    <li><a href="Ability_Scores.html" onclick="closeLeftNav()">ABILITY SCORES</a></li>
-    <li><a href="Proficiencies.html" onclick="closeLeftNav()">SKILLS</a></li>
+    <li><a class="active" href="Proficiencies.html" onclick="closeLeftNav()">SKILLS</a></li>
     <li><a href="proto_CharacterSheetGuide.html" onclick="closeLeftNav()">CHARACTER SHEET GUIDE</a></li>
     <li><a href="support_page.html" onclick="closeLeftNav()">SUPPORT</a></li>
   </ul>
@@ -322,7 +322,7 @@ body {
   <br/>
   <br/>
   <br/>
-  <a href="Character Sheet - Alternative - Print Version.pdf" download="DnD5eCharacterSheet.pdf">
+  <a href="Character Sheet - Alternative - Print Version.pdf" target = "_blank">
     <button class="subclass">Download a blank character sheet here!</button>
   </a>
 </div>
@@ -346,18 +346,18 @@ body {
 
 <div class="page" >
 
-<h2> Proficiencies </h2>
+<h2> Skills </h2>
 
 <div align="right"onclick="confirmClass();">
   
-  <a href = "proto_CharacterSheetGuide.html" target="_parent" > 
-  <button type="button" class="confirm" id="conButton">CONFIRM CHOICE &raquo;</button>
-  </a>
+  <!-- <a href = "index.html" target="_parent" > -->
+  <button type="button" class="confirm" id="conButton" onclick="confirmChoice()">CONFIRM CHOICE &raquo;</button>
+  <!--</a> -->
 </div>
 
 <p>Your proficiencies are skills that your character is good at. When performing these skills you will receive a bonus to their effectiveness. 
 
-You are a <strong>High Elf Fighter</strong> with the <strong>Noble</strong> background. You can choose four skills to be proficient in:</p>
+ You can choose four skills to be proficient in:</p>
 
 
 
@@ -801,6 +801,15 @@ function createAlert(){
 		div.style.opacity = "1";
 		div.style.display = "block";
 	}
+}
+
+function confirmChoice(){
+if( prof1 != prof2 && prof1 != back1 && prof1 != back2 && prof2 != back1 && prof2 != back2 && back1 != back2 ){
+
+if(confirm("Are you ok with picking these skills?")) {
+    document.location.href = "proto_CharacterSheetGuide.html";
+ }
+}
 }
 
 for (i = 0; i < close.length; i++) {
