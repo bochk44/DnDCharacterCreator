@@ -74,7 +74,7 @@ body {
   
   
   input[type=text], input[type=submit] {
-  width: 100%;
+  width: 50px;
   padding: 12px;
   margin: 8px 0;
   display: inline-block;
@@ -137,8 +137,23 @@ input[type=submit]:hover {
 
 <script>
 function intakeInfo() {
-	var name = document.getElementById("name").value;
-  document.getElementById("emailForm").innerHTML = "Thanks for your feedback " + name + ", we truly appreciate it and we'll get back to you as soon as possible!";
+  var name = document.getElementById("name").value;
+  var email = document.getElementById("email").value;
+  var loca1 = email.indexOf("@");
+  var loca2 = email.indexOf(".");
+  var feedback = document.getElementById("comments").value;
+  if(name === "") {
+    alert("Please enter a name.");
+  }
+  else if(email === "" || (loca1 < 1 || loca2 < 3 || loca1 >= loca2-1) {
+    alert("Please enter a valid email address.");
+  }
+  else if(feedback.length < 1) {
+    alert("Please enter a comment, question or concern.");
+  }
+  else {
+    document.getElementById("emailForm").innerHTML = "Thanks for your feedback " + name + ", we truly appreciate it and we'll get back to you as soon as possible!";
+  }
 }
 function openLeftNav() {
   document.getElementById("leftSidenav").style.width = "30%";
