@@ -274,7 +274,7 @@ body {
     <li><a href="class_selector.html" onclick="closeLeftNav()">Class</a></li>			<!-- changed -->
     <li><a href="background_select.html" onclick="closeLeftNav()">Background</a></li>
     <li></li>
-    <li><a href="active" onclick="closeLeftNav()">Spells</a></li>						<!-- changed -->
+    <li><a href="Spells.html" onclick="closeLeftNav()">Spells</a></li>						<!-- changed -->
     <li><a href="Equipment.html" onclick="closeLeftNav()">Equipment</a></li>
     <li><a href="Ability_Scores.html" onclick="closeLeftNav()">Ability Scores</a></li>
     <li><a href="Proficiencies.html" onclick="closeLeftNav()">Skills</a></li>
@@ -347,15 +347,6 @@ body {
 
 <!-- End of Spells -->
 
-<h2 style="margin-left: 10%">Selected Cantrips</h2>
-<!-- Selected Cantrips -->
-
-<!-- End of Selected Cantrips -->
-
-<h2 style="margin-left: 10%">Selected First Level Spells</h2>
-<!-- Spells -->
-
-<!-- End of Spells -->
 
 <script>
 var coll = document.getElementsByClassName("collapsible");
@@ -405,12 +396,12 @@ function confirmClass() {
   } //ends for loop
   
   if(activeRadio != null && activeRadio.id === "radio2") {
-    document.getElementById("rightNav_h3").innerHTML = "Elf";
-    document.getElementById("rightNav_p").innerHTML = "Please select a sub-race:<br/><br/><button class=\"subclass\" onclick=\"confirmSubclass(2, 0)\">High Elf &raquo;</button> High Elf details<br/><br/><button class=\"subclass\" onclick=\"confirmSubclass(2, 1)\">Wood Elf &raquo;</button> Wood Elf details<br/><br/><button class=\"subclass\" onclick=\"confirmSubclass(2, 2)\">Drow &raquo;</button> Drow details<br/><br/><br/><br/>";
+    document.getElementById("rightNav_h3").innerHTML = "Cantrip";
+    document.getElementById("rightNav_p").innerHTML = "Would you like to confirm selecting this cantrip?<br/><br/><button class=\"subclass\" onclick=\"confirmSubclass(2, 0)\">Yes &raquo;</button> <br/><br/>";
   }
   else {
-    document.getElementById("rightNav_h3").innerHTML = "No Race Selected";
-    document.getElementById("rightNav_p").innerHTML = "Please select a race by clicking on the name and checking the box in the description. (only \"Elf\" is implemented)";
+    document.getElementById("rightNav_h3").innerHTML = "No Spell Selected";
+    document.getElementById("rightNav_p").innerHTML = "Please select a spell by clicking on the name and checking the box in the description. (only \"Fire Bolt\" is implemented)";
     
   }
   closeLeftNav();
@@ -419,9 +410,9 @@ function confirmClass() {
 } //ends confirmClass
   
 function confirmSubclass(thing ,thing2) {
- var msg = "You have selected a " + races[thing] + " (" + subraces[thing][thing2] + "). Would you like to save this choice?";
+ var msg = "You have selected Fire Bolt. Would you like to save this choice?";
  if(confirm(msg)) {
-    document.location.href = "class_selector.html";
+    document.location.href = "Equipment.html";
  }
 }
 function openLeftNav() {
