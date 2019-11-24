@@ -68,6 +68,30 @@ body {
   .sidenav {padding-top: 15px;}
   .sidenav a {font-size: 18px;}
 }
+  
+  
+  
+  
+  
+  input[type=text], input[type=submit] {
+  width: 100%;
+  padding: 12px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+input[type=submit] {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+}
+
+input[type=submit]:hover {
+  opacity: 0.8;
+}
+  
 </style>
 </head>
 <body>
@@ -103,14 +127,19 @@ body {
 <h2> Support</h2>
 <p>Thank you for using our website! If you have any comments, questions, or concerns please fill ot the form below.</p>
 
-<div class="container" style="background-color:white">
+<div id="emailForm" class="container" style="background-color:white">
   <input id="name" type="text" placeholder="John Doe" name="name" required autofocus>
   <input id="email" type="text" placeholder="john.doe@email.com" name="mail" required>
   <input id="comments" type="textarea" placeholder="Tell us what you think!" rows="10" cols="15" wrap="hard" required>
+  <input type="submit" value="Send" onclick="intakeInfo()">
 </div>
 
 
 <script>
+function intakeInfo() {
+	var name = document.getElementById("name").value;
+  document.getElementById("emailForm").innerHTML = "Thanks for your feedback " + name + ", we truly appreciate it and we'll get back to you as soon as possible!";
+}
 function openLeftNav() {
   document.getElementById("leftSidenav").style.width = "30%";
 }
