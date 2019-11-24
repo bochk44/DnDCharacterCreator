@@ -419,6 +419,8 @@ function confirmClass() {
   var curRadio;
   var radioBut = document.getElementsByClassName("radioButton");
   
+  closeLeftNav();
+  resetCollapsibles();
   
   for (i = 0; i < radioBut.length && activeRadio === null; i++) {
     curRadio = document.getElementById(prefix.concat(i));
@@ -436,16 +438,18 @@ function confirmClass() {
     document.getElementById("rightNav_p").innerHTML = "Please select a race by clicking on the name and checking the box in the description. (only \"Elf\" is implemented)";
     
   }
-  closeLeftNav();
-  resetCollapsibles();
-  openRightNav();
 } //ends confirmClass
   
 function confirmSubclass(thing ,thing2) {
- var msg = "You have selected a " + races[thing] + " (" + subraces[thing][thing2] + "). Would you like to save this choice?";
- if(confirm(msg)) {
-    document.location.href = "class_selector.html";
- }
+  if (thing2 === 0){
+    var msg = "You have selected a " + races[thing] + " (" + subraces[thing][thing2] + "). Would you like to save this choice?";
+    if(confirm(msg)) {
+      document.location.href = "class_selector.html";
+    }
+  }
+  else {
+    alert("Please select High Elf");
+  }
 }
 function openLeftNav() {
   document.getElementById("leftSidenav").style.width = "30%";
