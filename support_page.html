@@ -172,7 +172,7 @@ function intakeInfo() {
   var loca1 = email.indexOf("@");
   var loca2 = email.lastIndexOf(".");
   var feedback = document.getElementById("comments").value;
-  if(name === " ") {
+  if(name === "" || name === " ") {
     alert("Please enter a name.");
   }
   else if(email === "" || (loca1 < 1 || loca2 < 3 || loca1 >= loca2-1)) {
