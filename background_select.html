@@ -444,13 +444,13 @@ function confirmClass() {
   
   for (i = 0; i < radioBut.length && activeRadio === null; i++) {
     curRadio = document.getElementById(prefix.concat(i));
-    if(curRadio.checked) {
+    if(curRadio.checked && i === 7) {
       confirmBackground(i);
       activeRadio = curRadio;
     }
   } //ends for loop
   if(activeRadio === null) {
-    alert("Please select a background.");
+    alert("Please select a background. (only \"Noble\" is implemented right now)");
   }
 
   closeLeftNav();
