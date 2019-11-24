@@ -383,7 +383,7 @@ body {
 var coll = document.getElementsByClassName("collapsible");
 var races = ["Dragonborn", "Dwarf", "Elf", "Gnome", "Half-Elf", "Halfling", "Half-Orc", "Human", "Teifling"];
 var subraces = new Array(9);
-subraces[2] = ["High Elf", "Wood Elf", "Drow"];
+subraces[2] = ["High Elf", "Wood Elf", "Dark Elf"];
 var i;
 for (i = 0; i < coll.length; i++) {
   coll[i].addEventListener("click", function() {
@@ -428,7 +428,7 @@ function confirmClass() {
   
   if(activeRadio != null && activeRadio.id === "radio2") {
     document.getElementById("rightNav_h3").innerHTML = "Elf";
-    document.getElementById("rightNav_p").innerHTML = "Please select a sub-race:<br/><br/><button class=\"subclass\" onclick=\"confirmSubclass(2, 0)\">High Elf &raquo;</button> High Elf details<br/><br/><button class=\"subclass\" onclick=\"confirmSubclass(2, 1)\">Wood Elf &raquo;</button> Wood Elf details<br/><br/><button class=\"subclass\" onclick=\"confirmSubclass(2, 2)\">Drow &raquo;</button> Drow details<br/><br/><br/><br/>";
+    document.getElementById("rightNav_p").innerHTML = "Please select a sub-race:<br/><br/><button class=\"subclass\" onclick=\"confirmSubclass(2, 0)\">High Elf &raquo;</button> +1 Intelligence<br/>You know one cantrip of your choice from the Wizard spell list<br/><br/><button class=\"subclass\" onclick=\"confirmSubclass(2, 1)\">Wood Elf &raquo;</button> +1 Wisdom<br/>Increase your base walkking speed by 5 feet.<br/><br/><button class=\"subclass\" onclick=\"confirmSubclass(2, 2)\">Dark Elf &raquo;</button> +1 Charisma<br/>You know the dancing lights cantrip<br/><br/><br/><br/>";
   }
   else {
     document.getElementById("rightNav_h3").innerHTML = "No Race Selected";
