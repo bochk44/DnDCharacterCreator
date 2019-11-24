@@ -73,14 +73,16 @@ body {
   
   
   
-  input[type=text], input[type=submit] {
-  width: 400px;
+input[type=text], input[type=submit] {
+  width: 50%;
   padding: 12px;
   margin: 8px 0;
+  margin-left: 25%;
   display: inline-block;
   border: 1px solid #ccc;
   box-sizing: border-box;
 }
+
 
 input[type=submit] {
   background-color: #4CAF50;
@@ -130,7 +132,7 @@ input[type=submit]:hover {
 <div id="emailForm" class="container" style="background-color:white">
   <input id="name" type="text" placeholder="John Doe" name="name" required autofocus>
   <input id="email" type="text" placeholder="john.doe@email.com" name="mail" required>
-  <input id="comments" type="textarea" placeholder="Tell us what you think!" rows="10" cols="15" wrap="hard" required>
+  <input id="comments" type="textarea" placeholder="Tell us what you think!" wrap="hard" required>
   <input type="submit" value="Send" onclick="intakeInfo()">
 </div>
 
