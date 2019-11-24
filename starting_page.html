@@ -255,6 +255,32 @@ span.psw {
   transform: translateY(1px);
 }
 
+.alert {
+  margin-top: 15px;
+  padding: 20px;
+  background-color: #f44336;
+  color: white;
+  opacity: 0;
+  transition: opacity 0.6s;
+  margin-bottom: 15px;
+  display: "none";
+}
+
+.alertbtn {
+  margin-left: 15px;
+  color: white;
+  font-weight: bold;
+  float: right;
+  font-size: 22px;
+  line-height: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.alertbtn:hover {
+  color: black;
+}
+
 </style>
 </head>
 
@@ -364,19 +390,20 @@ span.psw {
 Dungeons and Dragons Character Creator
 </h1>
 
+
 <blockquote>
 	Creating a DnD character can be an arduous and somewhat tedious process, especially for new players. 
 	Our goal is to simplify that process with easy step by step instructions and clear directions so you can get to playing the game faster. 
 	Make an account, log in and we can get started!
 </blockquote>
 
-
-<div>
-
-	<a href="race_select.html" target="_parent"> 
-		<button class="continue"> Get Started </button>
+<a > 
+		<button class="continue" onclick="changePage()"> Get Started </button>
 	</a>
 
+<div class="alert" style="margin-top: 80px;">
+  <span class="alertbtn" onclick="closeAlert()">&times;</span>  
+  Please log in or sign up before continuing.
 </div>
 
 
@@ -396,6 +423,7 @@ Dungeons and Dragons Character Creator
 // When the user clicks anywhere outside of the modal, close it
 var modal = document.getElementById('id01');
 var signup = document.getElementById('id02');
+var flag = false;
 
 window.onclick = function(event) {
     if (event.target == modal) {
@@ -407,6 +435,7 @@ window.onclick = function(event) {
 }
 
 function closeModal(){
+flag = true;
 modal.style.display="none"; 
 document.getElementById("rightBtn").style.background = "grey"; 
 document.getElementById("rightBtn").innerHTML = "Logged In";
@@ -418,6 +447,7 @@ signup.style.display='none';
 }
 
 function lockSignup(){
+flag = true;
  signup.style.display='none';
  
  document.getElementById("rightBtn").style.background = "grey"; 
@@ -430,6 +460,34 @@ function lockSignup(){
  
 }
 
+function changePage(){
+	console.log(flag);
+	if( flag ){
+		document.location.href = "race_select.html";
+	}
+	else{
+		createAlert();
+	}
+}
+
+var close = document.getElementsByClassName("alertbtn");
+var i;
+
+function createAlert(){
+	for( i = 0; i < close.length; i++ ){
+		var div = close[i].parentElement;
+		div.style.opacity = "1";
+		div.style.display = "block";
+	}
+}
+
+function closeAlert(){
+for( i = 0; i < close.length; i++ ){
+		var div = close[i].parentElement;
+		div.style.opacity = "0";
+		div.style.display = "none";
+	}
+}
 
 	
 function openLeftNav() {
