@@ -191,6 +191,30 @@ body {
   -webkit-transform: rotate(45deg);
   -ms-transform: rotate(45deg);
   transform: rotate(45deg);
+	
+	
+  
+.subclass {
+  display: inline-block;
+  padding: 10px;
+  font-size: 18px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  background-color: #4CAF50;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 2px #999;
+}
+.subclass:hover {background-color: #3e8e41}
+.subclass:active {
+  background-color: #3e8e41;
+  box-shadow: 0 1px #666;
+  transform: translateY(1px);
+}
+	
 </style>
 </head>
 <body>
@@ -199,11 +223,23 @@ body {
   <a href="javascript:void(0)" class="closebtn" onclick="closeLeftNav()">&#8592;</a>
   <h3> DnD Character Creator </h3>
   <ul>
-  <li><a class="active" href="#race">Race</a></li>
-  <li><a href="#class onclick=closeLeftNav()">Class</a></li>
-  <li><a href="#background onclick=closeLeftNav()">Background</a></li>
-  <li><a href="#skills onclick=closeLeftNav()">Skills</a></li>
-</ul>
+    <li><a href="race_select.html" onclick="closeLeftNav()">Race</a></li>
+    <li><a class="active" onclick="closeLeftNav()">Class</a></li>
+    <li><a href="background_select.html" onclick="closeLeftNav()">Background</a></li>
+    <li><a href="Spells.html" onclick="closeLeftNav()">Spells</a></li>
+    <li><a href="Equipment.html" onclick="closeLeftNav()">Equipment</a></li>
+    <li><a href="Ability_Scores.html" onclick="closeLeftNav()">Ability Scores</a></li>
+    <li><a href="Proficiencies.html" onclick="closeLeftNav()">Skills</a></li>
+    <li><a href="proto_CharacterSheetGuide.html" onclick="closeLeftNav()">Character Sheet Guide</a></li>
+    <li><a href="support_page.html" onclick="closeLeftNav()">Support</a></li>
+  </ul>
+  <br/>
+  <br/>
+  <br/>
+  <br/>
+  <a href="Character Sheet - Alternative - Print Version.pdf" download="DnD5eCharacterSheet.pdf">
+    <button class="subclass">Download a blank character sheet here!</button>
+  </a>
 </div>
 
 
