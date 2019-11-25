@@ -5,23 +5,57 @@
 <style>
 body {
   font-family: "Lato", sans-serif;
+            background-color: black;
 }
-/* --------------------------------------------------------- */
-/* --------------------------------------------------------- */
-/* ------------------Side Nav details start------------------*/
-/* --------------------------------------------------------- */
-/* --------------------------------------------------------- */
+
+        /************************************************************/
+        /* Banner                                                   */
+        /************************************************************/
+
+        #banner {
+            width: 100%;
+            height: 9.5%;
+
+            position: fixed;
+            left: 0;
+            top: 0;
+                
+            text-align: center;
+            color: mediumpurple;
+            background-color: #222222;
+        }
+
+        /************************************************************/
+        /* Content Wrapper                                          */
+        /************************************************************/
+
+        .wrapper {
+            width: 115%;
+            height: 89.5%;
+
+            position: fixed;
+            display: block;
+            left: -15%;
+            top: 10.5%;
+        }
+        
+
+        /************************************************************/
+        /* Side Navigation                                          */
+        /************************************************************/
+
 .leftSidenav {
-  height: 100%;
-  width: 0;
-  position: fixed;
-  z-index: 1;
-  top: 0;
-  left: 0;
-  background-color: #3B0B39;
-  overflow-x: hidden;
-  transition: 0.5s;
-  padding-top: 60px;
+            width: 15%;
+            height: 89.5%;
+
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            overflow-x: hidden;
+            transition: 0.5s;
+            padding-top: 60px;
+            background-color: #222;
+	text-align: center;
 }
 .leftSidenav .closebtn {
   position: absolute;
@@ -34,17 +68,17 @@ body {
   padding: 8px 8px 8px 32px;
   text-decoration: none;
   font-size: 25px;
-  color: #EFFBEF;
+  color: mediumpurple;
   display: block;
   transition: 0.3s;
 }
 .rightSidenav {
   height: 100%;
-  width: 0;
+  width: 35%;
   position: fixed;
   z-index: 1;
   top: 0;
-  right: 0;
+  right: -35%;
   background-color: #111;
   overflow-x: hidden;
   transition: 0.5s;
@@ -79,7 +113,6 @@ body {
   margin: 0;
   padding: 0;
   width: 100%;
-  background-color: #A901DB;
   height: auto;
   overflow: auto;
 }
@@ -93,7 +126,7 @@ body {
   
 .leftSidenav li a {
   display: block;
-  color: #000;
+                color: #4CAF50;
   padding: 8px 16px;
   text-decoration: none;
 }
@@ -109,16 +142,35 @@ body {
   .sidenav {padding-top: 15px;}
   .sidenav a {font-size: 18px;}
 }
-/* --------------------------------------------------------- */
-/* --------------------------------------------------------- */
-/* ------------------Side Nav details end--------------------*/
-/* --------------------------------------------------------- */
-/* --------------------------------------------------------- */
-/* --------------------------------------------------------- */
-/* --------------------------------------------------------- */
-/* ----------------Radio Button details start----------------*/
-/* --------------------------------------------------------- */
-/* --------------------------------------------------------- */
+	
+        /************************************************************/
+        /* Main Content Region                                      */
+        /************************************************************/
+
+        .main {
+            width: 67.5%;
+
+            position: fixed;
+            left: 15.5%;
+            top: 10.5%;
+            bottom: 0;
+            overflow: scroll;
+
+            border-width: 20px;
+            border-style: solid;
+            border-color: #333;
+
+            background-color: lightgray;
+        }
+            .main p {
+                padding-left: 20px;
+                padding-right: 20px;
+            }
+
+        /************************************************************/
+        /* Radio Buttons                                            */
+        /************************************************************/
+
 .radioButton {
   display: block;
   position: relative;
@@ -172,16 +224,11 @@ body {
   -ms-transform: rotate(45deg);
   transform: rotate(45deg);
 }
-/* --------------------------------------------------------- */
-/* --------------------------------------------------------- */
-/* ----------------Radio Button details end------------------*/
-/* --------------------------------------------------------- */
-/* --------------------------------------------------------- */
-/* --------------------------------------------------------- */
-/* --------------------------------------------------------- */
-/* ---------------Collapsible details start------------------*/
-/* --------------------------------------------------------- */
-/* --------------------------------------------------------- */
+
+        /************************************************************/
+        /* Collapsible Content                                      */
+        /************************************************************/
+
 .collapsible {
   background-color: #A901DB;
   color: white;
@@ -205,17 +252,11 @@ body {
   background-color: #F6CEEC;
   margin-left: 10.5%;
 }
-  
-/* --------------------------------------------------------- */
-/* --------------------------------------------------------- */
-/* ---------------Collapsible details end--------------------*/
-/* --------------------------------------------------------- */
-/* --------------------------------------------------------- */
-/* --------------------------------------------------------- */
-/* --------------------------------------------------------- */
-/* ------------------Button details start--------------------*/
-/* --------------------------------------------------------- */
-/* --------------------------------------------------------- */
+
+        /************************************************************/
+        /* Buttons                                                  */
+        /************************************************************/
+
 .confirm {
   background-color: #4CAF50;
   border: none;
@@ -230,6 +271,7 @@ body {
   font-size: 16px;
   margin: 4px 2px;
   border-radius: 6px;
+	cursor: pointer;
 }
 .confirm:hover {
   box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
@@ -255,22 +297,26 @@ body {
   box-shadow: 0 1px #666;
   transform: translateY(1px);
 }
-/* --------------------------------------------------------- */
-/* --------------------------------------------------------- */
-/* ------------------Button details end----------------------*/
-/* --------------------------------------------------------- */
-/* --------------------------------------------------------- */
-  
 </style>
 </head>
+	
 <body>
 
+    <!-- BANNER -->
+    <div id="banner">
+        <h2>Dungeons & Dragons Character Creator</h2>
+    </div>
+
+    <!-- CONTENT WRAPPER -->
+    <div class="wrapper">
+
+        <!-- SIDE NAVIGATION MENUS-->
 <div id="leftSidenav" class="leftSidenav">
   <a href="javascript:void(0)" class="closebtn" onclick="closeLeftNav()">&#8592;</a>
-  <h3> DnD Character Creator </h3>
+  <h3> Navigation Menu </h3>
   <ul>
     <li><a href="race_select.html" onclick="closeLeftNav()">RACE</a></li>
-    <li><a href="class_selector.html" onclick="closeLeftNav()">CLASS</a></li>
+    <li><a class="active" href="class_selector.html" onclick="closeLeftNav()">CLASS</a></li>
     <li><a href="background_select.html" onclick="closeLeftNav()">BACKGROUND</a></li>
     <li><a href="Spells.html" onclick="closeLeftNav()">SPELLS</a></li>
     <li><a href="Equipment.html" onclick="closeLeftNav()">EQUIPMENT</a></li>
@@ -294,12 +340,13 @@ body {
   <p id="rightNav_p" buffer="2em">Please select a class by clicking on the name and checking the box in the description. (only "Fighter" is implemented)</p>
 </div>
 
-
+        <!-- MAIN CONTENT -->
+        <div class="main">
+		
 <span style="font-size:30px;cursor:pointer" onclick="openLeftNav()">
   <img src="Images/MenuIcon.jpg"    alt="Menu Icon" width="50" height="50" style=padding-left:10px;>
 </span>
-
-
+		
 <h2 id="class_title" style="margin-left: 10%">Classes</h2>
 
 <div align="right"onclick="confirmClass();">
@@ -402,6 +449,8 @@ body {
     <span class="checkmark"></span>
   </label>
 </div>
+	    </div>
+	</div>
 
 <script>
 var coll = document.getElementsByClassName("collapsible");
@@ -473,16 +522,16 @@ function confirmSubclass(thing ,thing2) {
  }
 }
 function openLeftNav() {
-  document.getElementById("leftSidenav").style.width = "30%";
+  document.getElementById("leftSidenav").style.left = "0";
 }
 function closeLeftNav() {
-  document.getElementById("leftSidenav").style.width = "0";
+  document.getElementById("leftSidenav").style.left = "-15%";
 }
 function openRightNav() {
-  document.getElementById("rightSidenav").style.width = "35%";
+  document.getElementById("rightSidenav").style.right = "0";
 }
 function closeRightNav() {
-  document.getElementById("rightSidenav").style.width = "0";
+  document.getElementById("rightSidenav").style.right = "-35%";
 }
 </script>
 
