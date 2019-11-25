@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta name="Race Select" content="width=device-width, initial-scale=1">
-<style>
-body {
-	font-family: "Lato", sans-serif;
-        background-color: black;
-}
+    <meta name="Race Select" content="width=device-width, initial-scale=1">
+    <style>
+        body {
+            font-family: "Lato", sans-serif;
+            background-color: black;
+        }
 
         /************************************************************/
         /* Banner                                                   */
@@ -38,107 +38,126 @@ body {
             left: -15%;
             top: 10.5%;
         }
-	
+        
+
         /************************************************************/
         /* Side Navigation                                          */
         /************************************************************/
-	
-.leftSidenav {
-  width: 15%;
-  position: fixed;
-  z-index: 1;
-  left: 0;
-  overflow-x: hidden;
-  transition: 0.5s;
-  padding-top: 60px;
-  background-color: #222;
-}
-.leftSidenav .closebtn {
-  position: absolute;
-  top: 0;
-  right: 25px;
-  font-size: 36px;
-  margin-left: 50px;
-}
-.leftSidenav h3 {
-  padding: 8px 8px 8px 32px;
-  text-decoration: none;
-  font-size: 25px;
-  color: mediumpurple;
-  display: block;
-  transition: 0.3s;
-}
-.rightSidenav {
-  height: 100%;
-  width: 35%;
-  position: fixed;
-  z-index: 1;
-  top: 0;
-  right: -35%;
-  background-color: #111;
-  overflow-x: hidden;
-  transition: 0.5s;
-  padding-top: 60px;
-}
-.rightSidenav .closebtn {
-  position: absolute;
-  top: 0;
-  left: 25px;
-  font-size: 36px;
-  margin-right: 50px;
-}
-.rightSidenav h3 {
-  padding: 8px 8px 8px 32px;
-  text-decoration: none;
-  font-size: 25px;
-  color: #818181;
-  display: block;
-  transition: 0.3s;
-}
-.rightSidenav p {
-  padding: 8px 8px 8px 32px;
-  text-decoration: none;
-  font-size: 20px;
-  color: #818181;
-  display: block;
-  transition: 0.3s;
-}
- 
-.leftSidenav ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  width: 100%;
-  height: auto;
-  overflow: auto;
-}
-  
-.leftSidenav li {
-  border-bottom: 1px solid #555;
-}
-.leftSidenav li:last-child {
-  border-bottom: none;
-}
-  
-.leftSidenav li a {
-  display: block;
-  color: #4CAF50;
-	text-align: center;
-  padding: 8px 16px;
-  text-decoration: none;
-}
-.leftSidenav li a.active {
-  background-color: #4CAF50;
-  color: white;
-}
-.leftSidenav li a:hover:not(.active) {
-  background-color: #555;
-  color: white;
-}
-@media screen and (max-height: 450px) {
-  .sidenav {padding-top: 15px;}
-  .sidenav a {font-size: 18px;}
-}
+
+        .leftSidenav {
+            width: 15%;
+            height: 89.5%;
+
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            overflow-x: hidden;
+            transition: 0.5s;
+            padding-top: 60px;
+            background-color: #222;
+        }
+
+            .leftSidenav .closebtn {
+                position: absolute;
+                top: 0;
+                right: 25px;
+                margin-left: 50px;
+                font-size: 36px;
+            }
+
+            .leftSidenav h3 {
+                padding: 8px 8px 8px 32px;
+                display: block;
+                transition: 0.3s;
+                text-decoration: none;
+                text-align: center;
+                font-size: 25px;
+                color: mediumpurple;
+            }
+
+        .rightSidenav {
+            height: 100%;
+            width: 35%;
+            position: fixed;
+            z-index: 1;
+            top: 0;
+            right: -35%;
+            background-color: #111;
+            overflow-x: hidden;
+            transition: 0.5s;
+            padding-top: 60px;
+        }
+
+            .rightSidenav .closebtn {
+                position: absolute;
+                top: 0;
+                left: 25px;
+                font-size: 36px;
+                margin-right: 50px;
+            }
+
+            .rightSidenav h3 {
+                padding: 8px 8px 8px 32px;
+                text-decoration: none;
+                font-size: 25px;
+                color: #818181;
+                display: block;
+                transition: 0.3s;
+            }
+
+            .rightSidenav p {
+                padding: 8px 8px 8px 32px;
+                text-decoration: none;
+                font-size: 20px;
+                color: #818181;
+                display: block;
+                transition: 0.3s;
+            }
+
+        .leftSidenav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: auto;
+            overflow: auto;
+        }
+
+        .leftSidenav li {
+            border-bottom: 1px solid #555;
+        }
+
+            .leftSidenav li:last-child {
+                border-bottom: none;
+            }
+
+            .leftSidenav li a {
+                display: block;
+                color: #4CAF50;
+                padding: 8px 16px;
+                text-decoration: none;
+                text-align: center;
+            }
+
+                .leftSidenav li a.active {
+                    background-color: #4CAF50;
+                    color: white;
+                }
+
+                .leftSidenav li a:hover:not(.active) {
+                    background-color: #555;
+                    color: white;
+                }
+
+        @media screen and (max-height: 450px) {
+            .sidenav {
+                padding-top: 15px;
+            }
+
+                .sidenav a {
+                    font-size: 18px;
+                }
+        }
 
         /************************************************************/
         /* Main Content Region                                      */
@@ -151,7 +170,7 @@ body {
             left: 15.5%;
             top: 10.5%;
             bottom: 0;
-	    overflow: scroll;
+            overflow: scroll;
 
             border-width: 20px;
             border-style: solid;
@@ -163,351 +182,382 @@ body {
                 padding-left: 20px;
                 padding-right: 20px;
             }
-	
+
         /************************************************************/
         /* Radio Buttons                                            */
         /************************************************************/
-.radioButton {
-  display: block;
-  position: relative;
-  padding-left: 35px;
-  margin-bottom: 12px;
-  cursor: pointer;
-  font-size: 22px;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-}
-.radioButton input {
-  position: absolute;
-  opacity: 0;
-  cursor: pointer;
-  height: 0;
-  width: 0;
-}
-.checkmark {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 25px;
-  width: 25px;
-  background-color: #eee;
-  border-radius: 50%;
-}
-.radioButton:hover input ~ .checkmark {
-  background-color: #ccc;
-}
-.radioButton input:checked ~ .checkmark {
-  background-color: #4CAF50;
-}
-.checkmark:after {
-  content: "";
-  position: absolute;
-  display: none;
-}
-.radioButton input:checked ~ .checkmark:after {
-  display: block;
-}
-.radioButton .checkmark:after {
-  left: 9px;
-  top: 5px;
-  width: 5px;
-  height: 10px;
-  border: solid white;
-  border-width: 0 3px 3px 0;
-  -webkit-transform: rotate(45deg);
-  -ms-transform: rotate(45deg);
-  transform: rotate(45deg);
-}
-	
+
+        .radioButton {
+            display: block;
+            position: relative;
+            padding-left: 35px;
+            margin-bottom: 12px;
+            cursor: pointer;
+            font-size: 22px;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+
+            .radioButton input {
+                position: absolute;
+                opacity: 0;
+                cursor: pointer;
+                height: 0;
+                width: 0;
+            }
+
+        .checkmark {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 25px;
+            width: 25px;
+            background-color: #eee;
+            border-radius: 50%;
+        }
+
+        .radioButton:hover input ~ .checkmark {
+            background-color: #ccc;
+        }
+
+        .radioButton input:checked ~ .checkmark {
+            background-color: #4CAF50;
+        }
+
+        .checkmark:after {
+            content: "";
+            position: absolute;
+            display: none;
+        }
+
+        .radioButton input:checked ~ .checkmark:after {
+            display: block;
+        }
+
+        .radioButton .checkmark:after {
+            left: 9px;
+            top: 5px;
+            width: 5px;
+            height: 10px;
+            border: solid white;
+            border-width: 0 3px 3px 0;
+            -webkit-transform: rotate(45deg);
+            -ms-transform: rotate(45deg);
+            transform: rotate(45deg);
+        }
+        
         /************************************************************/
         /* Collapsible Content                                      */
         /************************************************************/
 
-.collapsible {
-  background-color: #A901DB;
-  color: white;
-  cursor: pointer;
-  padding: 18px;
-  width: 70%;
-  border: 1px solid #555;
-  text-align: left;
-  outline: none;
-  font-size: 15px;
-  margin-left: 10%;
-}
-.active, .collapsible:hover {
-  background-color: #4CAF50;
-}
-.content {
-  padding: 0 18px;
-  display: none;
-  width: 66%;
-  overflow: hidden;
-  background-color: #F6CEEC;
-  margin-left: 10.5%;
-}
-  
+        .collapsible {
+            background-color: #A901DB;
+            color: white;
+            cursor: pointer;
+            padding: 18px;
+            width: 70%;
+            border: 1px solid #555;
+            text-align: left;
+            outline: none;
+            font-size: 15px;
+            margin-left: 10%;
+        }
+
+            .active, .collapsible:hover {
+                background-color: #4CAF50;
+            }
+
+        .content {
+            padding: 0 18px;
+            display: none;
+            width: 66%;
+            overflow: hidden;
+            background-color: #F6CEEC;
+            margin-left: 10.5%;
+        }
+
         /************************************************************/
-        /* Collapsible Content                                      */
+        /* Buttons                                                  */
         /************************************************************/
 
-.confirm {
-  background-color: #4CAF50;
-  border: none;
-  color: white;
-  position: fixed;
-  bottom: 80%;
-  right: 5%;
-  padding: 20px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  margin: 4px 2px;
-  border-radius: 6px;
+        .confirm {
+            background-color: #4CAF50;
+            border: none;
+            color: white;
+            position: fixed;
+            bottom: 80%;
+            right: 5%;
+            padding: 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            border-radius: 6px;
             cursor:pointer;
-}
-.confirm:hover {
-  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
-}
-  
-.subclass {
-  display: inline-block;
-  padding: 10px;
-  font-size: 18px;
-  cursor: pointer;
-  text-align: center;
-  text-decoration: none;
-  outline: none;
-  color: #fff;
-  background-color: #4CAF50;
-  border: none;
-  border-radius: 10px;
-  box-shadow: 0 2px #999;
-}
-.subclass:hover {background-color: #3e8e41}
-.subclass:active {
-  background-color: #3e8e41;
-  box-shadow: 0 1px #666;
-  transform: translateY(1px);
-}
-  
-</style>
+        }
+
+            .confirm:hover {
+                box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+            }
+
+        .subclass {
+            display: inline-block;
+            padding: 10px;
+            font-size: 18px;
+            cursor: pointer;
+            text-align: center;
+            text-decoration: none;
+            outline: none;
+            color: #fff;
+            background-color: #4CAF50;
+            border: none;
+            border-radius: 10px;
+            box-shadow: 0 2px #999;
+        }
+
+            .subclass:hover {
+                background-color: #3e8e41
+            }
+
+            .subclass:active {
+                background-color: #3e8e41;
+                box-shadow: 0 1px #666;
+                transform: translateY(1px);
+            }
+
+    </style>
 </head>
 
-	<body>
+<body>
 
     <!-- BANNER -->
     <div id="banner">
         <h2>Dungeons & Dragons Character Creator</h2>
     </div>
 
-	<!-- CONTENT WRAPPER -->
-	<div class="wrapper">
-		
-<div id="leftSidenav" class="leftSidenav">
-  <a href="javascript:void(0)" class="closebtn" onclick="closeLeftNav()">&#8592;</a>
-  <h3> DnD Character Creator </h3>
-  <ul>
-	<li><a href="starting_page.html" onclick="closeLeftNav()">HOME</a></li>
-    <li><a class="active" href="race_select.html" onclick="closeLeftNav()">RACE</a></li>
-    <li><a href="class_selector.html" onclick="closeLeftNav()">CLASS</a></li>
-    <li><a href="background_select.html" onclick="closeLeftNav()">BACKGROUND</a></li>
-	<li><a href="Ability_Scores.html" onclick="closeLeftNav()">ABILITY SCORES</a></li>
-    <li><a href="Spells.html" onclick="closeLeftNav()">SPELLS</a></li>
-    <li><a href="Equipment.html" onclick="closeLeftNav()">EQUIPMENT</a></li>
-    <li><a href="Proficiencies.html" onclick="closeLeftNav()">SKILLS</a></li>
-    <li><a href="proto_CharacterSheetGuide.html" onclick="closeLeftNav()">CHARACTER SHEET GUIDE</a></li>
-    <li><a href="support_page.html" onclick="closeLeftNav()">SUPPORT</a></li>
-  </ul>
-  <a href="Character Sheet - Alternative - Print Version.pdf" target = "_blank">
-    <button class="subclass">Download a blank character sheet here!</button>
-  </a>
-</div>
+    <!-- CONTENT WRAPPER -->
+    <div class="wrapper">
 
-<div id="rightSidenav" class="rightSidenav">
-  <a href="javascript:void(0)" class="closebtn" onclick="closeRightNav()">&#8594;</a>
-  <h3 id="rightNav_h3">No Race Selected</h3>
-  <p id="rightNav_p" buffer="2em">Please select a class by clicking on the name and checking the box in the description. (only "Elf" is implemented)</p>
-</div>
+        <!-- SIDE NAVIGATIAON MENUS -->
+        <div id="leftSidenav" class="leftSidenav">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeLeftNav()">&#8592;</a>
+            <h3> Navigation Menu </h3>
+            <ul>
+                <li><a href="starting_page.html" onclick="closeLeftNav()">HOME</a></li>
+                <li><a class="active" href="race_select.html" onclick="closeLeftNav()">RACE</a></li>
+                <li><a href="class_selector.html" onclick="closeLeftNav()">CLASS</a></li>
+                <li><a href="background_select.html" onclick="closeLeftNav()">BACKGROUND</a></li>
+                <li><a href="Ability_Scores.html" onclick="closeLeftNav()">ABILITY SCORES</a></li>
+                <li><a href="Spells.html" onclick="closeLeftNav()">SPELLS</a></li>
+                <li><a href="Equipment.html" onclick="closeLeftNav()">EQUIPMENT</a></li>
+                <li><a href="Proficiencies.html" onclick="closeLeftNav()">SKILLS</a></li>
+                <li><a href="proto_CharacterSheetGuide.html" onclick="closeLeftNav()">CHARACTER SHEET GUIDE</a></li>
+                <li><a href="support_page.html" onclick="closeLeftNav()">SUPPORT</a></li>
+            </ul>
+            <br />
+            <br />
+            <br />
+            <br />
+            <a href="Character Sheet - Alternative - Print Version.pdf" target="_blank">
+                <button class="subclass">Download a blank character sheet here!</button>
+            </a>
+        </div>
 
-		<!-- MAIN CONTENT -->
-		<div class="main">
-			
-<span style="font-size:30px;cursor:pointer" onclick="openLeftNav()">
-  <img src="Images/MenuIcon.jpg"    alt="Menu Icon" width="50" height="50" style=padding-left:10px;>
-</span>
+        <div id="rightSidenav" class="rightSidenav">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeRightNav()">&#8594;</a>
+            <h3 id="rightNav_h3">No Race Selected</h3>
+            <p id="rightNav_p" buffer="2em">Please select a class by clicking on the name and checking the box in the description. (only "Elf" is implemented)</p>
+        </div>
 
 
-<h2 style="margin-left: 10%">Select a Race</h2>
+        <!-- MAIN CONTENT -->
+        <div class="main">
 
-<div align="right"onclick="confirmClass();">
-  <button type="button" class="confirm" id="conButton">CONFIRM CHOICE &raquo;</button>
-</div>
+            <span style="font-size:30px;cursor:pointer" onclick="openLeftNav()">
+                <img src="Images/MenuIcon.jpg" alt="Menu Icon" width="50" height="50" style=padding-left:10px;>
+            </span>
 
-<button type="button" class="collapsible"><strong>Dragonborn</strong></button>
-<div class="content">
-  <p>A Humanoid race of dragon-like beings.<br />+2 Strength<br />+1 Charsima</p>
-  <label class="radioButton">Select Race
-    <input type="radio" name="class" id="radio0" onclick="closeRightNav(); closeLeftNav();">
-    <span class="checkmark"></span>
-  </label>
-</div>
-<button type="button" class="collapsible"><strong>Dwarf</strong></button>
-<div class="content">
-  <p>A hardy race of people that are known for their strength and bravado.<br />+2 Constitution</p>
-  <label class="radioButton">Select Race
-    <input type="radio" name="class" id="radio1" onclick="closeRightNav(); closeLeftNav();">
-    <span class="checkmark"></span>
-  </label>
-</div>
-<button type="button" class="collapsible"><strong>Elf</strong></button>
-<div class="content">
-  <p>A magical race that personifies beauty and grace.<br />+2 Dexterity</p>
-  <label class="radioButton">Select Race
-    <input type="radio" name="class" id="radio2" onclick="closeRightNav(); closeLeftNav();">
-    <span class="checkmark"></span>
-  </label>
-</div>
-<button type="button" class="collapsible"><strong>Gnome</strong></button>
-<div class="content">
-  <p>A highly energetic and out-going race of people.<br />+2 Intelligence</p>
-  <label class="radioButton">Select Race
-    <input type="radio" name="class" id="radio3" onclick="closeRightNav(); closeLeftNav();">
-    <span class="checkmark"></span>
-  </label>
-</div>
-<button type="button" class="collapsible"><strong>Half-Elf</strong></button>
-<div class="content">
-  <p>A race resulting from a mix of human and elf lineage.<br />+2 Charisma<br />+1 to two other abilities</p>
-  <label class="radioButton">Select Race
-    <input type="radio" name="class" id="radio4" onclick="closeRightNav(); closeLeftNav();">
-    <span class="checkmark"></span>
-  </label>
-</div>
-<button type="button" class="collapsible"><strong>Halfling</strong></button>
-<div class="content">
-  <p>A race that tends to be very friendly and easy-going.<br />+2 Dexterity</p>
-  <label class="radioButton">Select Race
-    <input type="radio" name="class" id="radio5" onclick="closeRightNav(); closeLeftNav();">
-    <span class="checkmark"></span>
-  </label>
-</div>
-<button type="button" class="collapsible"><strong>Half-Orc</strong></button>
-<div class="content">
-  <p>A race resulting from a mix between Humans and Orcs.<br />+2 Strength<br />+1 Constitution</p>
-  <label class="radioButton">Select Race
-    <input type="radio" name="class" id="radio6" onclick="closeRightNav(); closeLeftNav();">
-    <span class="checkmark"></span>
-  </label>
-</div>
-<button type="button" class="collapsible"><strong>Human</strong></button>
-<div class="content">
-  <p>The most adaptable of all the races.<br />+1 to all ability scores</p>
-  <label class="radioButton">Select Race
-    <input type="radio" name="class" id="radio7" onclick="closeRightNav(); closeLeftNav();">
-    <span class="checkmark"></span>
-  </label>
-</div>
-<button type="button" class="collapsible"><strong>Tiefling</strong></button>
-<div class="content">
-  <p>A race of beings of demonic descent, though not necessarily evil themselves.<br />+2 Charisma<br />+1 Intelligence</p>
-  <label class="radioButton">Select Race
-    <input type="radio" name="class" id="radio8" onclick="closeRightNav(); closeLeftNav();">
-    <span class="checkmark"></span>
-  </label>
-</div>
-		</div>
-		</div>
-		
 
-<script>
-var coll = document.getElementsByClassName("collapsible");
-var races = ["Dragonborn", "Dwarf", "Elf", "Gnome", "Half-Elf", "Halfling", "Half-Orc", "Human", "Teifling"];
-var subraces = new Array(9);
-subraces[2] = ["High Elf", "Wood Elf", "Drow"];
-var i;
-for (i = 0; i < coll.length; i++) {
-  coll[i].addEventListener("click", function() {
-    var content = this.nextElementSibling;
-    if (content.style.display === "block") {
-      this.classList.toggle("active");
-      content.style.display = "none";
-    } else {
-      resetCollapsibles();
-      this.classList.toggle("active");
-      content.style.display = "block";
-    }
-  });
-}
-function resetCollapsibles() {
-  var k;
-  var radioBut = document.getElementsByClassName("radioButton");
-  for(k = 0; k < radioBut.length; k++) {
-    var content = coll[k].nextElementSibling;
-    var prefix = "radio";
-    var curRadio = document.getElementById(prefix.concat(k));
-    if(!curRadio.checked && content.style.display === "block") {
-      coll[k].classList.toggle("active");
-      content.style.display = "none";
-    }
-  }
-}
-function confirmClass() {
-  var i;
-  var prefix = "radio";
-  var activeRadio = null;
-  var curRadio;
-  var radioBut = document.getElementsByClassName("radioButton");
-  
-  closeLeftNav();
-  resetCollapsibles();
-  
-  for (i = 0; i < radioBut.length && activeRadio === null; i++) {
-    curRadio = document.getElementById(prefix.concat(i));
-    if(curRadio.checked) {
-      activeRadio = curRadio;
-    }
-  } //ends for loop
-  
-  if(activeRadio != null && activeRadio.id === "radio2") {
-    document.getElementById("rightNav_h3").innerHTML = "Elf";
-    document.getElementById("rightNav_p").innerHTML = "Please select a sub-race:<br/><br/><button class=\"subclass\" onclick=\"confirmSubclass(2, 0)\">High Elf &raquo;</button> +1 Intelligence<br/>You know one cantrip of your choice from the Wizard spell list<br/><br/><button class=\"subclass\" onclick=\"confirmSubclass(2, 1)\">Wood Elf &raquo;</button> +1 Wisdom<br/>Increase your base walkking speed by 5 feet.<br/><br/><button class=\"subclass\" onclick=\"confirmSubclass(2, 2)\">Dark Elf &raquo;</button> +1 Charisma<br/>You know the dancing lights cantrip<br/><br/><br/><br/>";
-  }
-  else {
-    document.getElementById("rightNav_h3").innerHTML = "No Race Selected";
-    document.getElementById("rightNav_p").innerHTML = "Please select a race by clicking on the name and checking the box in the description. (only \"Elf\" is implemented)";
-    
-  }
-  openRightNav();
-} //ends confirmClass
-  
-function confirmSubclass(thing ,thing2) {
-  if (thing2 === 0){
-    var msg = "You have selected a " + races[thing] + " (" + subraces[thing][thing2] + "). Would you like to save this choice?";
-    if(confirm(msg)) {
-      document.location.href = "class_selector.html";
-    }
-  }
-  else {
-    alert("Please select High Elf");
-  }
-}
-function openLeftNav() {
-  document.getElementById("leftSidenav").style.left = "0";
-}
-function closeLeftNav() {
-  document.getElementById("leftSidenav").style.left = "-15%";
-}
-function openRightNav() {
-  document.getElementById("rightSidenav").style.right = "0";
-}
-function closeRightNav() {
-  document.getElementById("rightSidenav").style.right = "-35%";
-}
-</script>
+            <h2 style="margin-left: 10%">Select a Race</h2>
+
+            <div  align="right" onclick="confirmClass();">
+                <button type="button" class="confirm" id="conButton">CONFIRM CHOICE &raquo;</button>
+            </div>
+
+            <button type="button" class="collapsible"><strong>Dragonborn</strong></button>
+            <div class="content">
+                <p>A Humanoid race of dragon-like beings.<br />+2 Strength<br />+1 Charsima</p>
+                <label class="radioButton">
+                    Select Race
+                    <input type="radio" name="class" id="radio0" onclick="closeRightNav(); closeLeftNav();">
+                    <span class="checkmark"></span>
+                </label>
+            </div>
+            <button type="button" class="collapsible"><strong>Dwarf</strong></button>
+            <div class="content">
+                <p>A hardy race of people that are known for their strength and bravado.<br />+2 Constitution</p>
+                <label class="radioButton">
+                    Select Race
+                    <input type="radio" name="class" id="radio1" onclick="closeRightNav(); closeLeftNav();">
+                    <span class="checkmark"></span>
+                </label>
+            </div>
+            <button type="button" class="collapsible"><strong>Elf</strong></button>
+            <div class="content">
+                <p>A magical race that personifies beauty and grace.<br />+2 Dexterity</p>
+                <label class="radioButton">
+                    Select Race
+                    <input type="radio" name="class" id="radio2" onclick="closeRightNav(); closeLeftNav();">
+                    <span class="checkmark"></span>
+                </label>
+            </div>
+            <button type="button" class="collapsible"><strong>Gnome</strong></button>
+            <div class="content">
+                <p>A highly energetic and out-going race of people.<br />+2 Intelligence</p>
+                <label class="radioButton">
+                    Select Race
+                    <input type="radio" name="class" id="radio3" onclick="closeRightNav(); closeLeftNav();">
+                    <span class="checkmark"></span>
+                </label>
+            </div>
+            <button type="button" class="collapsible"><strong>Half-Elf</strong></button>
+            <div class="content">
+                <p>A race resulting from a mix of human and elf lineage.<br />+2 Charisma<br />+1 to two other abilities</p>
+                <label class="radioButton">
+                    Select Race
+                    <input type="radio" name="class" id="radio4" onclick="closeRightNav(); closeLeftNav();">
+                    <span class="checkmark"></span>
+                </label>
+            </div>
+            <button type="button" class="collapsible"><strong>Halfling</strong></button>
+            <div class="content">
+                <p>A race that tends to be very friendly and easy-going.<br />+2 Dexterity</p>
+                <label class="radioButton">
+                    Select Race
+                    <input type="radio" name="class" id="radio5" onclick="closeRightNav(); closeLeftNav();">
+                    <span class="checkmark"></span>
+                </label>
+            </div>
+            <button type="button" class="collapsible"><strong>Half-Orc</strong></button>
+            <div class="content">
+                <p>A race resulting from a mix between Humans and Orcs.<br />+2 Strength<br />+1 Constitution</p>
+                <label class="radioButton">
+                    Select Race
+                    <input type="radio" name="class" id="radio6" onclick="closeRightNav(); closeLeftNav();">
+                    <span class="checkmark"></span>
+                </label>
+            </div>
+            <button type="button" class="collapsible"><strong>Human</strong></button>
+            <div class="content">
+                <p>The most adaptable of all the races.<br />+1 to all ability scores</p>
+                <label class="radioButton">
+                    Select Race
+                    <input type="radio" name="class" id="radio7" onclick="closeRightNav(); closeLeftNav();">
+                    <span class="checkmark"></span>
+                </label>
+            </div>
+            <button type="button" class="collapsible"><strong>Tiefling</strong></button>
+            <div class="content">
+                <p>A race of beings of demonic descent, though not necessarily evil themselves.<br />+2 Charisma<br />+1 Intelligence</p>
+                <label class="radioButton">
+                    Select Race
+                    <input type="radio" name="class" id="radio8" onclick="closeRightNav(); closeLeftNav();">
+                    <span class="checkmark"></span>
+                </label>
+            </div>
+
+        </div>
+
+    </div>
+
+    <script>
+        var coll = document.getElementsByClassName("collapsible");
+        var races = ["Dragonborn", "Dwarf", "Elf", "Gnome", "Half-Elf", "Halfling", "Half-Orc", "Human", "Teifling"];
+        var subraces = new Array(9);
+        subraces[2] = ["High Elf", "Wood Elf", "Drow"];
+        var i;
+        for (i = 0; i < coll.length; i++) {
+        coll[i].addEventListener("click", function() {
+        var content = this.nextElementSibling;
+        if (content.style.display === "block") {
+        this.classList.toggle("active");
+        content.style.display = "none";
+        } else {
+        resetCollapsibles();
+        this.classList.toggle("active");
+        content.style.display = "block";
+        }
+        });
+        }
+        function resetCollapsibles() {
+        var k;
+        var radioBut = document.getElementsByClassName("radioButton");
+        for(k = 0; k < radioBut.length; k++) {
+        var content = coll[k].nextElementSibling;
+        var prefix = "radio";
+        var curRadio = document.getElementById(prefix.concat(k));
+        if(!curRadio.checked && content.style.display === "block") {
+        coll[k].classList.toggle("active");
+        content.style.display = "none";
+        }
+        }
+        }
+        function confirmClass() {
+        var i;
+        var prefix = "radio";
+        var activeRadio = null;
+        var curRadio;
+        var radioBut = document.getElementsByClassName("radioButton");
+
+        closeLeftNav();
+        resetCollapsibles();
+
+        for (i = 0; i < radioBut.length && activeRadio === null; i++) {
+        curRadio = document.getElementById(prefix.concat(i));
+        if(curRadio.checked) {
+        activeRadio = curRadio;
+        }
+        } //ends for loop
+
+        if(activeRadio != null && activeRadio.id === "radio2") {
+        document.getElementById("rightNav_h3").innerHTML = "Elf";
+        document.getElementById("rightNav_p").innerHTML = "Please select a sub-race:<br/><br/><button class=\"subclass\" onclick=\"confirmSubclass(2, 0)\">High Elf &raquo;</button> +1 Intelligence<br/>You know one cantrip of your choice from the Wizard spell list<br/><br/><button class=\"subclass\" onclick=\"confirmSubclass(2, 1)\">Wood Elf &raquo;</button> +1 Wisdom<br/>Increase your base walkking speed by 5 feet.<br/><br/><button class=\"subclass\" onclick=\"confirmSubclass(2, 2)\">Dark Elf &raquo;</button> +1 Charisma<br/>You know the dancing lights cantrip<br/><br/><br/><br/>";
+        }
+        else {
+        document.getElementById("rightNav_h3").innerHTML = "No Race Selected";
+        document.getElementById("rightNav_p").innerHTML = "Please select a race by clicking on the name and checking the box in the description. (only \"Elf\" is implemented)";
+
+        }
+        openRightNav();
+        } //ends confirmClass
+
+        function confirmSubclass(thing ,thing2) {
+        if (thing2 === 0){
+        var msg = "You have selected a " + races[thing] + " (" + subraces[thing][thing2] + "). Would you like to save this choice?";
+        if(confirm(msg)) {
+        document.location.href = "class_selector.html";
+        }
+        }
+        else {
+        alert("Please select High Elf");
+        }
+        }
+        function openLeftNav() {
+        document.getElementById("leftSidenav").style.left = "0";
+        }
+        function closeLeftNav() {
+        document.getElementById("leftSidenav").style.left = "-15%";
+        }
+        function openRightNav() {
+        document.getElementById("rightSidenav").style.right = "0";
+        }
+        function closeRightNav() {
+        document.getElementById("rightSidenav").style.right = "-35%";
+        }
+    </script>
 
 </body>
 </html>
