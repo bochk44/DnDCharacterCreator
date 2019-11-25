@@ -343,19 +343,18 @@
 
         <!-- SIDE NAVIGATIAON MENUS -->
         <div id="leftSidenav" class="leftSidenav">
-            <a href="javascript:void(0)" class="closebtn" onclick="closeLeftNav()">&#8592;</a>
             <h3> Navigation Menu </h3>
             <ul>
-                <li><a href="starting_page.html" onclick="closeLeftNav()">HOME</a></li>
-                <li><a class="active" href="race_select.html" onclick="closeLeftNav()">RACE</a></li>
-                <li><a href="class_selector.html" onclick="closeLeftNav()">CLASS</a></li>
-                <li><a href="background_select.html" onclick="closeLeftNav()">BACKGROUND</a></li>
-                <li><a href="Ability_Scores.html" onclick="closeLeftNav()">ABILITY SCORES</a></li>
-                <li><a href="Spells.html" onclick="closeLeftNav()">SPELLS</a></li>
-                <li><a href="Equipment.html" onclick="closeLeftNav()">EQUIPMENT</a></li>
-                <li><a href="Proficiencies.html" onclick="closeLeftNav()">SKILLS</a></li>
-                <li><a href="proto_CharacterSheetGuide.html" onclick="closeLeftNav()">CHARACTER SHEET GUIDE</a></li>
-                <li><a href="support_page.html" onclick="closeLeftNav()">SUPPORT</a></li>
+                <li><a href="starting_page.html">HOME</a></li>
+                <li><a class="active" onclick="closeRightNav()">RACE</a></li>
+                <li><a href="class_selector.html">CLASS</a></li>
+                <li><a href="background_select.html">BACKGROUND</a></li>
+                <li><a href="Ability_Scores.html">ABILITY SCORES</a></li>
+                <li><a href="Spells.html">SPELLS</a></li>
+                <li><a href="Equipment.html">EQUIPMENT</a></li>
+                <li><a href="Proficiencies.html">SKILLS</a></li>
+                <li><a href="proto_CharacterSheetGuide.html">CHARACTER SHEET GUIDE</a></li>
+                <li><a href="support_page.html">SUPPORT</a></li>
             </ul>
             <br />
             <br />
@@ -369,17 +368,12 @@
         <div id="rightSidenav" class="rightSidenav">
             <a href="javascript:void(0)" class="closebtn" onclick="closeRightNav()">&#8594;</a>
             <h3 id="rightNav_h3">No Race Selected</h3>
-            <p id="rightNav_p" buffer="2em">Please select a class by clicking on the name and checking the box in the description. (only "Elf" is implemented)</p>
+            <p id="rightNav_p" buffer="2em">Please select a race by clicking on the name and checking the box in the description. (only "Elf" is implemented)</p>
         </div>
 
 
         <!-- MAIN CONTENT -->
         <div class="main">
-
-            <span style="font-size:30px;cursor:pointer" onclick="openLeftNav()">
-                <img src="Images/MenuIcon.jpg" alt="Menu Icon" width="50" height="50" style=padding-left:10px;>
-            </span>
-
 
             <h2 style="margin-left: 10%">Select a Race</h2>
 
@@ -392,7 +386,7 @@
                 <p>A Humanoid race of dragon-like beings.<br />+2 Strength<br />+1 Charsima</p>
                 <label class="radioButton">
                     Select Race
-                    <input type="radio" name="class" id="radio0" onclick="closeRightNav(); closeLeftNav();">
+                    <input type="radio" name="class" id="radio0" onclick="closeRightNav();">
                     <span class="checkmark"></span>
                 </label>
             </div>
@@ -401,7 +395,7 @@
                 <p>A hardy race of people that are known for their strength and bravado.<br />+2 Constitution</p>
                 <label class="radioButton">
                     Select Race
-                    <input type="radio" name="class" id="radio1" onclick="closeRightNav(); closeLeftNav();">
+                    <input type="radio" name="class" id="radio1" onclick="closeRightNav();">
                     <span class="checkmark"></span>
                 </label>
             </div>
@@ -410,7 +404,7 @@
                 <p>A magical race that personifies beauty and grace.<br />+2 Dexterity</p>
                 <label class="radioButton">
                     Select Race
-                    <input type="radio" name="class" id="radio2" onclick="closeRightNav(); closeLeftNav();">
+                    <input type="radio" name="class" id="radio2" onclick="closeRightNav();">
                     <span class="checkmark"></span>
                 </label>
             </div>
@@ -419,7 +413,7 @@
                 <p>A highly energetic and out-going race of people.<br />+2 Intelligence</p>
                 <label class="radioButton">
                     Select Race
-                    <input type="radio" name="class" id="radio3" onclick="closeRightNav(); closeLeftNav();">
+                    <input type="radio" name="class" id="radio3" onclick="closeRightNav();">
                     <span class="checkmark"></span>
                 </label>
             </div>
@@ -428,7 +422,7 @@
                 <p>A race resulting from a mix of human and elf lineage.<br />+2 Charisma<br />+1 to two other abilities</p>
                 <label class="radioButton">
                     Select Race
-                    <input type="radio" name="class" id="radio4" onclick="closeRightNav(); closeLeftNav();">
+                    <input type="radio" name="class" id="radio4" onclick="closeRightNav();">
                     <span class="checkmark"></span>
                 </label>
             </div>
@@ -437,7 +431,7 @@
                 <p>A race that tends to be very friendly and easy-going.<br />+2 Dexterity</p>
                 <label class="radioButton">
                     Select Race
-                    <input type="radio" name="class" id="radio5" onclick="closeRightNav(); closeLeftNav();">
+                    <input type="radio" name="class" id="radio5" onclick="closeRightNav();">
                     <span class="checkmark"></span>
                 </label>
             </div>
@@ -446,7 +440,7 @@
                 <p>A race resulting from a mix between Humans and Orcs.<br />+2 Strength<br />+1 Constitution</p>
                 <label class="radioButton">
                     Select Race
-                    <input type="radio" name="class" id="radio6" onclick="closeRightNav(); closeLeftNav();">
+                    <input type="radio" name="class" id="radio6" onclick="closeRightNav();">
                     <span class="checkmark"></span>
                 </label>
             </div>
@@ -455,7 +449,7 @@
                 <p>The most adaptable of all the races.<br />+1 to all ability scores</p>
                 <label class="radioButton">
                     Select Race
-                    <input type="radio" name="class" id="radio7" onclick="closeRightNav(); closeLeftNav();">
+                    <input type="radio" name="class" id="radio7" onclick="closeRightNav();">
                     <span class="checkmark"></span>
                 </label>
             </div>
@@ -464,7 +458,7 @@
                 <p>A race of beings of demonic descent, though not necessarily evil themselves.<br />+2 Charisma<br />+1 Intelligence</p>
                 <label class="radioButton">
                     Select Race
-                    <input type="radio" name="class" id="radio8" onclick="closeRightNav(); closeLeftNav();">
+                    <input type="radio" name="class" id="radio8" onclick="closeRightNav();">
                     <span class="checkmark"></span>
                 </label>
             </div>
@@ -512,7 +506,6 @@
         var curRadio;
         var radioBut = document.getElementsByClassName("radioButton");
 
-        closeLeftNav();
         resetCollapsibles();
 
         for (i = 0; i < radioBut.length && activeRadio === null; i++) {
@@ -544,12 +537,6 @@
         else {
         alert("Please select High Elf");
         }
-        }
-        function openLeftNav() {
-        document.getElementById("leftSidenav").style.left = "0";
-        }
-        function closeLeftNav() {
-        document.getElementById("leftSidenav").style.left = "-15%";
         }
         function openRightNav() {
         document.getElementById("rightSidenav").style.right = "0";
