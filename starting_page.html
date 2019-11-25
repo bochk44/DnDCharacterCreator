@@ -418,7 +418,7 @@
 
                 <div class="container" style="background-color:#f1f1f1">
                     <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
-                    <span class="psw">Forgot <a href="#">password?</a></span>
+                    <span class="psw"><a onclick="forgotPswrd()">Forgot password?</a></span>
                 </div>
             </form>
         </div>
@@ -454,7 +454,6 @@
 
                 <div class="container" style="background-color:#f1f1f1">
                     <button type="button" onclick="closeSignup()" class="cancelbtn">Cancel</button>
-                    <span class="psw">Forgot <a href="#">password?</a></span>
                 </div>
             </form>
         </div>
@@ -500,6 +499,22 @@
         document.getElementById("signBtn").innerHTML = "Signed Up";
         document.getElementById("signBtn").onclick = "";
 
+        }
+        
+        function forgotPswrd() {
+          var email = prompt("Please enter your email below to recover your password", "your_email@email.com");
+          var loca1 = email.indexOf("@");
+          var loca2 = email.lastIndexOf(".");
+          while (email != null && email != "your_email@email.com" && (email === "" || loca1 < 1 || loca2 < 3 || loca1 >= loca2-1)) {
+            alert("Please enter a valid email address.");
+            email = prompt("Please enter your email below to recover your password", "your_email@email.com");
+            loca1 = email.indexOf("@");
+            loca2 = email.lastIndexOf(".");
+          }
+          if(email != null) {
+            alert("Thank you, an email has been sent to " + email);   
+          }
+          
         }
 
     </script>
