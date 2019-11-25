@@ -334,19 +334,18 @@
 
         <!-- SIDE NAVIGATIAON MENUS -->
         <div id="leftSidenav" class="leftSidenav">
-            <a href="javascript:void(0)" class="closebtn" onclick="closeLeftNav()">&#8592;</a>
             <h3> Navigation Menu </h3>
             <ul>
-                <li><a class="active" href="starting_page.html" onclick="closeLeftNav()">HOME</a></li>
-                <li><a href="race_select.html" onclick="closeLeftNav()">RACE</a></li>
-                <li><a href="class_selector.html" onclick="closeLeftNav()">CLASS</a></li>
-                <li><a href="background_select.html" onclick="closeLeftNav()">BACKGROUND</a></li>
-                <li><a href="Ability_Scores.html" onclick="closeLeftNav()">ABILITY SCORES</a></li>
-                <li><a href="Spells.html" onclick="closeLeftNav()">SPELLS</a></li>
-                <li><a href="Equipment.html" onclick="closeLeftNav()">EQUIPMENT</a></li>
-                <li><a href="Proficiencies.html" onclick="closeLeftNav()">SKILLS</a></li>
-                <li><a href="proto_CharacterSheetGuide.html" onclick="closeLeftNav()">CHARACTER SHEET GUIDE</a></li>
-                <li><a href="support_page.html" onclick="closeLeftNav()">SUPPORT</a></li>
+                <li><a class="active">HOME</a></li>
+                <li><a href="race_select.html">RACE</a></li>
+                <li><a href="class_selector.html">CLASS</a></li>
+                <li><a href="background_select.html">BACKGROUND</a></li>
+                <li><a href="Ability_Scores.html">ABILITY SCORES</a></li>
+                <li><a href="Spells.html">SPELLS</a></li>
+                <li><a href="Equipment.html">EQUIPMENT</a></li>
+                <li><a href="Proficiencies.html">SKILLS</a></li>
+                <li><a href="proto_CharacterSheetGuide.html">CHARACTER SHEET GUIDE</a></li>
+                <li><a href="support_page.html">SUPPORT</a></li>
             </ul>
             <br />
             <br />
@@ -358,10 +357,6 @@
         </div>
 
         <div class="main">
-
-            <span style="font-size:30px;cursor:pointer" onclick="openLeftNav()">
-                <img src="Images/MenuIcon.jpg" alt="Menu Icon" width="50" height="50" style=padding-left:10px;>
-            </span>
 
             <button id="rightBtn" onclick="document.getElementById('id01').style.display='block'" class="rightBtn" style="width:auto; right: 15%;">Login</button>
             <button id="signBtn" onclick="document.getElementById('id02').style.display='block'" class="rightBtn" style="width:auto;">Sign Up</button>
@@ -494,14 +489,6 @@
 
         }
 
-
-
-        function openLeftNav() {
-        document.getElementById("leftSidenav").style.left = "0";
-        }
-        function closeLeftNav() {
-        document.getElementById("leftSidenav").style.left = "-15%";
-        }
     </script>
 </body>
 </html>
