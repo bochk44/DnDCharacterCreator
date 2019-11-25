@@ -126,19 +126,18 @@ textarea {
 <body>
   
 <div id="leftSidenav" class="leftSidenav">
-  <a href="javascript:void(0)" class="closebtn" onclick="closeLeftNav()">&#8592;</a>
   <h3> DnD Character Creator </h3>
   <ul>
-	<li><a href="starting_page.html" onclick="closeLeftNav()">HOME</a></li>
-    <li><a href="race_select.html" onclick="closeLeftNav()">RACE</a></li>
-    <li><a href="class_selector.html" onclick="closeLeftNav()">CLASS</a></li>
-    <li><a href="background_select.html" onclick="closeLeftNav()">BACKGROUND</a></li>
-	<li><a href="Ability_Scores.html" onclick="closeLeftNav()">ABILITY SCORES</a></li>
-    <li><a href="Spells.html" onclick="closeLeftNav()">SPELLS</a></li>
-    <li><a href="Equipment.html" onclick="closeLeftNav()">EQUIPMENT</a></li>
-    <li><a href="Proficiencies.html" onclick="closeLeftNav()">SKILLS</a></li>
-    <li><a href="proto_CharacterSheetGuide.html" onclick="closeLeftNav()">CHARACTER SHEET GUIDE</a></li>
-    <li><a class = "active" href="support_page.html" onclick="closeLeftNav()">SUPPORT</a></li>
+	<li><a href="starting_page.html">HOME</a></li>
+    <li><a href="race_select.html">RACE</a></li>
+    <li><a href="class_selector.html">CLASS</a></li>
+    <li><a href="background_select.html">BACKGROUND</a></li>
+	<li><a href="Ability_Scores.html">ABILITY SCORES</a></li>
+    <li><a href="Spells.html">SPELLS</a></li>
+    <li><a href="Equipment.html">EQUIPMENT</a></li>
+    <li><a href="Proficiencies.html">SKILLS</a></li>
+    <li><a href="proto_CharacterSheetGuide.html">CHARACTER SHEET GUIDE</a></li>
+    <li><a class = "active">SUPPORT</a></li>
   </ul>
   <br/>
   <br/>
@@ -149,10 +148,6 @@ textarea {
   </a>
 </div>
 
-  
-<span style="font-size:30px;cursor:pointer" onclick="openLeftNav()">
-  <img src="Images/MenuIcon.jpg"    alt="Menu Icon" width="50" height="50" style=padding-left:10px;>
-</span>
 <h2> Support</h2>
 <p>Thank you for using our website! If you have any comments, questions, or concerns please fill ot the form below.</p>
 
@@ -184,12 +179,7 @@ function intakeInfo() {
     document.getElementById("emailForm").innerHTML = "Thanks for your feedback " + name + ", we truly appreciate it and we'll get back to you as soon as possible!";
   }
 }
-function openLeftNav() {
-  document.getElementById("leftSidenav").style.width = "30%";
-}
-function closeLeftNav() {
-  document.getElementById("leftSidenav").style.width = "0";
-}
+	
 </script>
    
 </body>
