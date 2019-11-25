@@ -341,19 +341,18 @@
 
         <!-- SIDE NAVIGATIAON MENUS -->
         <div id="leftSidenav" class="leftSidenav">
-            <a href="javascript:void(0)" class="closebtn" onclick="closeLeftNav()">&#8592;</a>
             <h3> Navigation Menu </h3>
             <ul>
-                <li><a href="starting_page.html" onclick="closeLeftNav()">HOME</a></li>
-                <li><a href="race_select.html" onclick="closeLeftNav()">RACE</a></li>
-                <li><a href="class_selector.html" onclick="closeLeftNav()">CLASS</a></li>
-                <li><a href="background_select.html" onclick="closeLeftNav()">BACKGROUND</a></li>
-                <li><a href="Ability_Scores.html" onclick="closeLeftNav()">ABILITY SCORES</a></li>
-                <li><a class="active" href="Spells.html" onclick="closeLeftNav()">SPELLS</a></li>
-                <li><a href="Equipment.html" onclick="closeLeftNav()">EQUIPMENT</a></li>
-                <li><a href="Proficiencies.html" onclick="closeLeftNav()">SKILLS</a></li>
-                <li><a href="proto_CharacterSheetGuide.html" onclick="closeLeftNav()">CHARACTER SHEET GUIDE</a></li>
-                <li><a href="support_page.html" onclick="closeLeftNav()">SUPPORT</a></li>
+                <li><a href="starting_page.html">HOME</a></li>
+                <li><a href="race_select.html">RACE</a></li>
+                <li><a href="class_selector.html">CLASS</a></li>
+                <li><a href="background_select.html">BACKGROUND</a></li>
+                <li><a href="Ability_Scores.html">ABILITY SCORES</a></li>
+                <li><a class="active">SPELLS</a></li>
+                <li><a href="Equipment.html">EQUIPMENT</a></li>
+                <li><a href="Proficiencies.html">SKILLS</a></li>
+                <li><a href="proto_CharacterSheetGuide.html">CHARACTER SHEET GUIDE</a></li>
+                <li><a href="support_page.html">SUPPORT</a></li>
             </ul>
             <br />
             <br />
@@ -373,10 +372,6 @@
 
         <div class="main">
 
-            <span style="font-size:30px;cursor:pointer" onclick="openLeftNav()">
-                <img src="Images/MenuIcon.jpg" alt="Menu Icon" width="50" height="50" style=padding-left:10px;>
-            </span>
-
             <h2 style="margin-left: 10%"> Spells </h2>
             <p style="margin-left: 10%"> As a <b>High Elf Fighter</b> you have access to <b> 1 Cantrip </b> and <b>0 First Level Spells</b> Please select your spells from the list below</p>
 
@@ -392,7 +387,7 @@
                 <p>You hurl a bubble of acid to one creature within range dealing 1d6 acid damage.<br /><br />Casting Time: 1 action<br />Range: 60 feet<br />Components: V, S <br /> Duration: Instantaneous</p>
                 <label class="radioButton">
                     Select Cantrip
-                    <input type="radio" name="class" id="radio0" onclick="closeRightNav(); closeLeftNav();">
+                    <input type="radio" name="class" id="radio0" onclick="closeRightNav();">
                     <span class="checkmark"></span>
                 </label>
             </div>
@@ -401,7 +396,7 @@
                 <p>You extend your hand and trace a sigil of warding in the air. Until the end of your next turn. you have resistance against bludgeoning, piercing, and slashing damage dealt by weapon attacks.<br /><br />Casting Time: 1 action<br />Range: Self<br />Components V, S<br />Duration: 1 round</p>
                 <label class="radioButton">
                     Select Cantrip
-                    <input type="radio" name="class" id="radio1" onclick="closeRightNav(); closeLeftNav();">
+                    <input type="radio" name="class" id="radio1" onclick="closeRightNav();">
                     <span class="checkmark"></span>
                 </label>
             </div>
@@ -410,7 +405,7 @@
                 <p>You hurl a mote of fire at a creature in range dealing 1d10 fire damage.<br /><br />Casting time: 1 action<br />Range: 120 feet<br />Components V,S<br />Duration: Instantaneous</p>
                 <label class="radioButton">
                     Select Cantrip
-                    <input type="radio" name="class" id="radio2" onclick="closeRightNav(); closeLeftNav();">
+                    <input type="radio" name="class" id="radio2" onclick="closeRightNav();">
                     <span class="checkmark"></span>
                 </label>
             </div>
@@ -419,7 +414,7 @@
                 <p>You touch one object. That object sheds bright lights for the spell duration<br /><br />Casting time: 1 action<br />Range: Touch<br />Components V,M (a firefly or phosphorescent moss)<br />Duration: 1 hour</p>
                 <label class="radioButton">
                     Select Cantrip
-                    <input type="radio" name="class" id="radio3" onclick="closeRightNav(); closeLeftNav();">
+                    <input type="radio" name="class" id="radio3" onclick="closeRightNav();">
                     <span class="checkmark"></span>
                 </label>
             </div>
@@ -488,7 +483,6 @@
         document.getElementById("rightNav_p").innerHTML = "Please select a spell by clicking on the name and checking the box in the description. (only \"Fire Bolt\" is implemented)";
 
         }
-        closeLeftNav();
         resetCollapsibles();
         openRightNav();
         } //ends confirmClass
@@ -498,12 +492,6 @@
         if(confirm(msg)) {
         document.location.href = "Equipment.html";
         }
-        }
-        function openLeftNav() {
-        document.getElementById("leftSidenav").style.left = "0";
-        }
-        function closeLeftNav() {
-        document.getElementById("leftSidenav").style.left = "-15%";
         }
         function openRightNav() {
         document.getElementById("rightSidenav").style.right = "0";
