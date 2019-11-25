@@ -2,440 +2,506 @@
 <html>
 
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<script>
+    <style>
 
+        body {
+            font-family: "Lato", sans-serif;
+            background-color: black;
+        }
 
-</script>
+        /************************************************************/
+        /* Banner                                                   */
+        /************************************************************/
 
-<style>
+        #banner {
+            width: 100%;
+            height: 9.5%;
 
-body {
-  font-family: "Lato", sans-serif;
-}
+            position: fixed;
+            left: 0;
+            top: 0;
+                
+            text-align: center;
+            color: mediumpurple;
+            background-color: #222222;
+        }
 
-.page{
-	margin: 50px;
-}
+        /************************************************************/
+        /* Content Wrapper                                          */
+        /************************************************************/
 
-.page h1{
-	text-align: center;
-}
+        .wrapper {
+            width: 115%;
+            height: 89.5%;
 
-.continue{
-  margin-left: 33%;
-  position: absolute;
-  
-  width: 20%;
-  padding: 20px;
-  background-color: #3B0B39;
-  color: white;
-  font-size: 16px;
-  border: none;
-  cursor: pointer;
-}
+            position: fixed;
+            display: block;
+            left: -15%;
+            top: 10.5%;
+        }
+        
 
-.leftSidenav {
-  height: 100%;
-  width: 0;
-  position: fixed;
-  z-index: 1;
-  top: 0;
-  left: 0;
-  background-color: #3B0B39;
-  overflow-x: hidden;
-  transition: 0.5s;
-  padding-top: 60px;
-}
-.leftSidenav .closebtn {
-  position: absolute;
-  top: 0;
-  right: 25px;
-  font-size: 36px;
-  margin-left: 50px;
-}
-.leftSidenav h3 {
-  padding: 8px 8px 8px 32px;
-  text-decoration: none;
-  font-size: 25px;
-  color: #EFFBEF;
-  display: block;
-  transition: 0.3s;
-}
+        /************************************************************/
+        /* Side Navigation                                          */
+        /************************************************************/
 
-.leftSidenav ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  width: 100%;
-  background-color: #A901DB;
-  height: auto;
-  overflow: auto;
-}
-  
-.leftSidenav li {
-  border-bottom: 1px solid #555;
-}
-.leftSidenav li:last-child {
-  border-bottom: none;
-}
-  
-.leftSidenav li a {
-  display: block;
-  color: #000;
-  padding: 8px 16px;
-  text-decoration: none;
-}
-.leftSidenav li a.active {
-  background-color: #4CAF50;
-  color: white;
-}
-.leftSidenav li a:hover:not(.active) {
-  background-color: #555;
-  color: white;
-}
-@media screen and (max-height: 450px) {
-  .sidenav {padding-top: 15px;}
-  .sidenav a {font-size: 18px;}
-}
+        .leftSidenav {
+            width: 15%;
+            height: 89.5%;
 
-/* Full-width input fields */
-input[type=text], input[type=password] {
-  width: 100%;
-  padding: 12px 20px;
-  margin: 8px 0;
-  display: inline-block;
-  border: 1px solid #ccc;
-  box-sizing: border-box;
-}
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            overflow-x: hidden;
+            transition: 0.5s;
+            padding-top: 60px;
+            background-color: #222;
+            text-align: center;
+        }
 
-/* Extra styles for the cancel button */
-.cancelbtn {
-  width: auto;
-  padding: 10px 18px;
-  background-color: #f44336;
-}
+            .leftSidenav .closebtn {
+                position: absolute;
+                top: 0;
+                right: 25px;
+                font-size: 36px;
+                margin-left: 50px;
+            }
 
-/* Center the image and position the close button */
-.imgcontainer {
-  text-align: center;
-  margin: 24px 0 12px 0;
-  position: relative;
-}
+            .leftSidenav h3 {
+                padding: 8px 8px 8px 32px;
+                text-decoration: none;
+                font-size: 25px;
+                color: #EFFBEF;
+                display: block;
+                transition: 0.3s;
+            }
 
-img.avatar {
-  width: 30%;
-  border-radius: 50%;
-}
+            .leftSidenav ul {
+                list-style-type: none;
+                margin: 0;
+                padding: 0;
+                width: 100%;
+                height: auto;
+                overflow: auto;
+            }
 
-.container {
-  padding: 16px;
-}
+            .leftSidenav li {
+                border-bottom: 1px solid #555;
+            }
 
-span.psw {
-  float: right;
-  padding-top: 16px;
-}
+                .leftSidenav li:last-child {
+                    border-bottom: none;
+                }
 
-/* The Modal (background) */
-.modal {
-  display: none; /* Hidden by default */
-  position: fixed; /* Stay in place */
-  z-index: 1; /* Sit on top */
-  left: 0;
-  top: 0;
-  width: 100%; /* Full width */
-  height: 100%; /* Full height */
-  overflow: auto; /* Enable scroll if needed */
-  background-color: rgb(0,0,0); /* Fallback color */
-  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-  padding-top: 60px;
-}
+                .leftSidenav li a {
+                    display: block;
+                    color: #4CAF50;
+                    padding: 8px 16px;
+                    text-decoration: none;
+                }
 
-/* Modal Content/Box */
-.modal-content {
-  background-color: #fefefe;
-  margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
-  border: 1px solid #888;
-  width: 80%; /* Could be more or less, depending on screen size */
-}
+                    .leftSidenav li a.active {
+                        background-color: #4CAF50;
+                        color: white;
+                    }
 
-/* The Close Button (x) */
-.close {
-  position: absolute;
-  right: 25px;
-  top: 0;
-  color: #000;
-  font-size: 35px;
-  font-weight: bold;
-}
+                    .leftSidenav li a:hover:not(.active) {
+                        background-color: #555;
+                        color: white;
+                    }
 
-.close:hover,
-.close:focus {
-  color: red;
-  cursor: pointer;
-}
+        @media screen and (max-height: 450px) {
+            .sidenav {
+                padding-top: 15px;
+            }
 
-.modBtn {
-  background-color: #3B0B39;
-  color: white;
-  padding: 14px 20px;
-  margin: 8px 0;
-  border: none;
-  cursor: pointer;
-  width: 100%;
-}
+                .sidenav a {
+                    font-size: 18px;
+                }
+        }
+        
+        /************************************************************/
+        /* Main Content Region                                      */
+        /************************************************************/
 
-.modBtn:hover {
-  opacity: 0.8;
-}
+        .main {
+            width: 67.5%;
 
-.rightBtn{
-  background-color: #3B0B39;
-  border: none;
-  color: white;
-  position: fixed;
-  bottom: 80%;
-  right: 5%;
-  padding: 20px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  margin: 4px 2px;
-  border-radius: 6px;
-}
+            position: fixed;
+            left: 15.5%;
+            top: 10.5%;
+            bottom: 0;
+            overflow: scroll;
 
-/* Add Zoom Animation */
-.animate {
-  -webkit-animation: animatezoom 0.6s;
-  animation: animatezoom 0.6s
-}
+            border-width: 20px;
+            border-style: solid;
+            border-color: #333;
 
-@-webkit-keyframes animatezoom {
-  from {-webkit-transform: scale(0)} 
-  to {-webkit-transform: scale(1)}
-}
-  
-@keyframes animatezoom {
-  from {transform: scale(0)} 
-  to {transform: scale(1)}
-}
+            background-color: lightgray;
+        }
+            .main p {
+                padding-left: 20px;
+                padding-right: 20px;
+            }
 
-/* Change styles for span and cancel button on extra small screens */
-@media screen and (max-width: 300px) {
-  span.psw {
-     display: block;
-     float: none;
-  }
-  .cancelbtn {
-     width: 100%;
-  }
-}
+        /************************************************************/
+        /* Input                                                    */
+        /************************************************************/
 
-.subclass {
-  display: inline-block;
-  padding: 10px;
-  font-size: 18px;
-  cursor: pointer;
-  text-align: center;
-  text-decoration: none;
-  outline: none;
-  color: #fff;
-  background-color: #4CAF50;
-  border: none;
-  border-radius: 10px;
-  box-shadow: 0 2px #999;
-}
-.subclass:hover {background-color: #3e8e41}
-.subclass:active {
-  background-color: #3e8e41;
-  box-shadow: 0 1px #666;
-  transform: translateY(1px);
-}
+        /* Full-width input fields */
+        input[type=text], input[type=password] {
+            width: 100%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+        }
 
-</style>
+        /* Extra styles for the cancel button */
+        .cancelbtn {
+            width: auto;
+            padding: 10px 18px;
+            background-color: #f44336;
+        }
+
+        /* Center the image and position the close button */
+        .imgcontainer {
+            text-align: center;
+            margin: 24px 0 12px 0;
+            position: relative;
+        }
+
+        img.avatar {
+            width: 30%;
+            border-radius: 50%;
+        }
+
+        .container {
+            padding: 16px;
+        }
+
+        span.psw {
+            float: right;
+            padding-top: 16px;
+        }
+
+        /* The Modal (background) */
+        .modal {
+            display: none; /* Hidden by default */
+            position: fixed; /* Stay in place */
+            z-index: 1; /* Sit on top */
+            left: 0;
+            top: 0;
+            width: 100%; /* Full width */
+            height: 100%; /* Full height */
+            overflow: auto; /* Enable scroll if needed */
+            background-color: rgb(0,0,0); /* Fallback color */
+            background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+            padding-top: 60px;
+        }
+
+        /* Modal Content/Box */
+        .modal-content {
+            background-color: #fefefe;
+            margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+            border: 1px solid #888;
+            width: 80%; /* Could be more or less, depending on screen size */
+        }
+
+        /* The Close Button (x) */
+        .close {
+            position: absolute;
+            right: 25px;
+            top: 0;
+            color: #000;
+            font-size: 35px;
+            font-weight: bold;
+        }
+
+            .close:hover,
+            .close:focus {
+                color: red;
+                cursor: pointer;
+            }
+
+        .modBtn {
+            background-color: #3B0B39;
+            color: white;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+        }
+
+            .modBtn:hover {
+                opacity: 0.8;
+            }
+
+        .rightBtn {
+            background-color: #3B0B39;
+            border: none;
+            color: white;
+            position: fixed;
+            bottom: 80%;
+            right: 5%;
+            padding: 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            border-radius: 6px;
+        }
+
+        /* Add Zoom Animation */
+        .animate {
+            -webkit-animation: animatezoom 0.6s;
+            animation: animatezoom 0.6s
+        }
+
+        @-webkit-keyframes animatezoom {
+            from {
+                -webkit-transform: scale(0)
+            }
+
+            to {
+                -webkit-transform: scale(1)
+            }
+        }
+
+        @keyframes animatezoom {
+            from {
+                transform: scale(0)
+            }
+
+            to {
+                transform: scale(1)
+            }
+        }
+
+        /* Change styles for span and cancel button on extra small screens */
+        @media screen and (max-width: 300px) {
+            span.psw {
+                display: block;
+                float: none;
+            }
+
+            .cancelbtn {
+                width: 100%;
+            }
+        }
+
+        .subclass {
+            display: inline-block;
+            padding: 10px;
+            font-size: 18px;
+            cursor: pointer;
+            text-align: center;
+            text-decoration: none;
+            outline: none;
+            color: #fff;
+            background-color: #4CAF50;
+            border: none;
+            border-radius: 10px;
+            box-shadow: 0 2px #999;
+        }
+
+            .subclass:hover {
+                background-color: #3e8e41
+            }
+
+            .subclass:active {
+                background-color: #3e8e41;
+                box-shadow: 0 1px #666;
+                transform: translateY(1px);
+            }
+    </style>
 </head>
 
 
 <body>
-
-
-<div id="leftSidenav" class="leftSidenav">
-  <a href="javascript:void(0)" class="closebtn" onclick="closeLeftNav()">&#8592;</a>
-  <h3> DnD Character Creator </h3>
-  <ul>
-	<li><a class="active" href="starting_page.html" onclick="closeLeftNav()">HOME</a></li>
-    <li><a href="race_select.html" onclick="closeLeftNav()">RACE</a></li>
-    <li><a href="class_selector.html" onclick="closeLeftNav()">CLASS</a></li>
-    <li><a href="background_select.html" onclick="closeLeftNav()">BACKGROUND</a></li>
-	<li><a href="Ability_Scores.html" onclick="closeLeftNav()">ABILITY SCORES</a></li>
-    <li><a href="Spells.html" onclick="closeLeftNav()">SPELLS</a></li>
-    <li><a href="Equipment.html" onclick="closeLeftNav()">EQUIPMENT</a></li>
-    <li><a href="Proficiencies.html" onclick="closeLeftNav()">SKILLS</a></li>
-    <li><a href="proto_CharacterSheetGuide.html" onclick="closeLeftNav()">CHARACTER SHEET GUIDE</a></li>
-    <li><a href="support_page.html" onclick="closeLeftNav()">SUPPORT</a></li>
-  </ul>
-  <br/>
-  <br/>
-  <br/>
-  <br/>
-  <a href="Character Sheet - Alternative - Print Version.pdf" target = "_blank">
-    <button class="subclass">Download a blank character sheet here!</button>
-  </a>
-</div>
-
-<span style="font-size:30px;cursor:pointer" onclick="openLeftNav()">
-  <img src="Images/MenuIcon.jpg"    alt="Menu Icon" width="50" height="50" style=padding-left:10px;>
-</span>
-
-<button  id="rightBtn" onclick="document.getElementById('id01').style.display='block'" class="rightBtn" style="width:auto; right: 15%;">Login</button>
-<button  id="signBtn" onclick="document.getElementById('id02').style.display='block'" class="rightBtn" style="width:auto;">Sign Up</button>
-
-<div id="id01" class="modal">
-  
-  <form class="modal-content animate" action="/action_page.php" method="post">
-    <div class="imgcontainer">
-      <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
-      <img src="Images/img_avatar3.png" alt="Avatar" class="avatar">
+    <!-- BANNER -->
+    <div id="banner">
+        <h2>Dungeons & Dragons Character Creator</h2>
     </div>
 
-    <div class="container">
-      <label for="uname"><b>Username</b></label>
-      <input type="text" placeholder="Enter Username" name="uname" required>
+    <!-- CONTENT WRAPPER -->
+    <div class="wrapper">
 
-      <label for="psw"><b>Password</b></label>
-      <input type="password" placeholder="Enter Password" name="psw" required>
-        
-      <button type="submit" class="modBtn" onclick="closeModal()">Login</button>
-	 
-      <label>
-        <input type="checkbox" checked="checked" name="remember"> Remember me
-      </label>
+        <!-- SIDE NAVIGATIAON MENUS -->
+        <div id="leftSidenav" class="leftSidenav">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeLeftNav()">&#8592;</a>
+            <h3> Navigation Menu </h3>
+            <ul>
+                <li><a class="active" href="starting_page.html" onclick="closeLeftNav()">HOME</a></li>
+                <li><a href="race_select.html" onclick="closeLeftNav()">RACE</a></li>
+                <li><a href="class_selector.html" onclick="closeLeftNav()">CLASS</a></li>
+                <li><a href="background_select.html" onclick="closeLeftNav()">BACKGROUND</a></li>
+                <li><a href="Ability_Scores.html" onclick="closeLeftNav()">ABILITY SCORES</a></li>
+                <li><a href="Spells.html" onclick="closeLeftNav()">SPELLS</a></li>
+                <li><a href="Equipment.html" onclick="closeLeftNav()">EQUIPMENT</a></li>
+                <li><a href="Proficiencies.html" onclick="closeLeftNav()">SKILLS</a></li>
+                <li><a href="proto_CharacterSheetGuide.html" onclick="closeLeftNav()">CHARACTER SHEET GUIDE</a></li>
+                <li><a href="support_page.html" onclick="closeLeftNav()">SUPPORT</a></li>
+            </ul>
+            <br />
+            <br />
+            <br />
+            <br />
+            <a href="Character Sheet - Alternative - Print Version.pdf" target="_blank">
+                <button class="subclass">Download a blank character sheet here!</button>
+            </a>
+        </div>
+
+        <div class="main">
+
+            <span style="font-size:30px;cursor:pointer" onclick="openLeftNav()">
+                <img src="Images/MenuIcon.jpg" alt="Menu Icon" width="50" height="50" style=padding-left:10px;>
+            </span>
+
+            <button id="rightBtn" onclick="document.getElementById('id01').style.display='block'" class="rightBtn" style="width:auto; right: 15%;">Login</button>
+            <button id="signBtn" onclick="document.getElementById('id02').style.display='block'" class="rightBtn" style="width:auto;">Sign Up</button>
+
+            <h1>
+                Dungeons and Dragons Character Creator
+            </h1>
+
+            <blockquote>
+                Creating a DnD character can be an arduous and somewhat tedious process, especially for new players.
+                Our goal is to simplify that process with easy step by step instructions and clear directions so you can get to playing the game faster.
+                Make an account, log in and we can get started!
+            </blockquote>
+
+
+            <div>
+
+                <a href="race_select.html" target="_parent">
+                    <button class="continue"> Get Started </button>
+                </a>
+
+            </div>
+        </div>
+
+        <div id="id01" class="modal">
+
+            <form class="modal-content animate" action="/action_page.php" method="post">
+                <div class="imgcontainer">
+                    <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+                    <img src="Images/img_avatar3.png" alt="Avatar" class="avatar">
+                </div>
+
+                <div class="container">
+                    <label for="uname"><b>Username</b></label>
+                    <input type="text" placeholder="Enter Username" name="uname" required>
+
+                    <label for="psw"><b>Password</b></label>
+                    <input type="password" placeholder="Enter Password" name="psw" required>
+
+                    <button type="submit" class="modBtn" onclick="closeModal()">Login</button>
+
+                    <label>
+                        <input type="checkbox" checked="checked" name="remember"> Remember me
+                    </label>
+                </div>
+
+                <div class="container" style="background-color:#f1f1f1">
+                    <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+                    <span class="psw">Forgot <a href="#">password?</a></span>
+                </div>
+            </form>
+        </div>
+
+        <div id="id02" class="modal">
+
+            <form class="modal-content animate" action="/action_page.php" method="post">
+                <div class="imgcontainer">
+                    <span onclick="document.getElementById('id02').style.display='none'" class="close" title="Close Modal">&times;</span>
+                    <h1> Sign Up </h1>
+                    <p> Please fill in this form to create an account </p>
+                </div>
+
+                <div class="container">
+                    <label for="email"><b>E-mail</b></label>
+                    <input type="text" placeholder="Enter E-mail" name="email" required>
+
+                    <label for="uname"><b>Username</b></label>
+                    <input type="text" placeholder="Enter Username" name="uname" required>
+
+                    <label for="psw"><b>Password</b></label>
+                    <input type="password" placeholder="Enter Password" name="psw" required>
+
+                    <label for="rpsw"><b>Re-type Password</b></label>
+                    <input type="password" placeholder="Re-Type Password" name="rpsw" required>
+
+                    <button type="submit" class="modBtn" onclick="lockSignup()">Sign Up</button>
+
+                    <label>
+                        <input type="checkbox" checked="checked" name="remember"> Remember me
+                    </label>
+                </div>
+
+                <div class="container" style="background-color:#f1f1f1">
+                    <button type="button" onclick="closeSignup()" class="cancelbtn">Cancel</button>
+                    <span class="psw">Forgot <a href="#">password?</a></span>
+                </div>
+            </form>
+        </div>
+
     </div>
 
-    <div class="container" style="background-color:#f1f1f1">
-      <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
-      <span class="psw">Forgot <a href="#">password?</a></span>
-    </div>
-  </form>
-</div>
-
-<div id="id02" class="modal">
-  
-  <form class="modal-content animate" action="/action_page.php" method="post">
-    <div class="imgcontainer">
-      <span onclick="document.getElementById('id02').style.display='none'" class="close" title="Close Modal">&times;</span>
-      <h1> Sign Up </h1>
-	  <p> Please fill in this form to create an account </p>
-    </div>
-
-    <div class="container">
-      <label for="email"><b>E-mail</b></label>
-      <input type="text" placeholder="Enter E-mail" name="email" required>
-	  
-	  <label for="uname"><b>Username</b></label>
-	  <input type="text" placeholder="Enter Username" name="uname" required>
-
-      <label for="psw"><b>Password</b></label>
-      <input type="password" placeholder="Enter Password" name="psw" required>
-	  
-	  <label for="rpsw"><b>Re-type Password</b></label>
-	  <input type="password" placeholder="Re-Type Password" name="rpsw" required>
-        
-      <button type="submit" class="modBtn" onclick="lockSignup()">Sign Up</button>
-	 
-      <label>
-        <input type="checkbox" checked="checked" name="remember"> Remember me
-      </label>
-    </div>
-
-    <div class="container" style="background-color:#f1f1f1">
-      <button type="button" onclick="closeSignup()" class="cancelbtn">Cancel</button>
-      <span class="psw">Forgot <a href="#">password?</a></span>
-    </div>
-  </form>
-</div>
-
-<div class="page">
-
-<h1>
-Dungeons and Dragons Character Creator
-</h1>
-
-<blockquote>
-	Creating a DnD character can be an arduous and somewhat tedious process, especially for new players. 
-	Our goal is to simplify that process with easy step by step instructions and clear directions so you can get to playing the game faster. 
-	Make an account, log in and we can get started!
-</blockquote>
-
-
-<div>
-
-	<a href="race_select.html" target="_parent"> 
-		<button class="continue"> Get Started </button>
-	</a>
-
-</div>
-
-
-</div>
-
-
-</body>
+    <script>
 
 
 
-</html>
+        // When the user clicks anywhere outside of the modal, close it
+        var modal = document.getElementById('id01');
+        var signup = document.getElementById('id02');
 
-<script>
-
-
-
-// When the user clicks anywhere outside of the modal, close it
-var modal = document.getElementById('id01');
-var signup = document.getElementById('id02');
-
-window.onclick = function(event) {
-    if (event.target == modal) {
+        window.onclick = function(event) {
+        if (event.target == modal) {
         modal.style.display = "none";
-    }
-	if( event.target == signup){
-		signup.style.display="none";
-	}
-}
+        }
+        if( event.target == signup){
+        signup.style.display="none";
+        }
+        }
 
-function closeModal(){
-modal.style.display="none"; 
-document.getElementById("rightBtn").style.background = "grey"; 
-document.getElementById("rightBtn").innerHTML = "Logged In";
-document.getElementById("rightBtn").onclick = "";
-}
+        function closeModal(){
+        modal.style.display="none";
+        document.getElementById("rightBtn").style.background = "grey";
+        document.getElementById("rightBtn").innerHTML = "Logged In";
+        document.getElementById("rightBtn").onclick = "";
+        }
 
-function closeSignup(){
-signup.style.display='none';
-}
+        function closeSignup(){
+        signup.style.display='none';
+        }
 
-function lockSignup(){
- signup.style.display='none';
- 
- document.getElementById("rightBtn").style.background = "grey"; 
- document.getElementById("rightBtn").innerHTML = "Logged In";
- document.getElementById("rightBtn").onclick = "";
+        function lockSignup(){
+        signup.style.display='none';
 
- document.getElementById("signBtn").style.background = "grey"; 
- document.getElementById("signBtn").innerHTML = "Signed Up";
- document.getElementById("signBtn").onclick = "";
- 
-}
+        document.getElementById("rightBtn").style.background = "grey";
+        document.getElementById("rightBtn").innerHTML = "Logged In";
+        document.getElementById("rightBtn").onclick = "";
+
+        document.getElementById("signBtn").style.background = "grey";
+        document.getElementById("signBtn").innerHTML = "Signed Up";
+        document.getElementById("signBtn").onclick = "";
+
+        }
 
 
-	
-function openLeftNav() {
-  document.getElementById("leftSidenav").style.width = "30%";
-}
-function closeLeftNav() {
-  document.getElementById("leftSidenav").style.width = "0";
-}
-</script>
+
+        function openLeftNav() {
+        document.getElementById("leftSidenav").style.left = "0";
+        }
+        function closeLeftNav() {
+        document.getElementById("leftSidenav").style.left = "-15%";
+        }
+    </script>
+</body>
+</html>
