@@ -2,7 +2,7 @@
 
 <html>
 <head>
-    <meta name="Stolen layout" />
+    <meta name="Character Sheet Guide" />
 
     <style>
 
@@ -10,16 +10,7 @@
             font: 100% Lucida Sans, Verdana;
             background-color: black;
         }
-
-        .container {
-            width: 100%;
-            height: 100%;
-
-            position: absolute;
-            left: 0;
-            top: 0;
-        }
-
+	    
         /****************************************/
         /* BANNER                               */
         /****************************************/
@@ -116,16 +107,39 @@
                 background-color: #555;
                 color: white;
             }
+	    
+	    .subclass {
+            display: inline-block;
+            padding: 10px;
+            font-size: 18px;
+            cursor: pointer;
+            text-align: center;
+            text-decoration: none;
+            outline: none;
+            color: #fff;
+            background-color: #4CAF50;
+            border: none;
+            border-radius: 10px;
+            box-shadow: 0 2px #999;
+	    }
+            .subclass:hover {
+                background-color: #3e8e41
+            }
+            .subclass:active {
+                background-color: #3e8e41;
+                box-shadow: 0 1px #666;
+                transform: translateY(1px);
+            }
             
         /****************************************/
         /* Main Content Area                    */
         /****************************************/
 
         .main {
-            width: 68%;
+            width: 67.5%;
 
             position: fixed;
-            left: 15%;
+            left: 15.5%;
             top: 10.5%;
             bottom: 0;
 
@@ -203,34 +217,40 @@
         </div>
 
 
-        <!-- MAIN CONTENT -->
+        <!-- CONTENT WRAPPER -->
         <div class="wrapper">
-
-            
 
             <!-- LEFT NAVIGATION MENU -->
 
-            <div class="leftnav">
+            <div id="leftnav" class="leftnav">
 
                 <a id="closenav" href="javascript:void(0)" class="closebtn" onclick="closenav()">&#8592;CLOSE   </a>
 
                 <h3>Navigation Menu</h3>
 
-                <li><a href="starting_page.html" onclick="closeLeftNav()">HOME</a></li>
-				<li><a href="race_select.html" onclick="closeLeftNav()">RACE</a></li>
-				<li><a href="class_selector.html" onclick="closeLeftNav()">CLASS</a></li>
-				<li><a href="background_select.html" onclick="closeLeftNav()">BACKGROUND</a></li>
-				<li><a href="Ability_Scores.html" onclick="closeLeftNav()">ABILITY SCORES</a></li>
-				<li><a href="Spells.html" onclick="closeLeftNav()">SPELLS</a></li>
-				<li><a href="Equipment.html" onclick="closeLeftNav()">EQUIPMENT</a></li>
-				<li><a href="Proficiencies.html" onclick="closeLeftNav()">SKILLS</a></li>
-				<li><a class = "active" href="proto_CharacterSheetGuide.html" onclick="closeLeftNav()">CHARACTER SHEET GUIDE</a></li>
-				<li><a href="support_page.html" onclick="closeLeftNav()">SUPPORT</a></li>
+                <a href="starting_page.html" onclick="closeLeftNav()">HOME</a>
+                <a class="active" href="race_select.html" onclick="closeLeftNav()">RACE</a>
+                <a href="class_selector.html" onclick="closeLeftNav()">CLASS</a>
+                <a href="background_select.html" onclick="closeLeftNav()">BACKGROUND</a>
+                <a href="Ability_Scores.html" onclick="closeLeftNav()">ABILITY SCORES</a>
+                <a href="Spells.html" onclick="closeLeftNav()">SPELLS</a>
+                <a href="Equipment.html" onclick="closeLeftNav()">EQUIPMENT</a>
+                <a href="Proficiencies.html" onclick="closeLeftNav()">SKILLS</a>
+                <a href="proto_CharacterSheetGuide.html" onclick="closeLeftNav()">CHARACTER SHEET GUIDE</a>
+                <a href="support_page.html" onclick="closeLeftNav()">SUPPORT</a>
+
+                <a href="Character Sheet - Alternative - Print Version.pdf" target="_blank">
+                    <button class="subclass">Download a blank character sheet here!</button>
+                </a>
             </div>
 
             <!-- MAIN CONTENT -->
 
             <div class="main">
+		    
+		    <span style="font-size:30px;cursor:pointer" onclick="opennav()">
+			<img src="Images/MenuIcon.jpg" alt="Menu Icon" width="50" height="50" style=padding-left:10px;>
+                 </span>
 
                 <p>
                     Hello, welcome to the Character Sheet Guide! Now that you've decided your character's race, class, background,
@@ -252,35 +272,137 @@
                 <button class="tablink" onclick="openTab('inventory')">INVENTORY</button>
 
                 <!-- TAB CONTENT -->
+		<!-- Basic info -->
+            <div id="basics" class="tabcontent">
+                <h2>Basics</h2>
 
-                <div id="basics" class="tabcontent">
-                    <h2>Basics</h2>
-                    <p>Let's fill in some basic character attributes.</p>
-                </div>
-                <div id="features" class="tabcontent">
-                    <h2>Features & Proficiencies</h2>
-                    <p>Here, we'll list your character's unique features.</p>
-                </div>
-                <div id="scores" class="tabcontent">
-                    <h2>Ability Scores</h2>
-                    <p>We'll need somewhere to keep track of those important ability scores.</p>
-                </div>
-                <div id="skills" class="tabcontent">
-                    <h2>Skills</h2>
-                    <p>Here's where we'll keep track of our skills.</p>
-                </div>
-                <div id="defenses" class="tabcontent">
-                    <h2>Defenses</h2>
-                    <p>Here's where we'll keep track of your character's combat defenses.</p>
-                </div>
-                <div id="attacks" class="tabcontent">
-                    <h2>Attacks</h2>
-                    <p>Let's write down those attacks.</p>
-                </div>
-                <div id="inventory" class="tabcontent">
-                    <h2>Inventory</h2>
-                    <p>Lastly, here we can list of any of your character's important belongings.</p>
-                </div>
+                <h4>Let's fill in some basic character information!</h4>
+                <img src="CharacterSheet_1_BasicInfo.jpg" alt="Top section of Character Sheet">
+                <p>
+                    This section (at the top of your character sheet) is where, you'll list your character's name, class, race,
+                    background, alignment, level, and experience. You can write your name here, too!
+                </p>
+                <a href="javascript:void(0)" onclick="openRightNav"> (Check my character's basic information) </a>
+
+                <h4>Now, let's add some flavour.</h4>
+                <img src="CharacterSheet_1_BasicInfo.jpg" alt="Top section of Character Sheet">
+                <p>
+                    You can use this section (right column, middle row of your character sheet) to fill out your character's
+                    personality traits, quirks, and goals.
+                </p>
+                <a href="javascript:void(0)" onclick="openRightNav"> (Check my character's base info) </a>
+
+            </div>
+
+            <!-- Features & Proficiencies-->
+            <div id="features" class="tabcontent">
+                <h2>Features & Proficiencies</h2>
+
+                <h4>Here, we'll list your character's unique features.</h4>
+                <img src="CharacterSheet_2_Features(ClaRaBg).jpg" alt="3rd column, middle section of Character Sheet">
+                <p>
+                    "FEATURES & TRAITS" (right column, middle row of your character sheet) is where you'll write any added
+                    features from your race, class, and background.
+                </p>
+
+                <h4>Have any trained specialties?</h4>
+                <img src="CharacterSheet_3_ProfLang(ClaRaBg).jpg" alt="1st column, bottom section of Character Sheet">
+                <p>
+                    "OTHER PROFICIENCIES & LANGUAGES" (left column, bottom row of you character sheet) is where you'll record any
+                    weapon, armour, or other kind of proficiencies your character has, as well as any languages your character can speak.
+                </p>
+                <a href="javascript:void(0)" onclick="openRightNav"> (Check my character's features, proficiencies, and languages) </a>
+            </div>
+
+            <!-- Ability Scores-->
+            <div id="scores" class="tabcontent">
+                <h2>Ability Scores</h2>
+                <h4>We'll need somewhere to keep track of those important ability scores.</h4>
+                <img src="CharacterSheet_4_Scores(Abl).jpg" alt="left section of Character Sheet">
+                <p>
+                    This section (in the left column of your character sheet) is what you'll use to keep track of you character's
+                    ability scores and ability modifiers.
+                </p>
+                <ul>
+                    <li>There are 6 boxes for strength, dexterity, constitution, intelligence, wisdom, and charisma.</li>
+                    <li>In the larger region above the score title, write your character's score.</li>
+                    <li>In the smaller region right above, write the score's modifier.
+                </ul>
+                <a href="javascript:void(0)" onclick="openRightNav"> (Check my character's ability scores) </a>
+            </div>
+
+            <!-- Skills -->
+            <div id="skills" class="tabcontent">
+                <h2>Skills</h2>
+                <h4>Skills are tricky. Here's how we'll keep track of them.</h4>
+                <img src="CharacterSheet_5_Skills(Abl).jpg" alt="left section of Character Sheet">
+                <p>
+                    This section (next to the ability scores column in the left of your character sheet) is how you'll track you character's
+                    skills.
+                </p>
+                <ul>
+                    <li>Skills are grouped in this area by the ability scores they're based on.</li>
+                    <li>If your character is proficient in a skill, check the small circle next to it.</li>
+                    <li>
+                        If the 'modifier' of the ability score a skill is based on is greater than 0, write the modifier's value on the
+                        line next to that skill.
+                    </li>
+                </ul>
+                <a href="javascript:void(0)" onclick="openRightNav"> (Check my character's known skills) </a>
+            </div>
+
+            <!-- Defenses -->
+            <div id="defenses" class="tabcontent">
+                <h2>Defenses</h2>
+                <h4>[CAPTION]</h4>
+                <img src="CharacterSheet_7_Defenses(Abl).jpg" alt="middle section of Character Sheet">
+                <p>
+                    This section (upper middle of your character sheet) is where we'll keep track of your character's combat defenses.
+                </p>
+                <a href="javascript:void(0)" onclick="openRightNav"> (Check my character's defensive stats) </a>
+
+            </div>
+
+            <!-- Attacks & Spells -->
+            <div id="attacks" class="tabcontent">
+                <h2>Attacks</h2>
+                <h4>Let's get to know those attacks.</h4>
+                <img src="CharacterSheet_8_Attacks(Atk).jpg" alt="middle column, lower section of Character Sheet">
+                <p>
+                    "ATTACKS & SPELLCASTING" (lower middle section of your character sheet) is where you'll record any common attacks
+                    and/or spells your character uses.
+                </p>
+                <ul>
+                    <li>Does your character use one or more weapons to attack in one or more ways? You can list them here for reference.</li>
+                    <li>
+                        Does your character use spells with descriptions you can't remember? You'll be able to record what you need in the
+                        line space provided.
+                    </li>
+                </ul>
+                <a href="javascript:void(0)" onclick="openRightNav"> (Check my character's weapons and spells) </a>
+            </div>
+
+            <!-- Inventory -->
+            <div id="inventory" class="tabcontent">
+                <h2>Inventory</h2>
+                <h4>Stuff. Things.</h4>
+                <img src="CharacterSheet_10_Equipment.jpg" alt="bottom right section of Character Sheet">
+                <p>
+                    "EQUIPMENT & CHARACTER NOTES" (bottom right section of your character sheet) is where you can list of any of your
+                    character's important belongings.
+                </p>
+                <ul>
+                    <li>List your weapons here!</li>
+                    <li>List your armor or clothing too!</li>
+                    <li>Magic items? Record them here if you want!</li>
+                    <li>Family heirlooms? Quest items? Throw 'em in if you'd like!</li>
+                    <li>
+                        Does your character play an instrument? Do they use any tools a lot? Did they steal a partifularly nice
+                        spoon from a local tavern and want to remember that? Why not list them here!
+                    </li>
+                </ul>
+                <a href="javascript:void(0)" onclick="openRightNav"> (Check my character's equipment and inventory) </a>
+            </div>
 
             </div>
 
@@ -296,7 +418,7 @@
 
 
     <script>
-
+	    
         function openTab( tabName ) { 
         document.getElementById( 'basics' ).style.display = "none";
         document.getElementById( 'features' ).style.display = "none";
@@ -307,7 +429,13 @@
         document.getElementById( 'inventory' ).style.display = "none";
 
         document.getElementById( tabName ).style.display = "block";
-
+        }
+	    
+        function opennav() {
+        document.getElementById("leftnav").style.left = "0";
+        }
+        function closenav() {
+        document.getElementById("leftnav").style.left = "-15%";
         }
     </script>
 
