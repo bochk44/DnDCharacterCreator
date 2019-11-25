@@ -505,7 +505,7 @@
           var email = prompt("Please enter your email below to recover your password", "your_email@email.com");
           var loca1 = email.indexOf("@");
           var loca2 = email.lastIndexOf(".");
-          while (email != null && email != "your_email@email.com" && (email === "" || loca1 < 1 || loca2 < 3 || loca1 >= loca2-1)) {
+          while (email != null && (email == "your_email@email.com" || email === "" || loca1 < 1 || loca2 < 3 || loca1 >= loca2-1)) {
             alert("Please enter a valid email address.");
             email = prompt("Please enter your email below to recover your password", "your_email@email.com");
             loca1 = email.indexOf("@");
