@@ -4,16 +4,16 @@
 
 <script>
 function openLeftNav() {
-  document.getElementById("leftSidenav").style.width = "30%";
+  document.getElementById("leftSidenav").style.left = "0";
 }
 function closeLeftNav() {
-  document.getElementById("leftSidenav").style.width = "0";
+  document.getElementById("leftSidenav").style.left = "-15%";
 }
 function openRightNav() {
-  document.getElementById("rightSidenav").style.width = "35%";
+  document.getElementById("rightSidenav").style.right = "0";
 }
 function closeRightNav() {
-  document.getElementById("rightSidenav").style.width = "0";
+  document.getElementById("rightSidenav").style.right = "-35%";
 }
 
 function toggleStr()  {
@@ -105,7 +105,7 @@ function swap2( as, first, second ){
 function confirmChoice(){
 
 
-if(confirm("Are you ok with picking these ability scores?")) {
+if(confirm("Would you like to confirm these ability scores? If so, click 'OK' to move on to spell selection.")) {
     document.location.href = "Spells.html";
  }
 
@@ -117,18 +117,53 @@ if(confirm("Are you ok with picking these ability scores?")) {
 <style>
 body {
   font-family: "Lato", sans-serif;
+            background-color: black;
 }
+	
+        /************************************************************/
+        /* Banner                                                   */
+        /************************************************************/
+
+        #banner {
+            width: 100%;
+            height: 9.5%;
+
+            position: fixed;
+            left: 0;
+            top: 0;
+                
+            text-align: center;
+            color: mediumpurple;
+            background-color: #222222;
+        }
+
+        /************************************************************/
+        /* Content Wrapper                                          */
+        /************************************************************/
+
+        .wrapper {
+            width: 115%;
+            height: 89.5%;
+
+            position: fixed;
+            display: block;
+            left: -15%;
+            top: 10.5%;
+        }
+
+        /************************************************************/
+        /* Side Navigation                                          */
+        /************************************************************/
 .leftSidenav {
-  height: 100%;
-  width: 0;
-  position: fixed;
-  z-index: 1;
-  top: 0;
-  left: 0;
-  background-color: #3B0B39;
-  overflow-x: hidden;
-  transition: 0.5s;
-  padding-top: 60px;
+            width: 15%;
+
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            overflow-x: hidden;
+            transition: 0.5s;
+            padding-top: 60px;
+            background-color: #222;
 }
 .leftSidenav .closebtn {
   position: absolute;
@@ -141,18 +176,18 @@ body {
   padding: 8px 8px 8px 32px;
   text-decoration: none;
   font-size: 25px;
-  color: #EFFBEF;
+  color: mediumpurple;
   display: block;
   transition: 0.3s;
 }
 .rightSidenav {
   height: 100%;
-  width: 0;
+  width: 35%;
   position: fixed;
   z-index: 1;
   top: 0;
-  right: 0;
-  background-color: #3B0B39;
+  right: -35%;
+  background-color: #111;
   overflow-x: hidden;
   transition: 0.5s;
   padding-top: 60px;
@@ -201,7 +236,6 @@ body {
   margin: 0;
   padding: 0;
   width: 100%;
-  background-color: #A901DB;
   height: auto;
   overflow: auto;
 }
@@ -215,7 +249,8 @@ body {
   
 .leftSidenav li a {
   display: block;
-  color: #000;
+  color: #4CAF50;
+	text-align: center;
   padding: 8px 16px;
   text-decoration: none;
 }
@@ -232,7 +267,35 @@ body {
   .sidenav a {font-size: 18px;}
 }
 
-/* Dropdown Button */
+        /************************************************************/
+        /* Main Content Region                                      */
+        /************************************************************/
+
+        .main {
+            width: 67.5%;
+
+            position: fixed;
+            left: 15.5%;
+            top: 10.5%;
+            bottom: 0;
+            overflow:scroll;
+
+
+            border-width: 20px;
+            border-style: solid;
+            border-color: #333;
+
+            background-color: lightgray;
+        }
+            .main p {
+                padding-left: 20px;
+                padding-right: 20px;
+            }
+            
+        /************************************************************/
+        /* Dropdown Buttons                                         */
+        /************************************************************/
+
 .dropbtn {
   background-color: #A901DB;;
   color: white;
@@ -303,6 +366,7 @@ body {
   font-size: 16px;
   margin: 4px 2px;
   border-radius: 6px;
+	  cursor: pointer;
 }
 .confirm:hover {
   box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
@@ -333,8 +397,19 @@ body {
 .show {display:block;}
 </style>
 </head>
+	
 <body>
 
+    <!-- BANNER -->
+    <div id="banner">
+        <h2>Dungeons & Dragons Character Creator</h2>
+    </div>
+
+    <!-- CONTENT WRAPPER -->
+    <div class="wrapper">
+
+        <!-- LEFT NAVIGATION -->
+	    
 <div id="leftSidenav" class="leftSidenav">
   <a href="javascript:void(0)" class="closebtn" onclick="closeLeftNav()">&#8592;</a>
   <h3> DnD Character Creator </h3>
@@ -350,15 +425,12 @@ body {
     <li><a href="proto_CharacterSheetGuide.html" onclick="closeLeftNav()">CHARACTER SHEET GUIDE</a></li>
     <li><a href="support_page.html" onclick="closeLeftNav()">SUPPORT</a></li>
   </ul>
-  <br/>
-  <br/>
-  <br/>
-  <br/>
   <a href="Character Sheet - Alternative - Print Version.pdf" target = "_blank">
     <button class="subclass">Download a blank character sheet here!</button>
   </a>
 </div>
 
+	    <!-- RIGHT NAVIGATION -->
 <div id="rightSidenav" class="rightSidenav">
   <a href="javascript:void(0)" class="closebtn" onclick="closeRightNav()">&#8594;</a>
   <h3> Strength </h3>
@@ -398,6 +470,8 @@ body {
 
 
   
+        <!-- MAIN CONTENT -->
+        <div class="main">
 <span style="font-size:30px;cursor:pointer" onclick="openLeftNav()">
   <img src="Images/MenuIcon.jpg"    alt="Menu Icon" width="50" height="50" style=padding-left:10px;>
 </span>
@@ -651,7 +725,7 @@ body {
 
 </table>
 
-
+	    </div>
 
 
 
