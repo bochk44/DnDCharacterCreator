@@ -1,438 +1,527 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta name="BackgroundSelect" content="width=device-width, initial-scale=1">
-<style>
-body {
-  font-family: "Lato", sans-serif;
-}
-/* --------------------------------------------------------- */
-/* --------------------------------------------------------- */
-/* ------------------Side Nav details start------------------*/
-/* --------------------------------------------------------- */
-/* --------------------------------------------------------- */
-.leftSidenav {
-  height: 100%;
-  width: 0;
-  position: fixed;
-  z-index: 1;
-  top: 0;
-  left: 0;
-  background-color: #3B0B39;
-  overflow-x: hidden;
-  transition: 0.5s;
-  padding-top: 60px;
-}
-.leftSidenav .closebtn {
-  position: absolute;
-  top: 0;
-  right: 25px;
-  font-size: 36px;
-  margin-left: 50px;
-}
-.leftSidenav h3 {
-  padding: 8px 8px 8px 32px;
-  text-decoration: none;
-  font-size: 25px;
-  color: #EFFBEF;
-  display: block;
-  transition: 0.3s;
-}
- 
-.leftSidenav ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  width: 100%;
-  background-color: #A901DB;
-  height: auto;
-  overflow: auto;
-}
-  
-.leftSidenav li {
-  border-bottom: 1px solid #555;
-}
-.leftSidenav li:last-child {
-  border-bottom: none;
-}
-  
-.leftSidenav li a {
-  display: block;
-  color: #000;
-  padding: 8px 16px;
-  text-decoration: none;
-}
-.leftSidenav li a.active {
-  background-color: #4CAF50;
-  color: white;
-}
-.leftSidenav li a:hover:not(.active) {
-  background-color: #555;
-  color: white;
-}
-@media screen and (max-height: 450px) {
-  .sidenav {padding-top: 15px;}
-  .sidenav a {font-size: 18px;}
-}
-/* --------------------------------------------------------- */
-/* --------------------------------------------------------- */
-/* ------------------Side Nav details end--------------------*/
-/* --------------------------------------------------------- */
-/* --------------------------------------------------------- */
-/* --------------------------------------------------------- */
-/* --------------------------------------------------------- */
-/* ----------------Radio Button details start----------------*/
-/* --------------------------------------------------------- */
-/* --------------------------------------------------------- */
-.radioButton {
-  display: block;
-  position: relative;
-  padding-left: 35px;
-  margin-bottom: 12px;
-  cursor: pointer;
-  font-size: 22px;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-}
-.radioButton input {
-  position: absolute;
-  opacity: 0;
-  cursor: pointer;
-  height: 0;
-  width: 0;
-}
-.checkmark {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 25px;
-  width: 25px;
-  background-color: #eee;
-  border-radius: 50%;
-}
-.radioButton:hover input ~ .checkmark {
-  background-color: #ccc;
-}
-.radioButton input:checked ~ .checkmark {
-  background-color: #4CAF50;
-}
-.checkmark:after {
-  content: "";
-  position: absolute;
-  display: none;
-}
-.radioButton input:checked ~ .checkmark:after {
-  display: block;
-}
-.radioButton .checkmark:after {
-  left: 9px;
-  top: 5px;
-  width: 5px;
-  height: 10px;
-  border: solid white;
-  border-width: 0 3px 3px 0;
-  -webkit-transform: rotate(45deg);
-  -ms-transform: rotate(45deg);
-  transform: rotate(45deg);
-}
-/* --------------------------------------------------------- */
-/* --------------------------------------------------------- */
-/* ----------------Radio Button details end------------------*/
-/* --------------------------------------------------------- */
-/* --------------------------------------------------------- */
-/* --------------------------------------------------------- */
-/* --------------------------------------------------------- */
-/* ---------------Collapsible details start------------------*/
-/* --------------------------------------------------------- */
-/* --------------------------------------------------------- */
-.collapsible {
-  background-color: #A901DB;
-  color: white;
-  cursor: pointer;
-  padding: 18px;
-  width: 70%;
-  border: 1px solid #555;
-  text-align: left;
-  outline: none;
-  font-size: 15px;
-  margin-left: 10%;
-}
-.active, .collapsible:hover {
-  background-color: #4CAF50;
-}
-.content {
-  padding: 0 18px;
-  display: none;
-  width: 66%;
-  overflow: hidden;
-  background-color: #F6CEEC;
-  margin-left: 10.5%;
-}
-  
-/* --------------------------------------------------------- */
-/* --------------------------------------------------------- */
-/* ---------------Collapsible details end--------------------*/
-/* --------------------------------------------------------- */
-/* --------------------------------------------------------- */
-/* --------------------------------------------------------- */
-/* --------------------------------------------------------- */
-/* ------------------Button details start--------------------*/
-/* --------------------------------------------------------- */
-/* --------------------------------------------------------- */
-.confirm {
-  background-color: #4CAF50;
-  border: none;
-  color: white;
-  position: fixed;
-  bottom: 80%;
-  right: 5%;
-  padding: 20px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  margin: 4px 2px;
-  border-radius: 6px;
-}
-.confirm:hover {
-  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
-}
-  
-.subclass {
-  display: inline-block;
-  padding: 10px;
-  font-size: 18px;
-  cursor: pointer;
-  text-align: center;
-  text-decoration: none;
-  outline: none;
-  color: #fff;
-  background-color: #4CAF50;
-  border: none;
-  border-radius: 10px;
-  box-shadow: 0 2px #999;
-}
-.subclass:hover {background-color: #3e8e41}
-.subclass:active {
-  background-color: #3e8e41;
-  box-shadow: 0 1px #666;
-  transform: translateY(1px);
-}
-/* --------------------------------------------------------- */
-/* --------------------------------------------------------- */
-/* ------------------Button details end----------------------*/
-/* --------------------------------------------------------- */
-/* --------------------------------------------------------- */
-  
-</style>
+    <meta name="BackgroundSelect" content="width=device-width, initial-scale=1">
+    <style>
+        body {
+            font-family: "Lato", sans-serif;
+            background-color: black;
+        }
+
+        /************************************************************/
+        /* Banner                                                   */
+        /************************************************************/
+
+        #banner {
+            width: 100%;
+            height: 9.5%;
+
+            position: fixed;
+            left: 0;
+            top: 0;
+                
+            text-align: center;
+            color: mediumpurple;
+            background-color: #222222;
+        }
+
+        /************************************************************/
+        /* Content Wrapper                                          */
+        /************************************************************/
+
+        .wrapper {
+            width: 115%;
+            height: 89.5%;
+
+            position: fixed;
+            display: block;
+            left: -15%;
+            top: 10.5%;
+        }
+
+        /************************************************************/
+        /* Side Navigation                                          */
+        /************************************************************/
+
+        .leftSidenav {
+            width: 15%;
+            height: 89.5%;
+
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            overflow-x: hidden;
+            transition: 0.5s;
+            padding-top: 60px;
+            background-color: #222;
+        }
+
+            .leftSidenav .closebtn {
+                position: absolute;
+                top: 0;
+                right: 25px;
+                font-size: 36px;
+                margin-left: 50px;
+            }
+
+            .leftSidenav h3 {
+                padding: 8px 8px 8px 32px;
+                text-decoration: none;
+                font-size: 25px;
+                color: mediumpurple;
+                display: block;
+                transition: 0.3s;
+                text-align: center;
+            }
+
+            .leftSidenav ul {
+                list-style-type: none;
+                margin: 0;
+                padding: 0;
+                width: 100%;
+                height: auto;
+                overflow: auto;
+                text-align: center;
+            }
+
+            .leftSidenav li {
+                border-bottom: 1px solid #555;
+            }
+
+                .leftSidenav li:last-child {
+                    border-bottom: none;
+                }
+
+                .leftSidenav li a {
+                    display: block;
+                    color: #4CAF50;
+                    padding: 8px 16px;
+                    text-decoration: none;
+                    text-align: center;
+                }
+
+                    .leftSidenav li a.active {
+                        background-color: #4CAF50;
+                        color: white;
+                    }
+
+                    .leftSidenav li a:hover:not(.active) {
+                        background-color: #555;
+                        color: white;
+                    }
+
+        @media screen and (max-height: 450px) {
+            .sidenav {
+                padding-top: 15px;
+            }
+
+                .sidenav a {
+                    font-size: 18px;
+                }
+        }
+
+        /************************************************************/
+        /* Main Content Region                                      */
+        /************************************************************/
+
+        .main {
+            width: 67.5%;
+
+            position: fixed;
+            left: 15.5%;
+            top: 10.5%;
+            bottom: 0;
+            overflow: scroll;
+
+            border-width: 20px;
+            border-style: solid;
+            border-color: #333;
+
+            background-color: lightgray;
+        }
+            .main p {
+                padding-left: 20px;
+                padding-right: 20px;
+            }
+
+        /************************************************************/
+        /* Radio Buttons                                            */
+        /************************************************************/
+
+        .radioButton {
+            display: block;
+            position: relative;
+            padding-left: 35px;
+            margin-bottom: 12px;
+            cursor: pointer;
+            font-size: 22px;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+
+            .radioButton input {
+                position: absolute;
+                opacity: 0;
+                cursor: pointer;
+                height: 0;
+                width: 0;
+            }
+
+        .checkmark {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 25px;
+            width: 25px;
+            background-color: #eee;
+            border-radius: 50%;
+        }
+
+        .radioButton:hover input ~ .checkmark {
+            background-color: #ccc;
+        }
+
+        .radioButton input:checked ~ .checkmark {
+            background-color: #4CAF50;
+        }
+
+        .checkmark:after {
+            content: "";
+            position: absolute;
+            display: none;
+        }
+
+        .radioButton input:checked ~ .checkmark:after {
+            display: block;
+        }
+
+        .radioButton .checkmark:after {
+            left: 9px;
+            top: 5px;
+            width: 5px;
+            height: 10px;
+            border: solid white;
+            border-width: 0 3px 3px 0;
+            -webkit-transform: rotate(45deg);
+            -ms-transform: rotate(45deg);
+            transform: rotate(45deg);
+        }
+        
+        /************************************************************/
+        /* Collapsible Content                                      */
+        /************************************************************/
+
+        .collapsible {
+            background-color: #A901DB;
+            color: white;
+            cursor: pointer;
+            padding: 18px;
+            width: 70%;
+            border: 1px solid #555;
+            text-align: left;
+            outline: none;
+            font-size: 15px;
+            margin-left: 10%;
+        }
+
+            .active, .collapsible:hover {
+                background-color: #4CAF50;
+            }
+
+        .content {
+            padding: 0 18px;
+            display: none;
+            width: 66%;
+            overflow: hidden;
+            background-color: #F6CEEC;
+            margin-left: 10.5%;
+        }
+        
+        /************************************************************/
+        /* Buttons                                                  */
+        /************************************************************/
+
+        .confirm {
+            background-color: #4CAF50;
+            border: none;
+            color: white;
+            position: fixed;
+            bottom: 80%;
+            right: 5%;
+            padding: 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            border-radius: 6px;
+        }
+
+            .confirm:hover {
+                box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+            }
+
+        .subclass {
+            display: inline-block;
+            padding: 10px;
+            font-size: 18px;
+            cursor: pointer;
+            text-align: center;
+            text-decoration: none;
+            outline: none;
+            color: #fff;
+            background-color: #4CAF50;
+            border: none;
+            border-radius: 10px;
+            box-shadow: 0 2px #999;
+        }
+
+            .subclass:hover {
+                background-color: #3e8e41
+            }
+
+            .subclass:active {
+                background-color: #3e8e41;
+                box-shadow: 0 1px #666;
+                transform: translateY(1px);
+            }
+
+    </style>
 </head>
+
 <body>
 
-<div id="leftSidenav" class="leftSidenav">
-  <a href="javascript:void(0)" class="closebtn" onclick="closeLeftNav()">&#8592;</a>
-  <h3> DnD Character Creator </h3>
-  <ul>
-	<li><a href="starting_page.html" onclick="closeLeftNav()">HOME</a></li>
-    <li><a href="race_select.html" onclick="closeLeftNav()">RACE</a></li>
-    <li><a href="class_selector.html" onclick="closeLeftNav()">CLASS</a></li>
-    <li><a class="active" href="background_select.html" onclick="closeLeftNav()">BACKGROUND</a></li>
-	<li><a href="Ability_Scores.html" onclick="closeLeftNav()">ABILITY SCORES</a></li>
-    <li><a href="Spells.html" onclick="closeLeftNav()">SPELLS</a></li>
-    <li><a href="Equipment.html" onclick="closeLeftNav()">EQUIPMENT</a></li>
-    <li><a href="Proficiencies.html" onclick="closeLeftNav()">SKILLS</a></li>
-    <li><a href="proto_CharacterSheetGuide.html" onclick="closeLeftNav()">CHARACTER SHEET GUIDE</a></li>
-    <li><a href="support_page.html" onclick="closeLeftNav()">SUPPORT</a></li>
-  </ul>
-  <br/>
-  <br/>
-  <br/>
-  <br/>
-  <a href="Character Sheet - Alternative - Print Version.pdf" target = "_blank">
-    <button class="subclass">Download a blank character sheet here!</button>
-  </a>
-</div>
+    <!-- BANNER -->
+    <div id="banner">
+        <h2>Dungeons & Dragons Character Creator</h2>
+    </div>
 
-<span style="font-size:30px;cursor:pointer" onclick="openLeftNav()">
-  <img src="Images/MenuIcon.jpg"    alt="Menu Icon" width="50" height="50" style=padding-left:10px;>
-</span>
+    <!-- CONTENT WRAPPER -->
+    <div class="wrapper">
+
+        <div id="leftSidenav" class="leftSidenav">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeLeftNav()">&#8592;</a>
+            <h3> Navigation Menu </h3>
+            <ul>
+                <li><a href="starting_page.html" onclick="closeLeftNav()">HOME</a></li>
+                <li><a href="race_select.html" onclick="closeLeftNav()">RACE</a></li>
+                <li><a href="class_selector.html" onclick="closeLeftNav()">CLASS</a></li>
+                <li><a class="active" href="background_select.html" onclick="closeLeftNav()">BACKGROUND</a></li>
+                <li><a href="Ability_Scores.html" onclick="closeLeftNav()">ABILITY SCORES</a></li>
+                <li><a href="Spells.html" onclick="closeLeftNav()">SPELLS</a></li>
+                <li><a href="Equipment.html" onclick="closeLeftNav()">EQUIPMENT</a></li>
+                <li><a href="Proficiencies.html" onclick="closeLeftNav()">SKILLS</a></li>
+                <li><a href="proto_CharacterSheetGuide.html" onclick="closeLeftNav()">CHARACTER SHEET GUIDE</a></li>
+                <li><a href="support_page.html" onclick="closeLeftNav()">SUPPORT</a></li>
+            </ul>
+            <br />
+            <br />
+            <br />
+            <br />
+            <a href="Character Sheet - Alternative - Print Version.pdf" target="_blank">
+                <button class="subclass">Download a blank character sheet here!</button>
+            </a>
+        </div>
 
 
-<h2 id="class_title" style="margin-left: 10%">Backgrounds</h2>
+        <!-- MAIN CONTENT -->
+        <div class="main">
 
-<div align="right"onclick="confirmClass();">
-  <button type="button" class="confirm" id="conButton">CONFIRM CHOICE &raquo;</button>
-</div>
+            <span style="font-size:30px;cursor:pointer" onclick="openLeftNav()">
+                <img src="Images/MenuIcon.jpg" alt="Menu Icon" width="50" height="50" style=padding-left:10px;>
+            </span>
 
-<button type="button" class="collapsible"><strong>Acolyte</strong></button>
-<div class="content">
-  <p>Your character is one that has spent much of their life serving in a temple for the gods.<br /><br /><b>Feature: Shelter of the Faithful</b><br />You and your party can recieve free healing and shelter at a temple, shrine, or other religious institutions connected to your faith.</p>
-  <label class="radioButton">Select BackGround
-    <input type="radio" name="class" id="radio0" onclick="closeRightNav(); closeLeftNav();">
-    <span class="checkmark"></span>
-  </label>
-</div>
-<button type="button" class="collapsible"><strong>Charlatan</strong></button>
-<div class="content">
-  <p>You are incredibly skilled at decieving people and quickly determining their inner desires.<br /><br /><b>Feature: False Identity</b><br />You have already created a false identity complete with documents, acquaintances, and disguses.</p>
-  <label class="radioButton">Select Background
-    <input type="radio" name="class" id="radio1" onclick="closeRightNav(); closeLeftNav();">
-    <span class="checkmark"></span>
-  </label>
-</div>
-<button type="button" class="collapsible"><strong>Criminal</strong></button>
-<div class="content">
-  <p>You have spent your life flaunting the law and still retain many contacts within the criminal underworld.<br /><br /><b>Feature: Criminal Contact</b><br />You have an old, reliable contact in the underworld capable of keeping you connected to criminal networks, even from great distances away.</p>
-  <label class="radioButton">Select Background
-    <input type="radio" name="class" id="radio2" onclick="closeRightNav(); closeLeftNav();">
-    <span class="checkmark"></span>
-  </label>
-</div>
-<button type="button" class="collapsible"><strong>Entertainer</strong></button>
-<div class="content">
-  <p>You live to perform in front of an audience and your years of experience have made you quite skilled at it.<br /><br /><b>Feature: By Popular Demand</b><br />You can always find somewhere to perform, be it an inn or a noble's hall. When performing, you are given free lodging and food for the night.</p>
-  <label class="radioButton">Select Background
-    <input type="radio" name="class" id="radio3" onclick="closeRightNav(); closeLeftNav();">
-    <span class="checkmark"></span>
-  </label>
-</div>
-<button type="button" class="collapsible"><strong>Folk Hero</strong></button>
-<div class="content">
-  <p>You were born a peasant but through various acts of bravery, your name is already beginning to be shared in taverns around the land<br /><br /><b>Feature: Rustic Hospitality</b><br />You can easily find a place to hide, rest or recover among common folk unless your presence proves to be a danger to them.</p>
-  <label class="radioButton">Select Background
-    <input type="radio" name="class" id="radio4" onclick="closeRightNav(); closeLeftNav();">
-    <span class="checkmark"></span>
-  </label>
-</div>
-<button type="button" class="collapsible"><strong>Guild Artisan</strong></button>
-<div class="content">
-  <p>You are part of an artisan's guild and have many connections with various merchants.<br /><br /><b>Feature: Guild Membership</b><br />In some cities and towns, guildhalls provide a good place to find allies and hirelings. If you are accused of a crime your guild may support you and help free you.</p>
-  <label class="radioButton">Select Background
-    <input type="radio" name="class" id="radio5" onclick="closeRightNav(); closeLeftNav();">
-    <span class="checkmark"></span>
-  </label>
-</div>
-<button type="button" class="collapsible"><strong>Hermit</strong></button>
-<div class="content">
-  <p>You have lived a solitary lifestyle for a significant portion of your life.<br /><br /><b>Feature: Discovery</b><br />Your lengthy seclusion has led you to make an incredible and unique discovery, the nature of which should be discussed with your Dungeon Master.</p>
-  <label class="radioButton">Select Background
-    <input type="radio" name="class" id="radio6" onclick="closeRightNav(); closeLeftNav();">
-    <span class="checkmark"></span>
-  </label>
-</div>
-<button type="button" class="collapsible"><strong>Noble</strong></button>
-<div class="content">
-  <p>You hail from a noble family with condiderable land, wealth, and political influence.<br /><br /><b>Feature: Position of Privilege</b><br />Thanks to your noble birth, you are welcomed in high society and commomers will go out of their way to avoid your displeasure. You can easily secure an audience with a local noble if you wish to.</p>
-  <label class="radioButton">Select Background
-    <input type="radio" name="class" id="radio7" onclick="closeRightNav(); closeLeftNav();">
-    <span class="checkmark"></span>
-  </label>
-</div>
-<button type="button" class="collapsible"><strong>Outlander</strong></button>
-<div class="content">
-  <p>You grew up in the wilderness far away civilization and technology.<br /><br /><b>Feature: Wanderer</b><br />You have an excellent sense of navigation and can easily memorize maps and general geography. Additionally, you can always find food and fresh water nearby, if it exists.</p>
-  <label class="radioButton">Select Background
-    <input type="radio" name="class" id="radio8" onclick="closeRightNav(); closeLeftNav();">
-    <span class="checkmark"></span>
-  </label>
-</div>
-<button type="button" class="collapsible"><strong>Sailor</strong></button>
-<div class="content">
-  <p>You have spent many years on seafaring vessels, facing down legendary storms and creatures of the deep<br /><br /><b>Feature: Ship's Passage</b><br />When you need to, you can call in a favour to secure free passage for yourself and your party on a ship, though you can't guarantee the exact route or schedule.</p>
-  <label class="radioButton">Select Background
-    <input type="radio" name="class" id="radio9" onclick="closeRightNav(); closeLeftNav();">
-    <span class="checkmark"></span>
-  </label>
-</div>
-<button type="button" class="collapsible"><strong>Soldier</strong></button>
-<div class="content">
-  <p>You spent several years serving in the sort of fighting group, be it a professional army, a mercenary company, or a simple militia.<br /><br /><b>Feature: Military Rank</b><br />Soldiers loyal to your former organization recognize your authority and rank, even obeying simple commands if they are of lower rank than you previously held.</p>
-  <label class="radioButton">Select Background
-    <input type="radio" name="class" id="radio10" onclick="closeRightNav(); closeLeftNav();">
-    <span class="checkmark"></span>
-  </label>
-</div>
-<button type="button" class="collapsible"><strong>Urchin</strong></button>
-<div class="content">
-  <p>You grew up alone on the street, having to fight to find food and shelter every day.<br /><br /><b>Feature: City Secrets</b><br />You can easily find secret passages through cities that others would miss, allowing you to travel much faster thorugh a city than you would normally be able to.</p>
-  <label class="radioButton">Select Background
-    <input type="radio" name="class" id="radio11" onclick="closeRightNav(); closeLeftNav();">
-    <span class="checkmark"></span>
-  </label>
-</div>
 
-<script>
-var coll = document.getElementsByClassName("collapsible");
-var backgrounds = ["Acolyte", "Charlatan", "Criminal", "Entertainer", "Folk Hero", "Guild Artisan", "Hermit", "Noble", "Outlander", "Sailor", "Soldier", "Urchin"];
-var i;
-for (i = 0; i < coll.length; i++) {
-  coll[i].addEventListener("click", function() {
-    var content = this.nextElementSibling;
-    if (content.style.display === "block") {
-      this.classList.toggle("active");
-      content.style.display = "none";
-    } else {
-      resetCollapsibles();
-      this.classList.toggle("active");
-      content.style.display = "block";
-    }
-  });
-}
-function resetCollapsibles() {
-  var k;
-  var radioBut = document.getElementsByClassName("radioButton");
-  for(k = 0; k < radioBut.length; k++) {
-    var content = coll[k].nextElementSibling;
-    var prefix = "radio";
-    var curRadio = document.getElementById(prefix.concat(k));
-    if(!curRadio.checked && content.style.display === "block") {
-      coll[k].classList.toggle("active");
-      content.style.display = "none";
-    }
-  }
-}
-function confirmClass() {
-  var i;
-  var prefix = "radio";
-  var activeRadio = null;
-  var curRadio;
-  
-  resetCollapsibles();
-  var radioBut = document.getElementsByClassName("radioButton");
-  
-  for (i = 0; i < radioBut.length && activeRadio === null; i++) {
-    curRadio = document.getElementById(prefix.concat(i));
-    if(curRadio.checked && i === 7) {
-      confirmBackground(i);
-      activeRadio = curRadio;
-    }
-  } //ends for loop
-  if(activeRadio === null) {
-    alert("Please select a background. (only \"Noble\" is implemented right now)");
-  }
-  closeLeftNav();
-} //ends confirmClass
-  
-function confirmBackground(thing) {
- var msg = "You have selected the " + backgrounds[thing] + " background. Would you like to save this choice?";
- if(confirm(msg)) {
-    document.location.href = "Spells.html";
- }
-}
-function openLeftNav() {
-  document.getElementById("leftSidenav").style.width = "30%";
-}
-function closeLeftNav() {
-  document.getElementById("leftSidenav").style.width = "0";
-}
-function openRightNav() {
-  document.getElementById("rightSidenav").style.width = "35%";
-}
-function closeRightNav() {
-  document.getElementById("rightSidenav").style.width = "0";
-}
-</script>
+            <h2 id="class_title" style="margin-left: 10%">Backgrounds</h2>
+
+            <div align="right" onclick="confirmClass();">
+                <button type="button" class="confirm" id="conButton">CONFIRM CHOICE &raquo;</button>
+            </div>
+
+            <button type="button" class="collapsible"><strong>Acolyte</strong></button>
+            <div class="content">
+                <p>Your character is one that has spent much of their life serving in a temple for the gods.<br /><br /><b>Feature: Shelter of the Faithful</b><br />You and your party can recieve free healing and shelter at a temple, shrine, or other religious institutions connected to your faith.</p>
+                <label class="radioButton">
+                    Select BackGround
+                    <input type="radio" name="class" id="radio0" onclick="closeRightNav(); closeLeftNav();">
+                    <span class="checkmark"></span>
+                </label>
+            </div>
+            <button type="button" class="collapsible"><strong>Charlatan</strong></button>
+            <div class="content">
+                <p>You are incredibly skilled at decieving people and quickly determining their inner desires.<br /><br /><b>Feature: False Identity</b><br />You have already created a false identity complete with documents, acquaintances, and disguses.</p>
+                <label class="radioButton">
+                    Select Background
+                    <input type="radio" name="class" id="radio1" onclick="closeRightNav(); closeLeftNav();">
+                    <span class="checkmark"></span>
+                </label>
+            </div>
+            <button type="button" class="collapsible"><strong>Criminal</strong></button>
+            <div class="content">
+                <p>You have spent your life flaunting the law and still retain many contacts within the criminal underworld.<br /><br /><b>Feature: Criminal Contact</b><br />You have an old, reliable contact in the underworld capable of keeping you connected to criminal networks, even from great distances away.</p>
+                <label class="radioButton">
+                    Select Background
+                    <input type="radio" name="class" id="radio2" onclick="closeRightNav(); closeLeftNav();">
+                    <span class="checkmark"></span>
+                </label>
+            </div>
+            <button type="button" class="collapsible"><strong>Entertainer</strong></button>
+            <div class="content">
+                <p>You live to perform in front of an audience and your years of experience have made you quite skilled at it.<br /><br /><b>Feature: By Popular Demand</b><br />You can always find somewhere to perform, be it an inn or a noble's hall. When performing, you are given free lodging and food for the night.</p>
+                <label class="radioButton">
+                    Select Background
+                    <input type="radio" name="class" id="radio3" onclick="closeRightNav(); closeLeftNav();">
+                    <span class="checkmark"></span>
+                </label>
+            </div>
+            <button type="button" class="collapsible"><strong>Folk Hero</strong></button>
+            <div class="content">
+                <p>You were born a peasant but through various acts of bravery, your name is already beginning to be shared in taverns around the land<br /><br /><b>Feature: Rustic Hospitality</b><br />You can easily find a place to hide, rest or recover among common folk unless your presence proves to be a danger to them.</p>
+                <label class="radioButton">
+                    Select Background
+                    <input type="radio" name="class" id="radio4" onclick="closeRightNav(); closeLeftNav();">
+                    <span class="checkmark"></span>
+                </label>
+            </div>
+            <button type="button" class="collapsible"><strong>Guild Artisan</strong></button>
+            <div class="content">
+                <p>You are part of an artisan's guild and have many connections with various merchants.<br /><br /><b>Feature: Guild Membership</b><br />In some cities and towns, guildhalls provide a good place to find allies and hirelings. If you are accused of a crime your guild may support you and help free you.</p>
+                <label class="radioButton">
+                    Select Background
+                    <input type="radio" name="class" id="radio5" onclick="closeRightNav(); closeLeftNav();">
+                    <span class="checkmark"></span>
+                </label>
+            </div>
+            <button type="button" class="collapsible"><strong>Hermit</strong></button>
+            <div class="content">
+                <p>You have lived a solitary lifestyle for a significant portion of your life.<br /><br /><b>Feature: Discovery</b><br />Your lengthy seclusion has led you to make an incredible and unique discovery, the nature of which should be discussed with your Dungeon Master.</p>
+                <label class="radioButton">
+                    Select Background
+                    <input type="radio" name="class" id="radio6" onclick="closeRightNav(); closeLeftNav();">
+                    <span class="checkmark"></span>
+                </label>
+            </div>
+            <button type="button" class="collapsible"><strong>Noble</strong></button>
+            <div class="content">
+                <p>You hail from a noble family with condiderable land, wealth, and political influence.<br /><br /><b>Feature: Position of Privilege</b><br />Thanks to your noble birth, you are welcomed in high society and commomers will go out of their way to avoid your displeasure. You can easily secure an audience with a local noble if you wish to.</p>
+                <label class="radioButton">
+                    Select Background
+                    <input type="radio" name="class" id="radio7" onclick="closeRightNav(); closeLeftNav();">
+                    <span class="checkmark"></span>
+                </label>
+            </div>
+            <button type="button" class="collapsible"><strong>Outlander</strong></button>
+            <div class="content">
+                <p>You grew up in the wilderness far away civilization and technology.<br /><br /><b>Feature: Wanderer</b><br />You have an excellent sense of navigation and can easily memorize maps and general geography. Additionally, you can always find food and fresh water nearby, if it exists.</p>
+                <label class="radioButton">
+                    Select Background
+                    <input type="radio" name="class" id="radio8" onclick="closeRightNav(); closeLeftNav();">
+                    <span class="checkmark"></span>
+                </label>
+            </div>
+            <button type="button" class="collapsible"><strong>Sailor</strong></button>
+            <div class="content">
+                <p>You have spent many years on seafaring vessels, facing down legendary storms and creatures of the deep<br /><br /><b>Feature: Ship's Passage</b><br />When you need to, you can call in a favour to secure free passage for yourself and your party on a ship, though you can't guarantee the exact route or schedule.</p>
+                <label class="radioButton">
+                    Select Background
+                    <input type="radio" name="class" id="radio9" onclick="closeRightNav(); closeLeftNav();">
+                    <span class="checkmark"></span>
+                </label>
+            </div>
+            <button type="button" class="collapsible"><strong>Soldier</strong></button>
+            <div class="content">
+                <p>You spent several years serving in the sort of fighting group, be it a professional army, a mercenary company, or a simple militia.<br /><br /><b>Feature: Military Rank</b><br />Soldiers loyal to your former organization recognize your authority and rank, even obeying simple commands if they are of lower rank than you previously held.</p>
+                <label class="radioButton">
+                    Select Background
+                    <input type="radio" name="class" id="radio10" onclick="closeRightNav(); closeLeftNav();">
+                    <span class="checkmark"></span>
+                </label>
+            </div>
+            <button type="button" class="collapsible"><strong>Urchin</strong></button>
+            <div class="content">
+                <p>You grew up alone on the street, having to fight to find food and shelter every day.<br /><br /><b>Feature: City Secrets</b><br />You can easily find secret passages through cities that others would miss, allowing you to travel much faster thorugh a city than you would normally be able to.</p>
+                <label class="radioButton">
+                    Select Background
+                    <input type="radio" name="class" id="radio11" onclick="closeRightNav(); closeLeftNav();">
+                    <span class="checkmark"></span>
+                </label>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        var coll = document.getElementsByClassName("collapsible");
+        var backgrounds = ["Acolyte", "Charlatan", "Criminal", "Entertainer", "Folk Hero", "Guild Artisan", "Hermit", "Noble", "Outlander", "Sailor", "Soldier", "Urchin"];
+        var i;
+        for (i = 0; i < coll.length; i++) {
+        coll[i].addEventListener("click", function() {
+        var content = this.nextElementSibling;
+        if (content.style.display === "block") {
+        this.classList.toggle("active");
+        content.style.display = "none";
+        } else {
+        resetCollapsibles();
+        this.classList.toggle("active");
+        content.style.display = "block";
+        }
+        });
+        }
+        function resetCollapsibles() {
+        var k;
+        var radioBut = document.getElementsByClassName("radioButton");
+        for(k = 0; k < radioBut.length; k++) {
+        var content = coll[k].nextElementSibling;
+        var prefix = "radio";
+        var curRadio = document.getElementById(prefix.concat(k));
+        if(!curRadio.checked && content.style.display === "block") {
+        coll[k].classList.toggle("active");
+        content.style.display = "none";
+        }
+        }
+        }
+        function confirmClass() {
+        var i;
+        var prefix = "radio";
+        var activeRadio = null;
+        var curRadio;
+
+        resetCollapsibles();
+        var radioBut = document.getElementsByClassName("radioButton");
+
+        for (i = 0; i < radioBut.length && activeRadio === null; i++) {
+        curRadio = document.getElementById(prefix.concat(i));
+        if(curRadio.checked && i === 7) {
+        confirmBackground(i);
+        activeRadio = curRadio;
+        }
+        } //ends for loop
+        if(activeRadio === null) {
+        alert("Please select a background. (only \"Noble\" is implemented right now)");
+        }
+        closeLeftNav();
+        } //ends confirmClass
+
+        function confirmBackground(thing) {
+        var msg = "You have selected the " + backgrounds[thing] + " background. Click 'OK' to move onto the Ability Score selection menu.";
+        if(confirm(msg)) {
+        document.location.href = "Ability_Scores.html";
+        }
+        }
+        function openLeftNav() {
+        document.getElementById("leftSidenav").style.left = "0";
+        }
+        function closeLeftNav() {
+        document.getElementById("leftSidenav").style.left = "-15%";
+        }
+        function openRightNav() {
+        document.getElementById("rightSidenav").style.left = "0";
+        }
+        function closeRightNav() {
+        document.getElementById("rightSidenav").style.left = "-35%";
+        }
+    </script>
 
 </body>
 </html>
