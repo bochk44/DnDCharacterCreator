@@ -1,458 +1,564 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<style>
-body {
-  font-family: "Lato", sans-serif;
-}
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body {
+            font-family: "Lato", sans-serif;
+            background-color: black;
+        }
 
-.page{
-	margin: 50px;
-}
-.leftSidenav {
-  height: 100%;
-  width: 0;
-  position: fixed;
-  z-index: 1;
-  top: 0;
-  left: 0;
-  background-color: #3B0B39;
-  overflow-x: hidden;
-  transition: 0.5s;
-  padding-top: 60px;
-}
-.leftSidenav .closebtn {
-  position: absolute;
-  top: 0;
-  right: 25px;
-  font-size: 36px;
-  margin-left: 50px;
-}
-.leftSidenav h3 {
-  padding: 8px 8px 8px 32px;
-  text-decoration: none;
-  font-size: 25px;
-  color: #EFFBEF;
-  display: block;
-  transition: 0.3s;
-}
-.rightSidenav {
-  height: 100%;
-  width: 0;
-  position: fixed;
-  z-index: 1;
-  top: 0;
-  right: 0;
-  background-color: #3B0B39;
-  overflow-x: hidden;
-  transition: 0.5s;
-  padding-top: 60px;
-}
-.rightSidenav .closebtn {
-  position: absolute;
-  top: 0;
-  left: 25px;
-  font-size: 36px;
-  margin-right: 50px;
-}
-.rightSidenav h3 {
- padding: 8px 8px 8px 32px;
-  text-decoration: none;
-  font-size: 30px;
-  color: #EFFBEF;
-  display: block;
-  transition: 0.3s;
-}
+        /************************************************************/
+        /* Banner                                                   */
+        /************************************************************/
 
-.rightSidenav p {
-  padding-left: 32px;
-  text-decoration: none;
-  font-size: 20px;
-  color: #EFFBEF;
-  display: block;
-  transition: 0.3s;
-}
+        #banner {
+            width: 100%;
+            height: 9.5%;
 
-.rightSidenav li  {
-  padding-left: 32px;
-  text-decoration: none;
-  font-size: 20px;
-  color: #EFFBEF;
-  display: block;
-  transition: 0.3s;
-}
+            position: fixed;
+            left: 0;
+            top: 0;
+                
+            text-align: center;
+            color: mediumpurple;
+            background-color: #222222;
+        }
 
-.leftSidenav ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  width: 100%;
-  background-color: #A901DB;
-  height: auto;
-  overflow: auto;
-}
-  
-.leftSidenav li {
-  border-bottom: 1px solid #555;
-}
-.leftSidenav li:last-child {
-  border-bottom: none;
-}
-  
-.leftSidenav li a {
-  display: block;
-  color: #000;
-  padding: 8px 16px;
-  text-decoration: none;
-}
-.leftSidenav li a.active {
-  background-color: #4CAF50;
-  color: white;
-}
-.leftSidenav li a:hover:not(.active) {
-  background-color: #555;
-  color: white;
-}
-@media screen and (max-height: 450px) {
-  .sidenav {padding-top: 15px;}
-  .sidenav a {font-size: 18px;}
-}
+        /************************************************************/
+        /* Content Wrapper                                          */
+        /************************************************************/
+
+        .wrapper {
+            width: 115%;
+            height: 89.5%;
+
+            position: fixed;
+            display: block;
+            left: -15%;
+            top: 10.5%;
+        }
+        
+
+        /************************************************************/
+        /* Side Navigation                                          */
+        /************************************************************/
+
+        .leftSidenav {
+            width: 15%;
+            height: 89.5%;
+
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            overflow-x: hidden;
+            transition: 0.5s;
+            padding-top: 60px;
+            background-color: #222;
+        }
+
+            .leftSidenav .closebtn {
+                position: absolute;
+                top: 0;
+                right: 25px;
+                font-size: 36px;
+                margin-left: 50px;
+            }
+
+            .leftSidenav h3 {
+                padding: 8px 8px 8px 32px;
+                text-decoration: none;
+                text-align: center;
+                font-size: 25px;
+                color: white;
+                display: block;
+                transition: 0.3s;
+            }
+
+        .rightSidenav {
+            height: 100%;
+            width: 35%;
+            position: fixed;
+            z-index: 1;
+            top: 0;
+            right: -35%;
+            background-color: #3B0B39;
+            overflow-x: hidden;
+            transition: 0.5s;
+            padding-top: 60px;
+        }
+
+            .rightSidenav .closebtn {
+                position: absolute;
+                top: 0;
+                left: 25px;
+                font-size: 36px;
+                margin-right: 50px;
+            }
+
+            .rightSidenav h3 {
+                padding: 8px 8px 8px 32px;
+                text-decoration: none;
+                font-size: 30px;
+                color: #EFFBEF;
+                display: block;
+                transition: 0.3s;
+            }
+
+            .rightSidenav p {
+                padding-left: 32px;
+                text-decoration: none;
+                font-size: 20px;
+                color: #EFFBEF;
+                display: block;
+                transition: 0.3s;
+            }
+
+            .rightSidenav li {
+                padding-left: 32px;
+                text-decoration: none;
+                font-size: 20px;
+                color: #EFFBEF;
+                display: block;
+                transition: 0.3s;
+            }
+
+        .leftSidenav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: auto;
+            overflow: auto;
+        }
+
+        .leftSidenav li {
+            border-bottom: 1px solid #555;
+        }
+
+            .leftSidenav li:last-child {
+                border-bottom: none;
+            }
+
+            .leftSidenav li a {
+                display: block;
+                color: #4CAF50;
+                padding: 8px 16px;
+                text-decoration: none;
+                text-align: center;
+            }
+
+                .leftSidenav li a.active {
+                    background-color: #4CAF50;
+                    color: white;
+                }
+
+                .leftSidenav li a:hover:not(.active) {
+                    background-color: #555;
+                    color: white;
+                }
+
+        @media screen and (max-height: 450px) {
+            .sidenav {
+                padding-top: 15px;
+            }
+
+                .sidenav a {
+                    font-size: 18px;
+                }
+        }
+        
+        /************************************************************/
+        /* Main Content Region                                      */
+        /************************************************************/
+
+        .page {
+            width: 67.5%;
+
+            position: fixed;
+            left: 15.5%;
+            top: 10.5%;
+            bottom: 0;
+            overflow: scroll;
+
+            border-width: 20px;
+            border-style: solid;
+            border-color: #333;
+
+            background-color: lightgray;
+        }
+            .page p {
+                padding-left: 20px;
+                padding-right: 20px;
+            }
 
 
-.choiceTable tr td{
-	padding-left: 20px;
-	padding-right: 20px;
-}
 
-.savebtn{
-  float: right;
-  background-color: #3B0B39;
-  color: white;
-  padding: 16px;
-  font-size: 16px;
-  border: none;
-  cursor: pointer;
-  margin-right: 50px;
-  margin-bottom: 20px;
-}
+        .choiceTable tr td {
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+
+        .savebtn {
+            float: right;
+            background-color: #3B0B39;
+            color: white;
+            padding: 16px;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+            margin-right: 50px;
+            margin-bottom: 20px;
+        }
 
 
 
-.radioButton {
-  display: block;
-  position: relative;
-  padding-left: 35px;
-  margin-bottom: 12px;
-  cursor: pointer;
-  font-size: 22px;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-}
-.radioButton input {
-  position: absolute;
-  opacity: 0;
-  cursor: pointer;
-  height: 0;
-  width: 0;
-}
-.checkmark {
-  position: absolute;
-  top: 9px;
-  left: 0;
-  height: 25px;
-  width: 25px;
-  background-color: #ccc;
-  border-radius: 50%;
-}
-.radioButton:hover input ~ .checkmark {
-  background-color: #bbb;
-}
-.radioButton input:checked ~ .checkmark {
-  background-color: #4CAF50;
-}
-.checkmark:after {
-  content: "";
-  position: absolute;
-  display: none;
-}
-.radioButton input:checked ~ .checkmark:after {
-  display: block;
-}
-.radioButton .checkmark:after {
-  left: 9px;
-  top: 5px;
-  width: 5px;
-  height: 10px;
-  border: solid white;
-  border-width: 0 3px 3px 0;
-  -webkit-transform: rotate(45deg);
-  -ms-transform: rotate(45deg);
-  transform: rotate(45deg);
-  }
-  
-  .confirm {
-  background-color: #4CAF50;
-  border: none;
-  color: white;
-  position: fixed;
-  bottom: 80%;
-  right: 5%;
-  padding: 20px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  margin: 4px 2px;
-  border-radius: 6px;
-}
-.confirm:hover {
-  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
-  }
-  
-  .subclass {
-  display: inline-block;
-  padding: 10px;
-  font-size: 18px;
-  cursor: pointer;
-  text-align: center;
-  text-decoration: none;
-  outline: none;
-  color: #fff;
-  background-color: #4CAF50;
-  border: none;
-  border-radius: 10px;
-  box-shadow: 0 2px #999;
-}
-.subclass:hover {background-color: #3e8e41}
-.subclass:active {
-  background-color: #3e8e41;
-  box-shadow: 0 1px #666;
-  transform: translateY(1px);
-}
-</style>
+        .radioButton {
+            display: block;
+            position: relative;
+            padding-left: 35px;
+            margin-bottom: 12px;
+            cursor: pointer;
+            font-size: 22px;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+
+            .radioButton input {
+                position: absolute;
+                opacity: 0;
+                cursor: pointer;
+                height: 0;
+                width: 0;
+            }
+
+        .checkmark {
+            position: absolute;
+            top: 9px;
+            left: 0;
+            height: 25px;
+            width: 25px;
+            background-color: #ccc;
+            border-radius: 50%;
+        }
+
+        .radioButton:hover input ~ .checkmark {
+            background-color: #bbb;
+        }
+
+        .radioButton input:checked ~ .checkmark {
+            background-color: #4CAF50;
+        }
+
+        .checkmark:after {
+            content: "";
+            position: absolute;
+            display: none;
+        }
+
+        .radioButton input:checked ~ .checkmark:after {
+            display: block;
+        }
+
+        .radioButton .checkmark:after {
+            left: 9px;
+            top: 5px;
+            width: 5px;
+            height: 10px;
+            border: solid white;
+            border-width: 0 3px 3px 0;
+            -webkit-transform: rotate(45deg);
+            -ms-transform: rotate(45deg);
+            transform: rotate(45deg);
+        }
+
+        .confirm {
+            background-color: #4CAF50;
+            border: none;
+            color: white;
+            position: fixed;
+            bottom: 80%;
+            right: 5%;
+            padding: 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+
+            .confirm:hover {
+                box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+            }
+
+        .subclass {
+            display: inline-block;
+            padding: 10px;
+            font-size: 18px;
+            cursor: pointer;
+            text-align: center;
+            text-decoration: none;
+            outline: none;
+            color: #fff;
+            background-color: #4CAF50;
+            border: none;
+            border-radius: 10px;
+            box-shadow: 0 2px #999;
+        }
+
+            .subclass:hover {
+                background-color: #3e8e41
+            }
+
+            .subclass:active {
+                background-color: #3e8e41;
+                box-shadow: 0 1px #666;
+                transform: translateY(1px);
+            }
+    </style>
 </head>
 <body>
 
-<div id="leftSidenav" class="leftSidenav">
-  <a href="javascript:void(0)" class="closebtn" onclick="closeLeftNav()">&#8592;</a>
-  <h3> DnD Character Creator </h3>
-  <ul>
-	<li><a href="starting_page.html" onclick="closeLeftNav()">HOME</a></li>
-    <li><a href="race_select.html" onclick="closeLeftNav()">RACE</a></li>
-    <li><a href="class_selector.html" onclick="closeLeftNav()">CLASS</a></li>
-    <li><a href="background_select.html" onclick="closeLeftNav()">BACKGROUND</a></li>
-	<li><a href="Ability_Scores.html" onclick="closeLeftNav()">ABILITY SCORES</a></li>
-    <li><a href="Spells.html" onclick="closeLeftNav()">SPELLS</a></li>
-    <li><a class="active" href="Equipment.html" onclick="closeLeftNav()">EQUIPMENT</a></li>
-    <li><a href="Proficiencies.html" onclick="closeLeftNav()">SKILLS</a></li>
-    <li><a href="proto_CharacterSheetGuide.html" onclick="closeLeftNav()">CHARACTER SHEET GUIDE</a></li>
-    <li><a href="support_page.html" onclick="closeLeftNav()">SUPPORT</a></li>
-  </ul>
-  <br/>
-  <br/>
-  <br/>
-  <br/>
-  <a href="Character Sheet - Alternative - Print Version.pdf" target = "_blank">
-    <button class="subclass">Download a blank character sheet here!</button>
-  </a>
-</div>
+    <!-- BANNER -->
+    <div id="banner">
+        <h2>Dungeons & Dragons Character Creator</h2>
+    </div>
+
+    <!-- CONTENT WRAPPER -->
+    <div class="wrapper">
+
+        <!-- SIDE NAVIGATIAON MENUS -->
+        <div id="leftSidenav" class="leftSidenav">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeLeftNav()">&#8592;</a>
+            <h3> Navigation Menu </h3>
+            <ul>
+                <li><a href="starting_page.html" onclick="closeLeftNav()">HOME</a></li>
+                <li><a href="race_select.html" onclick="closeLeftNav()">RACE</a></li>
+                <li><a href="class_selector.html" onclick="closeLeftNav()">CLASS</a></li>
+                <li><a href="background_select.html" onclick="closeLeftNav()">BACKGROUND</a></li>
+                <li><a href="Ability_Scores.html" onclick="closeLeftNav()">ABILITY SCORES</a></li>
+                <li><a href="Spells.html" onclick="closeLeftNav()">SPELLS</a></li>
+                <li><a class="active" href="Equipment.html" onclick="closeLeftNav()">EQUIPMENT</a></li>
+                <li><a href="Proficiencies.html" onclick="closeLeftNav()">SKILLS</a></li>
+                <li><a href="proto_CharacterSheetGuide.html" onclick="closeLeftNav()">CHARACTER SHEET GUIDE</a></li>
+                <li><a href="support_page.html" onclick="closeLeftNav()">SUPPORT</a></li>
+            </ul>
+            <br />
+            <br />
+            <br />
+            <br />
+            <a href="Character Sheet - Alternative - Print Version.pdf" target="_blank">
+                <button class="subclass">Download a blank character sheet here!</button>
+            </a>
+        </div>
 
 
 
-<div id="rightSidenav" class="rightSidenav">
-  <a href="javascript:void(0)" class="closebtn" onclick="closeRightNav()">&#8594;</a>
-  <h3> Dungeoneer's Pack </h3>
-  
-  <p> A Dungeoneer's Pack contains: </p>
-	<ul>
-	
-	<li> <a> a Backpack  </a> </li>
-	<li> <a> a Crowbar  </a> </li>
-	<li> <a> a Hammer </a> </li>
-	<li> <a> 10 Pitons </a> </li>
-	<li> <a> 10 Torches </a> </li>
-	<li> <a> a Tinderbox </a> </li>
-	<li> <a> 10 Days of Rations </a> </li>
-	<li> <a> a Waterskin </a> </li>
-	<li> <a> 50 Feet of Hempen Rope </a> </li>
-	
-	</ul>
+        <div id="rightSidenav" class="rightSidenav">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeRightNav()">&#8594;</a>
+            <h3> Dungeoneer's Pack </h3>
 
-  
-</div>
-  
-<span style="font-size:30px;cursor:pointer" onclick="openLeftNav()">
-  <img src="Images/MenuIcon.jpg"    alt="Menu Icon" width="50" height="50" style=padding-left:10px;>
-</span>
-<span style="font-size:30px;cursor:pointer;float:right" onclick="openRightNav()"> open &#8592;</span>
+            <p> A Dungeoneer's Pack contains: </p>
+            <ul>
 
-<div class="page">
+                <li> <a> a Backpack  </a> </li>
+                <li> <a> a Crowbar  </a> </li>
+                <li> <a> a Hammer </a> </li>
+                <li> <a> 10 Pitons </a> </li>
+                <li> <a> 10 Torches </a> </li>
+                <li> <a> a Tinderbox </a> </li>
+                <li> <a> 10 Days of Rations </a> </li>
+                <li> <a> a Waterskin </a> </li>
+                <li> <a> 50 Feet of Hempen Rope </a> </li>
 
-<h2> Equipment</h2>
+            </ul>
 
 
-  
-  <!-- <a href = "index.html" target="_parent" > -->
-  <button type="button" class="confirm" id="conButton" onclick="confirmChoice()">CONFIRM CHOICE &raquo;</button>
-  <!--</a> -->
-</div>
+        </div>
 
-<p>As a <b>Fighter</b>, you can choose from the following equipment options:</p>
+        <div class="page">
 
-
-<table class="choiceTable">
-	<tr>
-		<td> 
-			<label class="radioButton"> (a) Chain mail armour
-				<input type="radio" name="option1" id="option1" value="chain" > </input> 
-				<span class="checkmark"></span>
-				<span style="font-size:30px;cursor:pointer" onclick="openRightNav()">
-					<img src="Images/info_icon.png"    alt="Info Icon" width="25" height="25" style=padding-left:10px;>
-				</span>
-			</label>
-			
-		</td>
-		
-		<td class="or"> <p>or </p> </td>
-		
-		<td>
-			<label class="radioButton"> (b) Leather armour, a longbow and 20 arrows
-				<input type="radio" name="option1" id="option2" value="leather" >  </input> 
-				<span class="checkmark"></span>
-				<span style="font-size:30px;cursor:pointer" onclick="openRightNav()">
-					<img src="Images/info_icon.png"    alt="Info Icon" width="25" height="25" style=padding-left:10px;>
-				</span>
-			</label>
-		</td>
-	</tr>
-	
-	<tr>
-		<td> 
-			<label class="radioButton"> (a) a Martial Weapon and a Shield
-				<input type="radio" name="option2" id="option3" value="mw1" >  </input> 
-				<span class="checkmark"></span>
-				<span style="font-size:30px;cursor:pointer" onclick="openRightNav()">
-					<img src="Images/info_icon.png"    alt="Info Icon" width="25" height="25" style=padding-left:10px;>
-				</span>
-			</label>
-		</td>
-		
-		<td class="or"> <p> or </p> </td>
-		
-		<td> 
-			<label class="radioButton"> (b) two Martial Weapons
-				<input type="radio" name ="option2" id="option4" value="mw2" >  </input> 
-				<span class="checkmark"></span>
-				<span style="font-size:30px;cursor:pointer" onclick="openRightNav()">
-					<img src="Images/info_icon.png"    alt="Info Icon" width="25" height="25" style=padding-left:10px;>
-				</span>
-			</label>
-		</td>
-	</tr>
-	
-	<tr>
-		<td>
-			<label class="radioButton"> (a) a Crossbow and 20 bolts
-				<input type="radio" name="option3" id="option5" value="crossbow" >  </input> 
-				<span class="checkmark"></span>
-				<span style="font-size:30px;cursor:pointer" onclick="openRightNav()">
-					<img src="Images/info_icon.png"    alt="Info Icon" width="25" height="25" style=padding-left:10px;>
-				</span>
-			</label>
-		</td>
-		
-		<td class="or"> <p> or </p> </td>
-		
-		<td> 
-			<label class="radioButton"> (b) two Handaxes
-				<input type="radio" name="option3" id="option6" value="handaxes" >  </input> 
-				<span class="checkmark"></span>
-				<span style="font-size:30px;cursor:pointer" onclick="openRightNav()">
-					<img src="Images/info_icon.png"    alt="Info Icon" width="25" height="25" style=padding-left:10px;>
-				</span>
-			</label>
-		</td>
-	</tr>
-	
-	<tr>
-		<td> 
-			<label class="radioButton"> (a) a Dungeoneer's Pack
-				<input type="radio" name="option4" id="option7" value="dungeon" >  </input> 
-				<span class="checkmark"></span>
-				<span style="font-size:30px;cursor:pointer" onclick="openRightNav()">
-					<img src="Images/info_icon.png"    alt="Info Icon" width="25" height="25" style=padding-left:10px;>
-				</span>
-			</label>
-		</td>
-		
-		<td class="or"> <p> or </p> </td>
-		
-		<td> 
-			<label class="radioButton"> (b) an Explorer's Pack
-				<input type="radio" name="option4" id="option8" value="explore" >  </input> 
-				<span class="checkmark"></span>
-				<span style="font-size:30px;cursor:pointer" onclick="openRightNav()">
-					<img src="Images/info_icon.png"    alt="Info Icon" width="25" height="25" style=padding-left:10px;>
-				</span>
-			</label>
-		</td>
-	</tr>
-</table>
+            <span style="font-size:30px;cursor:pointer" onclick="openLeftNav()">
+                <img src="Images/MenuIcon.jpg" alt="Menu Icon" width="50" height="50" style=padding-left:10px;>
+            </span>
+            <span style="font-size:30px;cursor:pointer;float:right" onclick="openRightNav()"> open &#8592;</span>
 
 
-</div> <!-- page div end -->
+            <h2> Equipment</h2>
 
 
 
-<script>
-function confirmChoice(){
+            <!-- <a href = "index.html" target="_parent" > -->
+            <button type="button" class="confirm" id="conButton" onclick="confirmChoice()">CONFIRM CHOICE &raquo;</button>
+            <!--</a> -->
 
- var i;
-  var prefix = "option";
-  var activeRadio = null;
-  var curRadio;
-  var radioBut = document.getElementsByClassName("radioButton");
-  var counter = 0;
-  
-  
-  for (i = 1; i < radioBut.length+1 && activeRadio === null; i++) {
-    curRadio = document.getElementById(prefix.concat(i));
-	console.log( prefix.concat(i) );
-    console.log( curRadio );
-	console.log( curRadio.checked );
-    if(curRadio.checked) {
-	  counter++;
-    }
-  } //ends for loop
-  
-	if( counter >= 4 ){
-		if(confirm("Are you ok with picking this equipment?") ) {
-    document.location.href = "Proficiencies.html";
- }
-	}
+        <p>As a <b>Fighter</b>, you can choose from the following equipment options:</p>
 
 
+        <table class="choiceTable">
+            <tr>
+                <td>
+                    <label class="radioButton">
+                        (a) Chain mail armour
+                        <input type="radio" name="option1" id="option1" value="chain"> </input>
+                        <span class="checkmark"></span>
+                        <span style="font-size:30px;cursor:pointer" onclick="openRightNav()">
+                            <img src="Images/info_icon.png" alt="Info Icon" width="25" height="25" style=padding-left:10px;>
+                        </span>
+                    </label>
+
+                </td>
+
+                <td class="or"> <p>or </p> </td>
+
+                <td>
+                    <label class="radioButton">
+                        (b) Leather armour, a longbow and 20 arrows
+                        <input type="radio" name="option1" id="option2" value="leather">  </input>
+                        <span class="checkmark"></span>
+                        <span style="font-size:30px;cursor:pointer" onclick="openRightNav()">
+                            <img src="Images/info_icon.png" alt="Info Icon" width="25" height="25" style=padding-left:10px;>
+                        </span>
+                    </label>
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <label class="radioButton">
+                        (a) a Martial Weapon and a Shield
+                        <input type="radio" name="option2" id="option3" value="mw1">  </input>
+                        <span class="checkmark"></span>
+                        <span style="font-size:30px;cursor:pointer" onclick="openRightNav()">
+                            <img src="Images/info_icon.png" alt="Info Icon" width="25" height="25" style=padding-left:10px;>
+                        </span>
+                    </label>
+                </td>
+
+                <td class="or"> <p> or </p> </td>
+
+                <td>
+                    <label class="radioButton">
+                        (b) two Martial Weapons
+                        <input type="radio" name="option2" id="option4" value="mw2">  </input>
+                        <span class="checkmark"></span>
+                        <span style="font-size:30px;cursor:pointer" onclick="openRightNav()">
+                            <img src="Images/info_icon.png" alt="Info Icon" width="25" height="25" style=padding-left:10px;>
+                        </span>
+                    </label>
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <label class="radioButton">
+                        (a) a Crossbow and 20 bolts
+                        <input type="radio" name="option3" id="option5" value="crossbow">  </input>
+                        <span class="checkmark"></span>
+                        <span style="font-size:30px;cursor:pointer" onclick="openRightNav()">
+                            <img src="Images/info_icon.png" alt="Info Icon" width="25" height="25" style=padding-left:10px;>
+                        </span>
+                    </label>
+                </td>
+
+                <td class="or"> <p> or </p> </td>
+
+                <td>
+                    <label class="radioButton">
+                        (b) two Handaxes
+                        <input type="radio" name="option3" id="option6" value="handaxes">  </input>
+                        <span class="checkmark"></span>
+                        <span style="font-size:30px;cursor:pointer" onclick="openRightNav()">
+                            <img src="Images/info_icon.png" alt="Info Icon" width="25" height="25" style=padding-left:10px;>
+                        </span>
+                    </label>
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <label class="radioButton">
+                        (a) a Dungeoneer's Pack
+                        <input type="radio" name="option4" id="option7" value="dungeon">  </input>
+                        <span class="checkmark"></span>
+                        <span style="font-size:30px;cursor:pointer" onclick="openRightNav()">
+                            <img src="Images/info_icon.png" alt="Info Icon" width="25" height="25" style=padding-left:10px;>
+                        </span>
+                    </label>
+                </td>
+
+                <td class="or"> <p> or </p> </td>
+
+                <td>
+                    <label class="radioButton">
+                        (b) an Explorer's Pack
+                        <input type="radio" name="option4" id="option8" value="explore">  </input>
+                        <span class="checkmark"></span>
+                        <span style="font-size:30px;cursor:pointer" onclick="openRightNav()">
+                            <img src="Images/info_icon.png" alt="Info Icon" width="25" height="25" style=padding-left:10px;>
+                        </span>
+                    </label>
+                </td>
+            </tr>
+        </table>
+
+        </div><!---->
 
 
-}
+    </div> <!-- page div end -->
 
 
-function openLeftNav() {
-  document.getElementById("leftSidenav").style.width = "30%";
-}
-function closeLeftNav() {
-  document.getElementById("leftSidenav").style.width = "0";
-}
-function openRightNav() {
-  document.getElementById("rightSidenav").style.width = "30%";
-}
-function closeRightNav() {
-  document.getElementById("rightSidenav").style.width = "0";
-}
-</script>
-   
+
+    <script>
+        function confirmChoice(){
+
+        var i;
+        var prefix = "option";
+        var activeRadio = null;
+        var curRadio;
+        var radioBut = document.getElementsByClassName("radioButton");
+        var counter = 0;
+
+
+        for (i = 1; i < radioBut.length+1 && activeRadio === null; i++) {
+        curRadio = document.getElementById(prefix.concat(i));
+        console.log( prefix.concat(i) );
+        console.log( curRadio );
+        console.log( curRadio.checked );
+        if(curRadio.checked) {
+        counter++;
+        }
+        } //ends for loop
+
+        if( counter >= 4 ){
+        if(confirm("Are you ok with picking this equipment?") ) {
+        document.location.href = "Proficiencies.html";
+        }
+        }
+
+
+
+
+        }
+
+
+        function openLeftNav() {
+        document.getElementById("leftSidenav").style.left = "0";
+        }
+        function closeLeftNav() {
+        document.getElementById("leftSidenav").style.left = "-15%";
+        }
+        function openRightNav() {
+        document.getElementById("rightSidenav").style.right = "0";
+        }
+        function closeRightNav() {
+        document.getElementById("rightSidenav").style.right = "-35%";
+        }
+    </script>
+
 </body>
 </html> 
