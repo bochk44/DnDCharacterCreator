@@ -5,40 +5,69 @@
 <style>
 body {
   font-family: "Lato", sans-serif;
-}
+            background-color: black;
+        }
+
+        /****************************************/
+        /* BANNER                               */
+        /****************************************/
+
+        #banner {
+            width: 100%;
+            height: 9.5%;
+
+            position: fixed;
+            left: 0;
+            top: 0;
+                
+            text-align: center;
+            color: mediumpurple;
+            background-color: #222222;
+        }
+
+            
+        /****************************************/
+        /* Content Wrapper                      */
+        /****************************************/
+
+        .wrapper {
+            width: 115%;
+            height: 89.5%;
+
+            position: fixed;
+            display: block;
+            left: -15%;
+            top: 10.5%;
+        }
+        
+            
+        /****************************************/
+        /* Left Navigation Menu                 */
+        /****************************************/
+
 .leftSidenav {
-  height: 100%;
-  width: 0;
-  position: fixed;
-  z-index: 1;
-  top: 0;
-  left: 0;
-  background-color: #3B0B39;
-  overflow-x: hidden;
-  transition: 0.5s;
-  padding-top: 60px;
-}
-.leftSidenav .closebtn {
-  position: absolute;
-  top: 0;
-  right: 25px;
-  font-size: 36px;
-  margin-left: 50px;
-}
+            width: 15%;
+            height: 100%;
+            position: fixed;
+            left: 0;
+            z-index: 1;
+            overflow-x: hidden;
+            background-color: #222;
+	}
 .leftSidenav h3 {
-  padding: 8px 8px 8px 32px;
-  text-decoration: none;
-  font-size: 25px;
-  color: #EFFBEF;
-  display: block;
-  transition: 0.3s;
+  
+                display: block;
+                padding: 8px 8px 8px 32px;
+                text-decoration: none;
+                text-align: center;
+                font-size: 25px;
+                color: white;
 }
 .leftSidenav ul {
   list-style-type: none;
   margin: 0;
   padding: 0;
   width: 100%;
-  background-color: #A901DB;
   height: auto;
   overflow: auto;
 }
@@ -51,10 +80,14 @@ body {
 }
   
 .leftSidenav li a {
-  display: block;
-  color: #000;
-  padding: 8px 16px;
-  text-decoration: none;
+                width: 100%;
+                text-align: center;
+                display: block;
+                padding-top: 10px;
+                padding-bottom: 10px;
+                border-top: 1px solid #555;
+                color: #4CAF50;
+                text-decoration: none;
 }
 .leftSidenav li a.active {
   background-color: #4CAF50;
@@ -69,12 +102,32 @@ body {
   .sidenav a {font-size: 18px;}
 }
   
-  
-  
-  
-  
+        /****************************************/
+        /* Main Content Area                    */
+        /****************************************/
+
+        .main {
+            width: 67.5%;
+
+            position: fixed;
+            left: 15.5%;
+            top: 10.5%;
+            bottom: 0;
+
+
+            border-width: 20px;
+            border-style: solid;
+            border-color: #333;
+
+            background-color: lightgray;
+        }
+            .main p {
+                padding-left: 20px;
+                padding-right: 20px;
+            }
+	
 input[type=text], input[type=submit], textarea {
-  width: 60%;
+  width: 100%;
   padding: 12px;
   margin: 8px 0;
   display: block;
@@ -94,7 +147,7 @@ textarea {
   resize: vertical;
 }
 .formArea {
-  margin-left: 20%;
+  margin: 0 10%;
   border-radius: 7px;
   background-color: #f2f2f2;
   padding: 20px;
@@ -125,6 +178,15 @@ textarea {
 </head>
 <body>
   
+    <!-- BANNER -->
+    <div id="banner">
+        <h2>Dungeons & Dragons Character Creator</h2>
+    </div>
+
+    <!-- CONTENT WRAPPER -->
+    <div class="wrapper">
+
+        <!-- NAVIGATION MENUS -->
 <div id="leftSidenav" class="leftSidenav">
   <h3> DnD Character Creator </h3>
   <ul>
@@ -148,6 +210,7 @@ textarea {
   </a>
 </div>
 
+<div class="main">
 <h2> Support</h2>
 <p>Thank you for using our website! If you have any comments, questions, or concerns please fill ot the form below.</p>
 
@@ -157,6 +220,8 @@ textarea {
   <textarea id="comments" placeholder="Tell us what you think!" wrap="soft" style="height:130px" required></textarea>
   <input type="submit" value="Send" onclick="intakeInfo()">
 </div>
+	    </div>
+	</div>
 
 
 <script>
