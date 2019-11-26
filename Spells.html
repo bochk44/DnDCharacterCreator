@@ -472,16 +472,14 @@
         } //ends for loop
 
         if(activeRadio != null && activeRadio.id === "radio2") {
-        document.getElementById("rightNav_h3").innerHTML = "Cantrip";
-        document.getElementById("rightNav_p").innerHTML = "Would you like to confirm selecting this cantrip?<br/><br/><button class=\"subclass\" onclick=\"confirmSubclass(2, 0)\">Yes &raquo;</button> <br/><br/>";
+        confirmSubclass(1,1);
         }
         else {
         document.getElementById("rightNav_h3").innerHTML = "No Spell Selected";
         document.getElementById("rightNav_p").innerHTML = "Please select a spell by clicking on the name and checking the box in the description. (only \"Fire Bolt\" is implemented)";
-
+        openRightNav();
         }
         resetCollapsibles();
-        openRightNav();
         } //ends confirmClass
 
         function confirmSubclass(thing ,thing2) {
